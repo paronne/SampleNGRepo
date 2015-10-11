@@ -1,0 +1,11 @@
+addEmptyValue:1,
+customValues:"Ground\r\
+Air\r\
+-\r\
+FedEx\r\
+UPS\r\
+DHL\r\
+Truck",
+name:"order_shipVia",
+typeid:34,
+uuid:"1AE30519-8DEE-4594-9C84-AEC3E3DCD352"

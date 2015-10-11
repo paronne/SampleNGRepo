@@ -1,0 +1,10 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/udm/addresses",
+items:[
+{foreignColumnName:"address_id",primaryDataProviderID:"mail_address_id",typeid:23,uuid:"5E075DE0-C1D7-4512-ACBC-DDAE23DED750"}
+],
+joinType:1,
+name:"contacts_to_addresses",
+primaryDataSource:"db:/udm/contacts",
+typeid:22,
+uuid:"8CD5CB39-20BB-4E4F-9AF2-BB2FB5E917FC"

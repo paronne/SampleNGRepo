@@ -1,0 +1,12 @@
+dataSource:"db:/udm/order_items",
+items:[
+{
+dataProviderIDToAggregate:"extended_price",
+name:"sum_extended",
+type:4,
+typeid:40,
+uuid:"663E01D1-D6D4-4B7A-8BAB-FC94B3BB2F97"
+}
+],
+typeid:39,
+uuid:"535D29BF-0ECC-47B5-B4C8-9DBDEF993FA7"

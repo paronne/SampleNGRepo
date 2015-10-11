@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-SymbolicName: piechart
+Bundle-Name: piechart
+
+Name: piechart/piechart.spec
+Web-Component: True
+

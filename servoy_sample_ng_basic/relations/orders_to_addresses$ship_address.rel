@@ -1,0 +1,10 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/udm/addresses",
+items:[
+{foreignColumnName:"address_id",primaryDataProviderID:"ship_address_id",typeid:23,uuid:"111D646F-3812-45D1-A91C-CAE169310A80"}
+],
+joinType:1,
+name:"orders_to_addresses$ship_address",
+primaryDataSource:"db:/udm/orders",
+typeid:22,
+uuid:"0EE68248-A108-48D5-A141-E0109A2E7A1A"

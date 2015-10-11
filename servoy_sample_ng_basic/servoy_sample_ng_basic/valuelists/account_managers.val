@@ -1,0 +1,11 @@
+addEmptyValue:1,
+dataProviderID1:"contact_id",
+dataProviderID2:"name_first",
+dataProviderID3:"name_last",
+name:"account_managers",
+relationName:"companies$main_company_id.companies_to_contacts",
+returnDataProviders:1,
+showDataProviders:6,
+typeid:34,
+uuid:"4FFF13C4-294C-445C-86B7-F3136E27113C",
+valueListType:1

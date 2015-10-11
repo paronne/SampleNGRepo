@@ -1,0 +1,37 @@
+.gauge-label {
+	font-size :18px;
+	font-weight:bold;
+	text-align:center;
+	position:relative;
+	top:5px;
+}
+
+.gauge-canvas {
+	position:relative;
+	top:35px;
+}
+
+.gauge-min-max {
+	font-style: normal;
+    font-weight: normal;
+    font: 10px Arial;
+    line-height: normal;
+    opacity: 0.40;
+    color: #333;
+}
+
+.gauge-min {
+	margin-left: 10px;
+    float: left;
+}
+
+.gauge-max {
+	float: right;
+	margin-right: 8px;
+}
+
+.gauge-section {
+    width: 80%;
+    height: 10px;
+    margin: auto;
+}

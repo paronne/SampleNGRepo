@@ -1,0 +1,3 @@
+basedir = .
+protractor.conf = ./protractor.config.js
+solution.name = servoy_sample_ng_basic

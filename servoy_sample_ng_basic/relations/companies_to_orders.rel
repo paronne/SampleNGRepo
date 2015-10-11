@@ -1,0 +1,10 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/udm/orders",
+items:[
+{foreignColumnName:"company_id",primaryDataProviderID:"company_id",typeid:23,uuid:"1FCF37E7-2D61-48DE-B7CC-74215B505203"}
+],
+joinType:1,
+name:"companies_to_orders",
+primaryDataSource:"db:/udm/companies",
+typeid:22,
+uuid:"012D2B68-E3A0-4BF1-9143-FB84A690405E"

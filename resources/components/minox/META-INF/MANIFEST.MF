@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-Name: Minox
+Bundle-SymbolicName: minox
+
+Name: flotr2/flotr2.spec
+Web-Component: True
+
+Name: gauge/gauge.spec
+Web-Component: True
+

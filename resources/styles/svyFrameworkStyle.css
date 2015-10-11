@@ -1,0 +1,1214 @@
+form {
+	border-style: solid; 
+	border-width: 0px;
+}
+field {
+	border-style: solid; 
+	font: 9px Tahoma; 
+	text-align: left;
+	border: 1px; 
+	margin: 0px 0px 0px 3px; 
+}
+tabpanel {
+	border-style: solid; 
+	border-width: 0px;
+}
+form.lookupwindow {
+	background-color: #145479; 
+	border-style: solid; 
+	border-width: 0px;
+}
+form.advancedsearchwindow {
+	background-color: #145479; 
+	border-style: solid; 
+	border-width: 0px;
+}
+
+form.bg {
+	background-image: url(media:///pv_bg_calm.png);
+	background-repeat:no-repeat;
+	background-size: 100% 100%;
+}
+form.bg field {
+	background-color: #FFFFFF;
+	border-style: solid; 
+	font: 9px Tahoma; 
+	text-align: left; 
+	margin: 0px 0px 0px 1px; 
+	border-color: #adb2b6; 
+	border-width: 1px;
+	color: #6d6e70;
+}
+form.bg label{
+	color: #4b4c4d;
+	border-style: solid; 
+	font:  9px Tahoma; 
+	border-width: 0px;
+	vertical-align: top;
+}
+form.bg label.button {
+	color: #606060;
+	border-style: solid; 
+	border-width: 0px;
+	font-size: 10px;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: solid; 
+}
+form.bg button {
+	color: #50636E;
+	margin: 2px 2px 0px 0px;
+	font: 9px Tahoma;
+}
+forms.bg label.login_title {
+	color: #d0dee4 ;
+	border-style: solid; 
+	border-width: 0px;
+	font-family: Tahoma;
+	font-size: 11pt;
+	font-weight: bold;
+	text-align: left; 
+}
+
+
+form.bg label.dayname {
+	color: #cedae3 ;
+	border-style: solid; 
+	font: 10pt Arial; 
+	border-width: 0px;
+	text-align: center;
+	font-weight: bold;
+}
+form.bg label.dayname_small {
+	color: #cedae3 ;
+	border-style: solid; 
+	font: 8pt Arial; 
+	border-width: 0px;
+	text-align: center;
+	font-weight: bold;
+	vertical-align: middle;
+}
+form.bg label.mainmenu {
+	color: #ffffff ;
+	border-style: solid; 
+	font: 10pt Arial; 
+	border-width: 0px;
+	text-align: center;
+	font-weight: bold
+}
+
+form.bg label.daynumber {
+	color: #2E2E2C ;
+	border-style: solid; 
+	font:   48pt Arial; 
+	border-width: 0px;
+	text-align: center;
+	font-weight: bold
+}
+form.bg label.username {
+	border-style: solid;
+	border-width: 0px;
+	text-align: left; 
+	color: #cedae3;
+	font-family: Myriad Pro;
+	font-size: 12pt;
+	vertical-align: middle;
+	opacity: 0.8
+}
+form.bg label.info_text {
+	color: #cedae3;
+	font-family: Tahoma;
+	font-size: 10pt;
+	text-align: left; 
+	font-weight: bold;
+}
+form.bg field.search {
+	border-style: solid;
+	border-width: 0px;
+	text-align: left; 
+	color: #000000;
+}
+form.bg label.headermainmenu {
+	color: #cedae3 ;
+	border-style: solid; 
+	font: 13pt Arial; 
+	border-width: 0px;
+	text-align: center;
+	font-weight: bold
+}
+form.template {
+	background-color: #F3F3F3; 
+	border-style: solid; 
+	border-width: 0px;
+}
+form.pv {
+	background-color: #F3F3F3; 
+	border-style: solid; 
+	border-width: 0px;
+}
+form.pv field {
+	background-color: #FFFFFF;
+	border-style: solid; 
+	font: 9px Tahoma; 
+	text-align: left; 
+	margin: 0px 0px 0px 1px; 
+	border-color: #adb2b6; 
+	border-width: 1px;
+	color: #6d6e70;
+}
+form.pv label.mainmenu {
+	color: #ffffff ;
+	border-style: solid; 
+	font: 10pt Arial; 
+	border-width: 0px;
+	text-align: center;
+	font-weight: bold
+}
+form.pv field.number {
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #869298;
+	margin: 0px;
+}
+
+
+
+form.pv check {
+	border-style: solid;
+	border-width: 0px;
+	font: 9px Tahoma; 
+	text-align: left; 
+	color: #4b4c4d;
+	background-color: transparent;
+}
+form.pv check.fast_search {
+	text-align: left; 
+	color: #FFFFFF;
+	border-style: solid;
+	border-width: 0px;
+	font: 9px Tahoma; 
+	background-color: transparent;
+}
+form.pv label {
+	color: #4b4c4d;
+	border-style: solid; 
+	font:  9px Tahoma; 
+	border-width: 0px;
+	vertical-align: top;
+}
+
+form.pv label.bold {
+	font-weight: bold;
+}
+
+form.pv label.print {
+	color: #3E4447 ;
+	border-style: solid; 
+	font:  10px Verdana; 
+	border-width: 0px;
+}
+
+form.pv label.login_title {
+	color: #d0dee4 ;
+	border-style: solid; 
+	border-width: 0px;
+	font-family: Tahoma;
+	font-size: 11pt;
+	font-weight: bold;
+	text-align: left; 
+}
+
+form.pv label.button {
+	color: #606060;
+	border-style: solid; 
+	border-width: 0px;
+	font-family: Myriad Pro;
+	font-size: 10px;
+	text-align: center;
+	vertical-align: middle;
+	border-width: 0px;
+	border-style: solid; 
+}
+form.pv label.pop_header
+{
+	color: #FFFFFF;
+	border-style: solid;
+	border-width: 0px;
+	border-bottom-width: 1px;
+	border-color: #FFFFFF;
+	font-family: Tamaha;
+	font-size: 7px;
+}
+form.pv label.pop_line1
+{
+	color: #FFFFFF;
+	border-style: solid; 
+	font-family: Verdana;
+	font-size: 7px;
+	font-weight: bold;
+	margin:0px;
+	border-width: 0px;
+}
+form.pv label.pop_line2
+{
+	color: #FFFFFF;
+	border-style: solid; 
+	font-family: Verdana;
+	font-size: 7px;
+	margin:0px;
+	font-weight: normal;
+	border-width: 0px;
+}
+form.pv label.blackBg_70
+{
+	border-width: 0px;
+	background-color: #000000;
+	opacity: 0.7;
+
+}
+
+
+form.pv label.print_number {
+	color: #3E4447 ;
+	border-style: solid; 
+	font:  10px Verdana;
+	text-align: right;  
+	border-width: 0px;
+}
+
+form.pv label.table {
+	color: #4b4c4d;
+	background-color: #d0dee4;
+	border-style: solid; 
+	font:  9px Tahoma; 
+	border-width: 0px;
+	text-align: left;
+	margin: 0px 3px 0px 3px;
+}
+
+form.pv label.table2 {
+	color: #FFFFFF;
+	background-color: #2B364A;
+	border-style: solid; 
+	border-color: #7A8290 #7A8290 #7A8290 #7A8290; 
+	border-width: 1px 1px 1px 1px;
+}
+
+form.pv label.field_table {
+	border-style: solid;
+	border-width: 0px 1px 1px 0px;
+	border-color: #6d6e70 #b3bec2 #dbecf6 #dbecf6;
+	background-color: #FFFFFF; 
+	margin: 0px;
+}
+
+label.header {
+	background-color: #42413E; 
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	border-color: #303a52;
+	text-align: center;
+	color: #FFFFFF;	
+	vertical-align: middle;
+}
+
+form.pv label.tab_header {
+	border-width: 0px 0px 0px 0px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 10px;
+}
+
+form.pv label.popup_header {
+	color: #cedae3 ;
+/* 	color: #cedae3 ; */
+	border-style: solid;
+	border-width: 0px;
+	font-family: Tahmoa;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+
+form.pv label.login_bg {
+	background-image: url(media:///pv_bg_calm.png);
+}
+
+form.pv label.loading {
+	background-color: #ff6600;
+	font-family: Tahoma;
+	font-size: 11pt;
+	font-weight: bold;
+	text-align: left; 
+}
+form.pv label.bgWhite_80 {
+	background-color: #ffffff;
+	opacity: 0.80;
+}
+form.pv tabpanel {
+	border-style: solid; 
+	border-width: 0px;
+}
+form.pv button {
+	color: #50636E;
+	margin: 2px 2px 0px 0px;
+	font: 9px Tahoma;
+}
+form.pv combobox {
+	background-color: #e9e8e8; 
+	border-style: solid; 
+	border-color: #adb2b6;
+	font: 9px Tahoma;
+	text-align: left; 
+	margin: 1px 1px 1px 1px;
+}
+
+form.pv combobox.table {
+	background-color: #e9e8e8; 
+	border-style: inset; 
+	font: 9px Tahoma;
+	text-align: left; 
+	margin: 1px 2px 1px 1px;
+}
+form.pv  label.opentab
+{
+	color: #000000;
+	font:  8pt Verdana;
+	vertical-align: middle;
+	
+}
+
+form.pv label.pop_header
+{
+	color: #FFFFFF ;
+	border-style: solid;
+	border-width: 0px;
+	border-bottom-width: 1px;
+	border-color: #FFFFFF;
+	font-family: Tahmoa;
+	font-size: 7px;
+}
+form.pv label.pop_line1
+{
+	color: #FFFFFF ;
+	border-style: solid; 
+	font-family: Verdana;
+	font-size: 8px;
+	font-weight: bold;
+	border-width: 0px;
+}
+form.pv label.pop_line2
+{
+	color: #FFFFFF ;
+	border-style: solid; 
+	font-family: Verdana;
+	font-size: 7px;
+	font-weight: normal;
+	border-width: 0px;
+}
+form.pv label.bg_item
+{
+	color: #FFFFFF ;
+	border-style: solid; 
+	font-family: Verdana;
+	font-size: 7px;
+	font-weight: normal;
+	border-width: 0px;
+	background-image: url(media:///pv_pop_bg_bookmark.png);
+}
+
+form.pv form.table {
+	
+}
+
+form.table label {
+	color: #4b4c4d;
+	background-color: #d0dee4;
+	border-style: solid; 
+	font:  9px Tahoma; 
+	border-width: 0px;
+	text-align: left;
+}
+
+form.table field {
+ 	border-style: solid;
+	border-width: 0px 1px 0px 0px;
+	border-color: #6d6e70 #b3bec2 #dbecf6 #dbecf6;
+	margin: 3px;
+}
+form.table selected {
+	background-color: #EDF5FA;
+	border-width: 1px 0px 1px 0px;
+	border-color: #b3bec2 #b3bec2 #b3bec2 #b3bec2;
+}
+form.table odd {
+ background-color: #d3e2ec;
+}
+
+form.table even {
+ background-color: #c6d6df;
+}
+
+/* style of the security and configarator                           ****/  
+form.config
+{
+	background-color: #D4D0C8;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+}
+form.config field {
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999999;
+	font-family: Tahoma, sans-serif;
+	font-size: 9px;
+	color: #555555;
+	text-align: left;
+	margin: 1px 0px 0px 2px;
+	vertical-align: top;
+}
+form.config label{
+	color: #777777;
+}
+forms.config label.field_title {
+/* 	font-weight: bold; */
+	color: #333333;
+	background: transparent;
+}
+form.config field.non_editable {
+	background-color: #D4D0C8;
+	border-color: #999999 #999999 #999999 #999999;
+	border-width: 1px 1px 1px 1px;
+}
+
+form.config check {
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: 0px;
+	font-family: Tahoma, sans-serif;
+	font-size: 9px;
+	color: #333333;
+	text-align: left;
+	margin: 0px 0px 0px 0px;
+	vertical-align: top;
+	font-weight: normal;
+}
+
+
+form.config form.border {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999999;
+}
+
+form.config check.table {
+	border-color: #869298;
+	border-width: 0px 0px 1px 0px;
+	text-align: center;
+}
+
+form.config field.bold {
+	font-weight: bold;
+}
+
+form.config field.noborder {
+	border-width: 0px 0px 0px 0px;
+	color: #4D4D4D;
+	vertical-align: text-bottom;
+	text-align: left;
+}
+
+form.config check.noborder {
+	border-width: 0px 0px 0px 0px;
+	color: #4D4D4D;
+	vertical-align: text-bottom;
+	text-align: left;
+}
+
+form.config field.table {
+/*	border-color: #AAAAAA;*/
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #869298;
+	margin: 0px 0px 0px 2px;
+}
+
+form.config button {
+	text-align: center;
+	font-family: Tahoma, sans-serif;
+	font-weight: normal;
+	font-size: 9px;
+	color: #000000;
+}
+
+form.config label.transparent {
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	background-color: transparent;
+	text-align: center;
+	vertical-align: middle;
+}
+
+form.config label.tabpannel_border {
+	background-color: #336699;
+}
+
+form.config label.table {
+	color: #FFFFFF;
+	background-color: #2B364A;
+	font-family: Tahoma, sans-serif;
+	font-size: 9px;
+}
+
+form.config label.field_table {
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #869298;
+	margin: 0px;
+}
+
+form.config label.header {
+	font-size: 10px;
+	font-weight: bold;
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #3E4447;
+}
+
+form.config tabpanel {
+	border-style: solid;
+	border-width: 0px;
+}
+
+form.config tabpanel.border {
+	border-style: solid;
+	border-width: 1px;
+	border-color: #999999;
+}
+
+form.config tabpanel.border_right {
+	border-style: solid;
+	border-width: 0px 1px 0px 0px;
+	border-color: #336699;
+}
+
+
+form.config.light {
+	background-color: #DDDDDD;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+}
+
+form.config.table {
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-color: #AAAAAA;
+	border-width: 1px 1px 1px 1px;
+}
+
+form.config label {
+	font-family: Tahoma, sans-serif;
+	font-weight: normal;
+	font-size: 9px;
+	color: #333333;
+}
+
+form.config label.black {
+	font-family: Tahoma, sans-serif;
+	font-weight: normal;
+	font-size: 8.5px;
+	color: #000000;
+}
+
+form.config label.searchbar {
+	background-color: #DB4105;
+}
+
+form.config label.bold {
+	font-family: Tahoma, sans-serif;
+	font-weight: bold;
+	font-size: 10px;
+	color: #ffffff;
+}
+
+form.config label.tab {
+	color: #575757;
+	font-weight: bold;
+	font-size: 8px;
+}
+
+form.config label.tab_selected {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+form.config label.field_group {
+	color: #ffffff;
+	font-weight: bold;
+	background-color: #336699;
+	border-color: #336699;
+	border-width: 2px 2px 2px 2px;
+	border-style: solid;
+	margin-left: 3px;
+}
+form.config label.programdtlbar {
+	background-color: #336699;
+}
+
+form.config label.top_bg_security {
+	background-image: url("media:///top_bg_security.png");
+	background-repeat: no-repeat;
+}
+
+form.config selected {
+	background-color: #3D80DF;
+}
+
+form.config odd {
+	background-color: #f0f0f0;
+}
+
+form.config even {
+	background-color: #FFFFFF;
+}
+
+/* 
+ * Style sheet for the property editor in scopes.svyPropertyEditor D4D0C8
+ *
+ */
+form.propertyEditor {
+	background-color: #D4D0C8;
+	border: 0px solid;
+}
+
+form.propertyEditor.main {
+	
+}
+
+form.propertyEditor.propertySets {
+	
+}
+
+form.propertyEditor.propertyDetails {
+	
+}
+
+form.propertyEditor field {
+	font-family: "Segoe UI", Avenir, "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif; 
+	font-size: 10px;
+	margin-left: 2px;
+	margin-right: 2px;
+	 
+}
+
+form.propertyEditor field.propertyValueText {
+	
+}
+
+form.propertyEditor combobox {
+	font-family: "Segoe UI", Avenir, "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif; 
+	font-size: 10px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+form.propertyEditor combobox.propertyValueText {
+	
+}
+
+form.propertyEditor check {
+	font-family: "Segoe UI", Avenir, "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif; 
+	font-size: 10px;
+	color: #3E4447;
+	background: transparent;
+}
+
+form.propertyEditor check.propertyValueText {
+	
+}
+
+form.propertyEditor label {
+	font-family: "Segoe UI", Avenir, "Helvetica Neue", Helvetica, "Lucida Grande", Arial, sans-serif; 
+	font-size: 10px;
+	color: #3E4447;
+	background: transparent;
+}
+
+form.propertyEditor label.propertyValueHeader {
+	font-weight: bold;
+}
+
+form.propertyEditor label.propertyValueLabel {
+	
+}
+
+form.propertyEditor label.propertyValueDescription {
+	
+}
+
+/**
+ *	Label holding the name of the property set
+ */
+form.propertyEditor label.propertySetText {
+	font-weight: bold;
+}
+
+/**
+ * Label holding the icon of a property set
+ */
+form.propertyEditor label.propertySetIcon {
+	text-align: center;
+	vertical-align: middle;
+}
+
+/**
+ *	Label show in detail form holding the description of the property set
+ */
+form.propertyEditor label.propertySetDescription {
+	font-weight: bold;
+}
+
+/**
+ *	Background highlight label for the selected property set
+ */
+form.propertyEditor label.propertySetSelectionBackground {
+	background: #CAD3E4;
+}
+
+form.propertyEditor tabpanel {
+	border: 0px solid;
+}
+
+form.propertyEditor tabpanel.main {
+	background: transparent;
+}
+
+/* Original style of the frame, the style used for framework forms before pv*/
+form.orgStyleFrame   form {
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+}
+form.orgStyleFrame   form.grey {
+	background-color: #F4F2F2;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+}
+form.orgStyleFrame  form.user {
+	background-color: #F3F3F3;
+}
+form.orgStyleFrame  form.main
+{
+	background-color: #F3F3F3; 
+	border-style: solid; 
+	border-width: 0px;
+}
+form.orgStyleFrame  form.template
+{
+	background-color: #F3F3F3; 
+	border-style: solid; 
+	border-width: 0px;
+}
+form.orgStyleFrame  label {
+	color: #ffffff;
+	border-style: solid;
+	font: bold 8px Verdana;
+	border-width: 0px 0px 0px 0px;
+}
+form.orgStyleFrame  label.normal {
+	color: #000000;
+	border-style: solid;
+	font: bold 10pt Verdana;
+	margin: 1px 1px 1px 1px;
+	border-width: 0px 0px 0px 0px;
+}
+form.orgStyleFrame  label.line {
+	color: #000000;
+	border-style: solid;
+	font: bold 11pt Tahoma;
+	margin: 1px 1px 1px 1px;
+	border-width: 0px 1px 0px 0px;
+}
+form.orgStyleFrame  label.toolbar_line {
+	background-color: #666666;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+}
+form.orgStyleFrame  tabpanel {
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	background-color: #F4F2F2;
+}
+form.orgStyleFrame  button.btn_new
+{
+	border-width: 0px 1px 0px 0px;
+	background-image: url(media:///bar_new_sel.png);
+	
+}
+form.orgStyleFrame  label.btn_new
+{
+	background-image: url(media:///bar_new_sel.png);
+	
+}
+form.orgStyleFrame  label.btn_edit
+{
+	background-image: url(media:///bar_edit_sel.png);
+	
+}
+form.orgStyleFrame  label.btn_delete
+{
+	background-image: url(media:///bar_del_sel.png);
+	
+}
+form.orgStyleFrame  label.btn_duplicate
+{
+	background-image: url(media:///bar_duplicate_sel.png);
+	
+}
+form.orgStyleFrame  label.btn_methods
+{
+	background-image: url(media:///bar_methods.png);
+	
+}
+form.orgStyleFrame  label.btn_sort
+{
+	background-image: url(media:///bar_sort.png);
+	
+}
+form.orgStyleFrame  label.btn_find
+{
+	background-image: url(media:///bar_find.png);
+	
+}
+form.orgStyleFrame  label.btn_find_menu
+{
+	background-image: url(media:///bar_find_menu.png);
+	
+}
+form.orgStyleFrame  label.btn_loadAllRecords
+{
+	background-image: url(media:///table_replace.png);
+	
+}
+form.orgStyleFrame  label.btn_export
+{
+	background-image: url(media:///bar_export_sel.png);
+	
+}
+form.orgStyleFrame  label.btn_resettblheader
+{
+	background-image: url(media:///bar_table_headers.png);
+	
+}
+form.orgStyleFrame  label.btn_save
+{
+	background-image: url(media:///bar_save.png);
+	
+}
+form.orgStyleFrame  label.btn_cancel
+{
+	background-image: url(media:///bar_cancel.png);
+	
+}
+form.orgStyleFrame  label.btn_first
+{
+	background-image: url(media:///bar_rec_first.png);
+	
+}
+form.orgStyleFrame  label.btn_prev
+{
+	background-image: url(media:///bar_rec_prev.png);
+	
+}
+form.orgStyleFrame  label.btn_next
+{
+	background-image: url(media:///bar_rec_next.png);
+	
+}
+form.orgStyleFrame  label.btn_last
+{
+	background-image: url(media:///bar_rec_last.png);
+	
+}
+form.orgStyleFrame  label.btn_record_information
+{
+	background-image: url(media:///bar_record_information.png);
+	
+}
+form.orgStyleFrame  label.btn_help
+{
+	background-image: url(media:///bar_help.png);
+	
+}
+form.orgStyleFrame  label.btn_selected_template
+{
+	background-image: url(media:///selected_template.png);
+	
+}
+form.orgStyleFrame  label.dc_background
+{
+	background-image: url(media:///dc_bg.png);
+	
+}
+form.orgStyleFrame  label.top_bg
+{
+	background-image: url(media:///top_bg.png);
+	
+}
+form.orgStyleFrame  label.btn_history_back
+{
+	background-image: url(media:///nav_left.png);
+	
+}
+form.orgStyleFrame  label.btn_history_forward
+{
+	background-image: url(media:///nav_right.png);
+	
+}
+form.orgStyleFrame  label.btn_new_shortcut
+{
+	background-image: url(media:///shortcut_add.png);
+	
+}
+form.orgStyleFrame  label.btn_new_bookmark
+{
+	background-image: url(media:///bookmark_add.png);
+	
+}
+form.orgStyleFrame  label.btn_print
+{
+	background-image: url(media:///bar_print_sel.png);
+	
+}
+form.orgStyleFrame  label.btn_template
+{
+	
+}
+form.orgStyleFrame  label.btn_his_back
+{
+	background-image: url(media:///nav_left.png);
+	
+}
+form.orgStyleFrame  label.btn_his_for
+{
+	background-image: url(media:///nav_right.png);
+	
+}
+form.orgStyleFrame  label.btn_shortcut_new
+{
+	background-image: url(media:///shortcut_add.png);
+	
+}
+form.orgStyleFrame  label.btn_bookmark_new
+{
+	background-image: url(media:///bookmark_add.png);
+	
+}
+form.orgStyleFrame  label.btn_shortcut
+{
+	background-image: url(media:///shortcut_16_16.png);
+	
+}
+form.orgStyleFrame  label.btn_bookmark
+{
+	background-image: url(media:///bookmark_16_16.png);
+	
+}
+form.orgStyleFrame  label.btn_record_history
+{
+	background-image: url(media:///record_history_16_16.png);
+	
+}
+form.orgStyleFrame  label.btn_logout
+{
+	background-image: url(media:///logout_16_16.png);
+	
+}
+form.orgStyleFrame  label.small_tab
+{
+	background-image: url(media:///small_tab.png);
+	
+}
+form.orgStyleFrame  label.btn_bookmark_up
+{
+	background-image: url(media:///bookmark_up.png);
+	
+}
+form.orgStyleFrame  label.btn_bookmark_down
+{
+	background-image: url(media:///bookmark_down.png);
+	
+}
+
+form.orgStyleFrame  label.btn_bookmark_delete
+{
+	background-image: url(media:///bookmark_delete.png);
+	
+}
+form.orgStyleFrame  label.btn_record_compare
+{
+	background-image: url(media:///record_compare.png);
+	
+}
+
+form.orgStyleFrame  label.btn_doc_management
+{
+	background-image: url(media:///doc_management.png);
+	
+}
+form.orgStyleFrame  label.btn_doc_attachtment
+{
+	background-image: url(media:///doc_attachment.png);
+	
+}
+form.orgStyleFrame  label.bookmark_border
+{
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #698111;  /*60696E   7C868B*/
+	background-color: #D8E7AB;
+}
+form.orgStyleFrame  label.bookmark
+{
+	color: #000000;
+	font:  10pt Verdana; 
+
+}
+form.orgStyleFrame  label.bookmark_program
+{
+	color: #000000;
+	font:  10pt Verdana bold; 
+}
+form.orgStyleFrame  label.opentab
+{
+	color: #000000;
+	font:  10pt Verdana; 
+}
+form.orgStyleFrame  label.pv_opentab
+{
+	color: #000000;
+	font:  8pt Verdana;
+	vertical-align: middle;
+	
+}
+form.orgStyleFrame  label.opentab_sel
+{
+	color: #000000;
+	font:  10pt Verdana; 
+}
+form.orgStyleFrame  dbtreeview {
+	background-color: #F4F2F2;
+	color: #666666;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+	font:  12pt Verdana; 
+}
+
+form.dialog
+{
+	
+}
+form.dialog label.dialogs_message
+{
+	font: 12pt 'Lucida Grande', Arial, Helvetica, sans-serif;
+}
+
+form.dialog label.dialogs_icon_generic { 
+	background-image: url("media:///dialogs_icon_generic.png");
+	background-repeat: no-repeat;
+	background-size: 60px }
+form.dialog label.dialogs_icon_info { 
+	background-image: url("media:///dialogs_icon_info.png");
+	background-repeat: no-repeat;
+	background-size: 60px }
+form.dialog label.dialogs_icon_warning { 
+	background-image: url("media:///dialogs_icon_warning.png");
+	background-repeat: no-repeat;
+	background-size: 60px }
+form.dialog label.dialogs_icon_error {
+	background-image: url("media:///dialogs_icon_error.png");
+	background-repeat: no-repeat;
+	background-size: 60px }
+form.valuelist
+{
+	background-color: #FFFFFF;
+	border-style: solid;
+	border-width: 0px 0px 0px 0px;
+}
+form.valuelist label
+{
+	color: #525252;
+	border-style: solid;
+	margin: 1px 1px 1px 1px;
+	border-width: 0px 0px 0px 0px;
+}
+form.valuelist label.title
+{
+	background-color:#7B7C7C;
+	color: #ffffff;
+	border-style: solid; 
+	border-width: 3px;
+	border-color: #7B7C7C;
+}
+form.valuelist field
+{
+	border-style: solid; 
+	border-width: 1px;
+	border-color: #A0A0A0;
+	background-color: #ffffff; 
+	margin: 1px 2px 1px 1px; 
+	color: #525252;
+	font: 10px "Tahoma"; 
+	text-align: left; 
+}
+form.valuelist field.noborder
+{
+	border-style: solid; 
+	border-width: 0px;
+}
+form.valuelist field.table
+{
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #97A1A7;  /*60696E   7C868B*/
+}
+form.valuelist tabpanel
+{
+	border-style: solid;
+	border-width: 0px;
+	
+}
+form.valuelist tabpanel.rightline
+{
+	border-style: solid;
+	border-width: 0px 1px 0px 0px;
+	border-color: #7B7C7C;
+}
+form.valuelist label.table
+{
+	color: #525252; 
+	background-color: #EDEDED;
+	font:  9px "Verdana"; 
+	border-style: solid; 
+	border-color: #EDEDED #7A8290 #EDEDED #EDEDED; 
+	border-width: 3px 0px 3px 3px;
+}
+form.valuelist field.table
+{
+	border-style: solid;
+	border-width: 0px 0px 1px 0px;
+	border-color: #869298;
+	margin: 0px;
+}
+form.valuelist form selected {
+ background-color: #3D80DF;
+}
+form.valuelist form odd {
+ background-color: #f0f0f0;
+}
+
+form.valuelist form even {
+ background-color: #FFFFFF;
+}	

@@ -1,0 +1,10 @@
+dataProviderID1:"value_id",
+dataProviderID2:"value1",
+dataSource:"db:/udm/valuelists",
+name:"address_types",
+returnDataProviders:1,
+showDataProviders:2,
+typeid:34,
+useTableFilter:true,
+uuid:"A6A57763-0AAE-4DF0-A1CB-5D4A2F1C465A",
+valueListType:1

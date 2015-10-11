@@ -1,0 +1,10 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/udm/companies",
+items:[
+{foreignColumnName:"company_id",primaryDataProviderID:"scopes.constants.CONST_MAIN_COMPANY_ID",typeid:23,uuid:"DC333718-8A78-4FEE-9925-35BD28E8F095"}
+],
+joinType:1,
+name:"companies$main_company_id",
+primaryDataSource:"db:/udm/companies",
+typeid:22,
+uuid:"899427F1-7A82-4C55-8341-CCDA2B8E85C8"

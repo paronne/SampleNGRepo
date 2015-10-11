@@ -1,0 +1,12 @@
+addEmptyValue:1,
+dataProviderID1:"contact_id",
+dataProviderID2:"name_first",
+dataProviderID3:"name_last",
+dataSource:"db:/udm/contacts",
+name:"order_company_contacts",
+returnDataProviders:1,
+showDataProviders:6,
+sortOptions:"name_first asc, name_last asc",
+typeid:34,
+uuid:"7DBEBD39-C029-42E5-AB02-D530C99BC0C1",
+valueListType:1

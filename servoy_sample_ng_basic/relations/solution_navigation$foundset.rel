@@ -1,0 +1,10 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/udm/solution_navigation",
+items:[
+{foreignColumnName:"solution_id",primaryDataProviderID:"scopes.constants.CONST_SOLUTION_ID",typeid:23,uuid:"6254CD09-3B74-45CE-9468-5C09B2966CDA"}
+],
+joinType:1,
+name:"solution_navigation$foundset",
+primaryDataSource:"db:/udm/solution_navigation",
+typeid:22,
+uuid:"0C847CEB-6053-46A1-929B-B6BABC776382"

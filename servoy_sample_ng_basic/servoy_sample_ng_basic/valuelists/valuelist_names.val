@@ -1,0 +1,8 @@
+addEmptyValue:1,
+customValues:"Address Types|address_types\r\
+Category Types|category_types\r\
+Company Types|company_types\r\
+Contact Types|contact_types",
+name:"valuelist_names",
+typeid:34,
+uuid:"FC601F61-03A2-44A4-8D85-09637116ECF8"

@@ -1,0 +1,10 @@
+allowCreationRelatedRecords:true,
+foreignDataSource:"db:/udm/contacts",
+items:[
+{foreignColumnName:"contact_id",primaryDataProviderID:"scopes.globals.curID_contact",typeid:23,uuid:"3549CB98-5482-475E-8811-6CE23679B930"}
+],
+joinType:1,
+name:"contacts$cur_contactid",
+primaryDataSource:"db:/udm/contacts",
+typeid:22,
+uuid:"A933E549-598B-482D-9A52-8FE02890B1E1"

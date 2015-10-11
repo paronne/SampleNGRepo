@@ -1,0 +1,6 @@
+addEmptyValue:1,
+customValues:"PAID|1\r\
+PENDING|0",
+name:"paid_values",
+typeid:34,
+uuid:"D3E8AC85-1058-4177-8241-030FA2BD88AA"

@@ -1,0 +1,15 @@
+{
+  "name": "E2E_tests",
+  "version": "0.0.0",
+  "description": "E2E tests for different tests solutions of ngClient",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "protractor": "1.0.0-rc1",
+	"jasmine-reporters": "^0.4.1"
+  }
+}

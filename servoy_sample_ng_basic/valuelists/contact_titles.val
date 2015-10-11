@@ -1,0 +1,9 @@
+addEmptyValue:1,
+dataProviderID1:"job_title",
+dataSource:"db:/udm/contacts",
+name:"contact_titles",
+returnDataProviders:1,
+showDataProviders:1,
+typeid:34,
+uuid:"B9F44FD3-5891-486C-B18C-D714DCC35145",
+valueListType:1

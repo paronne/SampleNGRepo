@@ -1,0 +1,267 @@
+.navlist
+{
+	font-size: 11pt;
+	color: #000000;
+	border-width: 0px 0px 0px 0px;
+	background-color: #ffffff;
+	font-weight: bold;
+}
+.noborder
+{
+	border-width: 0px 0px 0px 0px;
+}
+.noborder10px
+{
+	border-width: 0px 0px 0px 0px;
+	font-size: 10px;
+}
+
+.nobordersmall
+{
+	font-size: 9pt;
+	color: #000000;
+	border-width: 0px 0px 0px 0px;
+}
+.noborder12pt
+{
+	border-width: 0px 0px 0px 0px;
+	font-size: 12pt;
+}
+.reportsm
+{
+	font-size: 9pt;
+	color: #000000;
+}
+.reportsmbold
+{
+	font-weight: bold;
+	font-size: 9pt;
+	color: #000000;
+}
+.reportnobordersm
+{
+	font-size: 9pt;
+	color: #000000;
+	border-width: 0px 0px 0px 0px;
+}
+.noborderbold
+{
+	font-weight: bold;
+	border-width: 0px 0px 0px 0px;
+}
+.med
+{
+	font-size: 12pt;
+}
+.lg
+{
+	font-size: 14pt;
+}
+.topnav
+{
+	font-weight: bold;
+	font-size: 11pt;
+	color: #666666;
+}
+.navlstmed
+{
+	font-weight: normal;
+	font-size: 11pt;
+	color: #666666;
+}
+.navlstsm
+{
+	font-weight: normal;
+	font-size: 10pt;
+	color: #666666;
+}
+.whte
+{
+	color: #ffffff;
+}
+.whtctr
+{
+	color: #ffffff;
+    text-align: center;
+}
+.whtmed
+{
+	color: #ffffff;
+   	font-size: 12pt;
+}
+.whtlg
+{
+	color: #ffffff;
+   	font-size: 18pt;
+}
+.greybtn
+{
+	color: #ffffff;
+    text-align: center;
+	font-size: 11pt;
+	background-color: #666666;
+}
+.darkgrc
+{
+	color: #ffffff;
+	background-color: #666666;
+}
+.darkgrcmed
+{
+	font-size: 11pt;
+	color: #ffffff;
+	background-color: #666666;
+}
+.medgrc
+{
+	color: #ffffff;
+	background-color: #999999;
+}
+.ltgrc
+{
+	color: #ffffff;
+	background-color: #ebebeb;
+}
+.solidgrc
+{
+	color: #666666;
+	background-color: #666666;
+}
+.fieldlbl
+{
+    text-align: right;
+	border-width: 1px 1px 1px 1px;
+	border-style: solid;
+	border-color: #CCCCCC;
+	background: #e6e4df;
+	margin: 1px 8px 1px 1px;
+}
+.list
+{
+	font-weight: normal;
+	font-size: 11pt;
+	color: #333;
+    text-align: left;
+	background: none;
+}
+.listbold
+{
+	font-size: 11pt;
+	color: #333;
+    text-align: left;
+	background: none;
+}
+.oheader
+{
+	font-weight: bold;
+	font-size: 18pt;
+	color: #eb7c12;
+    text-align: left;
+}
+.revoheader
+{
+	font-weight: bold;
+	font-size: 18pt;
+	background-color: #eb7c12;
+	color: #ffffff;
+    text-align: left;
+}
+.headernobold
+{
+	font-weight: normal;
+	font-size: 18pt;
+	color: #eb7c12;
+    text-align: left;
+}
+.xboxtitle
+{
+	color: #003372;
+	font-weight: bold;
+	text-align: left;
+}
+.tabmenu
+{
+	color: #ffffff;
+	font-size: 11pt;
+	text-align: center;
+}
+.grey
+{
+	font-weight: normal;
+	font-size: 11pt;
+	color: #666666;
+    text-align: left;
+}
+.smgrey
+{
+	font-weight: normal;
+	font-size: 9pt;
+	color: #666666;
+    text-align: left;
+}
+.image
+{
+	font-weight: normal;
+	font-size: 11pt;
+	color: #000000;
+    text-align: left;
+	background-color: #FFFFFF;
+}
+.report
+{
+	font-weight: normal;
+	font-size: 9pt;
+	color: #000000;
+    text-align: left;
+}
+.reportbold
+{
+	font-weight: bold;
+	font-size: 9pt;
+	color: #000000;
+    text-align: left;
+}
+.reportsm
+{
+	font-weight: normal;
+	font-size: 9pt;
+	color: #000000;
+    text-align: left;
+}
+.reportxsm
+{
+	font-weight: normal;
+	font-size: 8pt;
+	color: #000000;
+    text-align: left;
+}
+.reportboldsm
+{
+	font-weight: bold;
+	font-size: 9pt;
+	color: #000000;
+    text-align: left;
+}
+.headerreport
+{
+	font-weight: bold;
+	font-size: 18pt;
+	color: #000000;
+    text-align: left;
+}
+.subheadreport
+{
+	font-weight: bold;
+	font-size: 12pt;
+	color: #000000;
+    text-align: left;
+}
+.nobackground
+{
+	background-color: white;
+}
+
+.buttonWithImage
+{
+	padding: 0px 5px;
+}

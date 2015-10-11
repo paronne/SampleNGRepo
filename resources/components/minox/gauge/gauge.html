@@ -1,0 +1,9 @@
+<!-- Plugin URL : http://bernii.github.io/gauge.js/ -->
+<div id="{{model.svyMarkupId}}" ng-style="style">
+	<canvas id='canvas-{{model.svyMarkupId}}' class="gauge-canvas" width="{{model.size.width}}px" height="{{model.size.height - 70}}px"></canvas>
+	<div id='label-{{model.svyMarkupId}}' class="gauge-label"  ng-bind="model.value"></div>
+	<section class="gauge-section">
+		<div class="gauge-min-max gauge-min" ng-bind="model.min"></div>
+		<div class="gauge-min-max gauge-max"  ng-bind="model.max"></div>
+	</section>
+</div>

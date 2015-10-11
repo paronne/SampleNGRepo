@@ -1,0 +1,12 @@
+addEmptyValue:1,
+dataProviderID1:"address_id",
+dataProviderID2:"line_1",
+dataProviderID3:"address_csz",
+dataSource:"db:/udm/addresses",
+name:"company_addresses",
+returnDataProviders:1,
+showDataProviders:6,
+sortOptions:"line_1 asc",
+typeid:34,
+uuid:"03660690-7FC2-4B25-8940-A1904BDD20F4",
+valueListType:1

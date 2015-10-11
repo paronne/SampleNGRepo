@@ -1,0 +1,12 @@
+groups:[
+"Administrators",
+"basic",
+"basic_users",
+"remote-dispatch-users",
+"Users",
+"users"
+],
+usergroups:{
+
+},
+users:[]
