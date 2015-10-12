@@ -1,7 +1,7 @@
 allowCreationRelatedRecords:true,
 foreignDataSource:"db:/udm/solution_preferences",
 items:[
-{foreignColumnName:"solution_id",primaryDataProviderID:"scopes.constants.CONST_SOLUTION_ID",typeid:23,uuid:"4FF1BFBD-D960-4806-BEE0-7BD7E633B798"}
+{foreignColumnName:"solution_id",primaryDataProviderID:"scopes.constants_old.CONST_SOLUTION_ID",typeid:23,uuid:"4FF1BFBD-D960-4806-BEE0-7BD7E633B798"}
 ],
 joinType:1,
 name:"solution_navigation_to_solution_preferences$consu_solution_id_is_2",
