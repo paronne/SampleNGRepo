@@ -124,7 +124,7 @@ exports.config = {
   //
   // A base URL for your application under test. Calls to protractor.get()
   // with relative paths will be prepended with this.
-  baseUrl: 'http://sampleng.eu-gb.mybluemix.net/',
+  baseUrl: 'http://samplengapp-dev.eu-gb.mybluemix.net/',
 
   // Selector for the element housing the angular app - this defaults to
   // body, but is necessary if ng-app is on a descendant of <body>
