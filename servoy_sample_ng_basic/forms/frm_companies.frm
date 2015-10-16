@@ -246,7 +246,7 @@ uuid:"C9C30632-B597-4296-A3AC-963BBD9BED89"
 {
 displaysTags:true,
 extendsID:"811E916B-E90F-4CE2-A6C1-4B357BA73B48",
-text:"Company Information - Rentfield",
+text:"Company Information - %%company_name%%",
 typeid:7,
 uuid:"CD60E4B0-0C7D-42C0-BDE0-33DB309FA417"
 },
