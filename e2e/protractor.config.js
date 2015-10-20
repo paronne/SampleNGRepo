@@ -44,8 +44,8 @@ exports.config = {
 
    // If sauceUser and sauceKey are specified, seleniumServerJar will be ignored.
   // The tests will be run remotely using SauceLabs.
-  sauceUser: 'aefremovska',
-  sauceKey: '4c454c6c-f80b-4012-9553-6572f22275de',
+  sauceUser: 'paronne',
+  sauceKey: 'bluemix',
 
   // The address of a running selenium server. If specified, Protractor will
   // connect to an already running instance of selenium. This usually looks like
@@ -124,7 +124,7 @@ exports.config = {
   //
   // A base URL for your application under test. Calls to protractor.get()
   // with relative paths will be prepended with this.
-  baseUrl: 'http://samplengapp-dev.eu-gb.mybluemix.net/',
+  baseUrl: 'http://ronnie-samplengapp-dev.eu-gb.mybluemix.net/',
 
   // Selector for the element housing the angular app - this defaults to
   // body, but is necessary if ng-app is on a descendant of <body>
