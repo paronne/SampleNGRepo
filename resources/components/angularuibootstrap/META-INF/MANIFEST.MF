@@ -1,0 +1,6 @@
+Manifest-Version: 1.0
+Bundle-Name: Angular-ui Bootstrap
+Bundle-SymbolicName: angularuibootstrap
+
+Name: buttonsRadio/buttonsRadio.spec
+Web-Component: True
