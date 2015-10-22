@@ -5,11 +5,11 @@ json:{
 dataProvider:"varNumber",
 onDataChangeMethodID:"72324F51-ED70-48D4-A49F-A1EF16E25237",
 styleClass:"btn-primary",
-valuelist:"5035D772-795A-4F35-A4EC-671132A4D936"
+valuelist:"CCF7CCB4-D224-4B21-B1FC-D04E55975641"
 },
 location:"60,279",
 name:"buttons_radio_1c",
-size:"321,100",
+size:"909,100",
 typeName:"angularuibootstrap-buttons-radio",
 typeid:47,
 uuid:"3F8B748F-B396-4A6E-8A36-4000FF1CCF98"
