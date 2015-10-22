@@ -2,7 +2,7 @@ describe('test_buttons_radio', function() {
   it('should execute test case without errors', function() {
     var text, value, bool, source, url, title;
     var TestVars = {};
-    browser.get("http://localhost:8080/solutions/svyAngularUIBootstrapButtonsRadio_test/index.html?f=buttonsRadio");
+    browser.get("http://ronnie-samplengapp-dev.eu-gb.mybluemix.net/solutions/svyAngularUIBootstrapButtonsRadio_test/index.html?f=buttonsRadio");
 	
     value = element(by.xpath("//div[@data-svy-name='buttonsRadio']/div/div[3]/input")).getAttribute('value');
     expect(value).toContain("");
