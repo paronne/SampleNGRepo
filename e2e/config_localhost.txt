@@ -1,0 +1,8 @@
+# configuration file format.
+
+driver: chrome
+chromedriver: drivers/chromedriver.exe
+screenshot-dir: results/screenshots
+screenshot-on-fail: results/screenshots
+baseurl: http://localhost:8080
+html-result: results

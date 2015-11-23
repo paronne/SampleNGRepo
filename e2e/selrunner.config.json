@@ -1,0 +1,6 @@
+[{
+	"-d":"firefox"
+}, {
+	"-d": "chrome",
+	"--chromedriver" : "drivers\\chromedriver.exe"
+}]

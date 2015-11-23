@@ -1,3 +1,5 @@
 basedir = .
 protractor.conf = ./protractor.config.js
 solution.name = svyAngularUIBootstrapButtonsRadio_test
+selrunner.conf = ./config_localhost.txt
+selrunner.tests = ./e2e/angularuibootstrap-buttons-radio_short

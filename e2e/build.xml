@@ -24,7 +24,7 @@
 					<arg value="outdated"/>
 		</exec>
 	</target>
-<!-- PROTRACTOR INSTALL TASKS -->
+	 <!-- PROTRACTOR INSTALL TASKS -->
 	 <!-- used to run install protractor only once -->
 	 <target name="protractor_installed_check" >
 		<echo message="Checking if protractor is installed."/>
@@ -67,27 +67,119 @@
 	</target>
 
 
-<!-- RUNNING TASKS -->
+<!-- RUNNING TASKS java -jar selenese-runner.jar -d phantomjs -b http://ronnie-samplengapp-dev.eu-gb.mybluemix.net/ -html-result results e2e\angularuibootstrap-buttons-radio -->
 	<!-- use this target for jenkins and saucelabs .  It does not require selenium webdiver which is 44 mb -->
-	<target name="run_tests" depends="load_properties, install_protractor_if_necessary">
+	<target name="run_tests_selenese" depends="load_properties">
 		    <echo message="Run tests script started"/>
-			<echo message="Testing solution: ${solution.name}"/>
+		    <echo message="basedir ${basedir}"/>
+		    <echo message="solution name ${solution.name}"/>
+			<!--<echo message="Testing solution: ${solution.name}"/>-->
+
 
 		<exec executable="cmd" dir="${basedir}" osfamily="windows"
 					failonerror="true">
 					<arg value="/c"/>
-					<arg value="node_modules\.bin\protractor"/>
-					<arg value="${protractor.conf}"/>
-					<arg value="--params.solutionName=${solution.name}"/>
+					<arg value="java"/>
+					<arg value="-jar"/>
+					<arg value="selenese-runner.jar"/>
+					<arg value="-c"/>
+					<arg value="${selrunner.conf}"/>
+
+					<arg value="-d" />
+					<arg value="${selrunner.cmd.d}"/>
+					<arg value="--${selrunner.cmd.driver}"/>
+					<arg value="${selrunner.cmd.driverpath}"/>
+
+					<arg value="${selrunner.tests}"/>
 		</exec>
 
-		<property name="temp1" value="node ./node_modules/.bin/protractor --troubleshoot true ${protractor.conf} --params.solutionName=${solution.name}"/>
+		<!--<property name="temp1" value="node ./node_modules/.bin/protractor -troubleshoot true ${protractor.conf} -params.solutionName=${solution.name}"/>
 		<exec executable="bash" dir="${basedir}" osfamily="unix"
 							failonerror="true">
 			                <arg value="-c"/>
 							<arg value="${temp1}"/>
-		</exec>
+		</exec>-->
 	</target>
+
+	<target name="run_tests" depends="load_properties">
+		<script language="javascript">
+		<![CDATA[
+	 		importClass(java.io.File);
+	        importClass(java.io.FileReader);
+	        importClass(java.io.BufferedReader);
+	        importClass(java.io.FileWriter);
+	        importClass(java.io.BufferedWriter);
+	        
+	        // read properties from file selrunner.config.json
+	        echo = project.createTask("echo");
+	        echo.setMessage("Parsing selrunner.config.json");
+	        echo.perform();
+	        
+	        var file = new File("selrunner.config.json");
+	        fr = new FileReader(file);
+	        br = new BufferedReader(fr);
+	        
+	        // Read the whole json file.
+	        var json = "";
+			do {
+				var text = br.readLine();
+				if (text) {
+			    	json += text;
+			    }
+			} while (text)
+			br.close();
+	        
+	        echo = project.createTask("echo");
+	        echo.setMessage("Read selrunner.config.json");
+	        echo.perform();
+
+	        // Evaluate the JSON.
+	        var struct = eval("(" + json + ")");
+	        
+	        // Run selenese-runner for each configuration in the selrunner.config.json
+	        // It assumes the file is an Array of JSON objects well formatted
+	        for (var j =0; j< struct.length; j++) {
+
+	        	// execute in ${basedire} java -jar selenese-runner.jar -c ${selrunner.conf} ${selrunner.tests}
+	        	var exec = project.createTask("exec");
+	        	exec.setDir(new File(project.getProperty("basedir")));
+	        	exec.setExecutable("cmd");
+	        	exec.createArg().setValue("/c");
+				exec.createArg().setValue("java");
+				exec.createArg().setValue("-jar");
+				exec.createArg().setValue("selenese-runner.jar");
+				exec.createArg().setValue("-c");
+				exec.createArg().setValue(project.getProperty("selrunner.conf"));
+
+				// add each option specified in the selrunner.config
+		        for (i in struct[j]) {
+		            echo = project.createTask("echo");
+		            echo.setMessage(i + "=" + struct[j][i]);
+		            echo.perform();
+		            exec.createArg().setValue(i);	// option key
+		            exec.createArg().setValue(struct[j][i]);	// option value
+		        }
+
+		        // execute tests
+		       	exec.createArg().setValue(project.getProperty("selrunner.tests"));
+		       	exec.perform();
+	        }
+
+
+	        /*
+			var browsers 	= ["chrome","phantomjs", "chrome"];
+			var drivers 	= ["chromedriver","phantomjs", "chromedriver"];
+			var driverpaths = ["drivers\\chromedriver.exe", "drivers\\phantomjs.exe", "drivers\\chromedriver.exe"];
+			for (var i=0; i < browsers.length; i++) {
+				project.setProperty("selrunner.cmd.d", browsers[i]);
+				project.setProperty("selrunner.cmd.driver", drivers[i]);
+				project.setProperty("selrunner.cmd.driverpath", driverpaths[i]);
+				self.project.executeTarget( "test" );
+			}*/
+		]]>
+		</script>
+	</target>
+
 
 
 

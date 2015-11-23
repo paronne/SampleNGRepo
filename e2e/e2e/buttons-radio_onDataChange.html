@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>angularuibootstrap-buttons-radio</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">angularuibootstrap-buttons-radio</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/solutions/svyAngularUIBootstrapButtonsRadio_test/index.html?f=buttonsRadio</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//input[@data-svy-name='testBaseUI.varNumber']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertValue</td>
+	<td>//input[@data-svy-name='testBaseUI.varNumber']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[contains(@class,'active')]</td>
+	<td></td>
+</tr>
+<!--Test buttons radio click-->
+<!--Select option Middle, value 0-->
+<tr>
+	<td>click</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[2][contains(@class,'active')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>//input[@data-svy-name='testBaseUI.varNumber']</td>
+	<td>0</td>
+</tr>
+<!--Select option Right, value 1-->
+<tr>
+	<td>click</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[3][contains(@class,'active')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertElementNotPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[2][contains(@class,'active')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>//input[@data-svy-name='testBaseUI.varNumber']</td>
+	<td>1</td>
+</tr>
+<!--Select option Left, onDataChange false-->
+<tr>
+	<td>click</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[3][contains(@class,'active')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>//input[@data-svy-name='testBaseUI.varNumber']</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>verifyNotAttribute</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label</td>
+	<td>class=&quot;active&quot;</td>
+</tr>
+<!--Check model is persisted at F5-->
+<tr>
+	<td>refreshAndWait</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[3]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[3][contains(@class,'active')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[3][contains(@class,'active')]</td>
+	<td></td>
+</tr>
+<!--Test dataprovider change-->
+<tr>
+	<td>type</td>
+	<td>//input[@data-svy-name='testBaseUI.varNumber']</td>
+	<td>2</td>
+</tr>
+<tr>
+	<td>waitForElementNotPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[contains(@class,'active')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@data-svy-name='testBaseUI.varNumber']</td>
+	<td>0</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[2][contains(@class,'active')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>//input[@data-svy-name='testBaseUI.varNumber']</td>
+	<td>1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-buttons-radio[@data-svy-name='buttonsRadio.buttons_radio_1']/div/label[3][contains(@class,'active')]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>close</td>
+	<td></td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
