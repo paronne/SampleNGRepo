@@ -138,7 +138,7 @@
 	        
 	        // Run selenese-runner for each configuration in the selrunner.config.json
 	        // It assumes the file is an Array of JSON objects well formatted
-	        for (var j =0; j< struct.length; j++) {
+	        for (config in struct) {
 
 	        	// execute in ${basedire} java -jar selenese-runner.jar -c ${selrunner.conf} ${selrunner.tests}
 	        	var exec = project.createTask("exec");
@@ -152,16 +152,22 @@
 				exec.createArg().setValue(project.getProperty("selrunner.conf"));
 
 				// add each option specified in the selrunner.config
-		        for (i in struct[j]) {
+		        for (option in struct[config]) {
 		            echo = project.createTask("echo");
-		            echo.setMessage(i + "=" + struct[j][i]);
+		            echo.setMessage(option + "=" + struct[config][option]);
 		            echo.perform();
-		            exec.createArg().setValue(i);	// option key
-		            exec.createArg().setValue(struct[j][i]);	// option value
+		            exec.createArg().setValue(option);	// option key
+		            exec.createArg().setValue(struct[config][option]);	// option value
 		        }
 
+		        // Include test for all solution names
+		        var solutionNames = project.getProperty("solution.name").split(",");
+		        for (var i =0; i<solutionNames.length; i++) {
+		        	exec.createArg().setValue("ui_tests\\" + solutionNames[i].trim() + "\\*_test");
+		        }
+		        // TODO recursive query in directory. Node or Java ?
+
 		        // execute tests
-		       	exec.createArg().setValue(project.getProperty("selrunner.tests"));
 		       	exec.perform();
 	        }
 

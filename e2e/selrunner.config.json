@@ -1,6 +1,11 @@
-[{
-	"-d":"firefox"
-}, {
+{
+	"firefox": {
+	"-d":"firefox",
+	"--html-result" : "results\\firefox"
+	}, 
+	"chrome" : {
 	"-d": "chrome",
-	"--chromedriver" : "drivers\\chromedriver.exe"
-}]
+	"--chromedriver" : "drivers\\chromedriver.exe",
+	"--html-result" : "results\\chrome"
+	}
+}
