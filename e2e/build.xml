@@ -66,10 +66,35 @@
 		</exec>
 	</target>
 
+	<target name ="run_tests" depends="run_ui_tests, run_unit_tests">
 
-<!-- RUNNING TASKS java -jar selenese-runner.jar -d phantomjs -b http://ronnie-samplengapp-dev.eu-gb.mybluemix.net/ -html-result results e2e\angularuibootstrap-buttons-radio -->
+	</target>
+
+	<!-- RUNNING TASKS -->
 	<!-- use this target for jenkins and saucelabs .  It does not require selenium webdiver which is 44 mb -->
-	<target name="run_tests_selenese" depends="load_properties">
+	<target name="run_unit_tests" depends="load_properties, install_protractor_if_necessary">
+		    <echo message="Run tests script started"/>
+			<echo message="Testing solution: ${solution.name}"/>
+
+		<exec executable="cmd" dir="${basedir}" osfamily="windows"
+					failonerror="true">
+					<arg value="/c"/>
+					<arg value="node_modules\.bin\protractor"/>
+					<arg value="${protractor.conf}"/>
+					<arg value="--params.solutionName=${solution.name}"/>
+		</exec>
+
+		<property name="temp1" value="node ./node_modules/.bin/protractor --troubleshoot true ${protractor.conf} --params.solutionName=${solution.name}"/>
+		<exec executable="bash" dir="${basedir}" osfamily="unix"
+							failonerror="true">
+			                <arg value="-c"/>
+							<arg value="${temp1}"/>
+		</exec>
+	</target>
+
+	<!-- RUNNING TASKS java -jar selenese-runner.jar -d phantomjs -b http://ronnie-samplengapp-dev.eu-gb.mybluemix.net/ -html-result results e2e\angularuibootstrap-buttons-radio -->
+	<!-- use this target for jenkins and saucelabs .  It does not require selenium webdiver which is 44 mb -->
+	<target name="tests_selenese" depends="load_properties">
 		    <echo message="Run tests script started"/>
 		    <echo message="basedir ${basedir}"/>
 		    <echo message="solution name ${solution.name}"/>
@@ -101,7 +126,8 @@
 		</exec>-->
 	</target>
 
-	<target name="run_tests" depends="load_properties">
+	<!-- RUNNING TASKS java -jar selenese-runner.jar -c ${selrunner.conf} [selrunner.config.json] ui_tests/solName/*_test -->
+	<target name="run_ui_tests" depends="load_properties">
 		<script language="javascript">
 		<![CDATA[
 	 		importClass(java.io.File);

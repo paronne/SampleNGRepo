@@ -17,9 +17,7 @@
 
 ### Description
 
-The entry point is e2e_test_runner.xml. It takes a servoy solution project (the 'hello' folder), exports it as a war file ('e2e/war_export/hello.war'), starts a tomcat server instance (the 'apache-tomcat-8.0.24' folder),  deploys the war, runs the protractor test scripts e2e/spec/hello/*_spec.js, undeploys the war file and shuts down tomcat.
-
-For each tested solution (in this example there is only one) the folder e2e/spec/ has to contain a folder with the same name as the tested solution. So for each tested solution, the script looks in e2e/spec for a folder with the exact name as the solution and runs all the files ending in '_spec.js'.
+The entry point is build.xml. It takes a servoy solution project (the 'hello' folder), exports it as a war file ('e2e/war_export/hello.war'), starts a tomcat server instance (the 'apache-tomcat-8.0.24' folder),  deploys the war, runs the protractor test scripts e2e/spec/hello/*_spec.js, undeploys the war file and shuts down tomcat.
 
 To add another solution, check out the project (and it's resources project) in the jenkins workpace near the 'hello' project and add its name in test_runner.properties in the variable 'solutions_to_export_as_war_tests'. Eg:
 
@@ -28,8 +26,42 @@ solutions_to_export_as_war_tests			= hello \
 mySolution
 ```
 
-Tests should then be added in the folder e2e/spec/mySolution/ and should end with '_spec.js'.*
+### e2e
 
+The e2e/build.xml runs the selenium test suites e2e/ui_tests/hello/*_test and protractor test scripts e2e/spec/hello/*_spec.js.
+
+Selenium e2e tests: For each tested solution (in this example there is none) the folder e2e/ui_tests/ has to contain a folder with the same name as the tested solution. So for each tested solution, the script looks in e2e/ui_tests for a folder with the exact name as the solution and runs all the files ending in '_test'.
+
+Tests should then be added in the folder e2e/ui_tests/mySolution/ and should end with '_test'.
+
+Set the solutions names and the path to the selenese-runner default configuration in the file e2e/test_properties.properties.
+
+```
+basedir = .
+solution.name = hello, mySolution  #the solutions to run tests against
+selrunner.conf = ./config.txt   #config options for selenese-runner
+protractor.conf = ./protractor.config.js    #configuration for protractor tests
+```
+
+Execute selenese-runner on multiple environment by defining each environment configuration in the e2e/selrunner.config.json.
+
+```
+{
+    "firefox": {
+        "-d":"firefox",
+        "--html-result" : "html_results\\firefox"
+    },
+    "chrome" : {
+        "-d": "chrome",
+        "--chromedriver" : "drivers\\chromedriver.exe",
+        "--html-result" : "html_results\\chrome"
+    }
+}
+```
+
+Protractor e2e tests: For each tested solution (in this example there is only one) the folder e2e/spec/ has to contain a folder with the same name as the tested solution. So for each tested solution, the script looks in e2e/spec for a folder with the exact name as the solution and runs all the files ending in '_spec.js'.
+
+Tests should then be added in the folder e2e/spec/mySolution/ and should end with '_spec.js'.*
 
 
 ### Setup
