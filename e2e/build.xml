@@ -92,7 +92,7 @@
 
 	<!-- RUNNING TASKS -->
 	<!-- run selenese for each configuration in selrunner.config.json -->
-	<target name="run_ui_tests" depends="get_ui_tests_cmd">
+	<target name="run_ui_tests" depends="get_ui_tests_cmd, set_cmd_windows, set_cmd_unix">
 		<echo message="Run tests script started"/>
 		<echo message="basedir ${basedir}"/>
 		<echo message="solution name ${solution.name}"/>	 
@@ -108,11 +108,32 @@
 		 </for>
 	</target>
 
+	<!-- TODO can be improved. get the os family and set the command -->
+	<target name="get_os_family">
+  		<condition property="os_window" else="os_unix">
+		 	<os family="windows"/>
+		</condition>
+	</target>
+
+	<target name="set_cmd_windows" if="os_window" depends="get_ui_tests_cmd, get_os_family">
+	    <echo message="is Windows" />
+	    <property name="selrunner.cmds" value="${selrunner.cmds.windows}"/>
+	</target>
+
+	<target name="set_cmd_unix" if="os_unix" depends="get_ui_tests_cmd, get_os_family">
+	    <echo message="is Unix" />
+	    <property name="selrunner.cmds" value="${selrunner.cmds.unix}"/>
+	</target>
+
 	<!-- run selenese-runner from commandline -->
 	<target name="run_selenese">
 		<echo message="Run ${selrunner.cmdline}"/>
 
 		<exec executable="cmd" dir="${basedir}" osfamily="windows" failonerror="false" resultproperty="exitCode">
+			<arg line="${selrunner.cmdline}"/>
+		</exec>
+
+		<exec executable="cmd" dir="${basedir}" osfamily="unix" failonerror="false" resultproperty="exitCode">
 			<arg line="${selrunner.cmdline}"/>
 		</exec>
 
@@ -165,7 +186,10 @@
 
 	        // Evaluate the JSON.
 	        var struct = eval("(" + json + ")");
-	        var cmds = "";
+
+	        // TODO get the OS from scripting
+	        var cmdsWin = "";
+	        var cmdsUnix = "";
 
 	        // Run selenese-runner for each configuration in the selrunner.config.json
 	        // It assumes the file is an Array of JSON objects well formatted
@@ -175,7 +199,8 @@
 //		        var solutionNames = project.getProperty("solution.name").split(",");
 //		        for (var i =0; i<solutionNames.length; i++) {
 
-				var cmdLine = "/c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");
+				var cmdLine = "/c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");		// Windows
+				var cmdLineUnix = "-c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");	// Unix
 
 				// add each option specified in the selrunner.config
 		        for (option in struct[config]) {
@@ -187,24 +212,31 @@
 		        }
 
 		        // TODO recursive query in directory. Node or Java ?
+		        // TODO for any path replace \\ with Unix /
 		        // Search all test suites ending with '_test' for all solution names
 		        var solutionNames = project.getProperty("solution.name").split(",");
 		        for (var i =0; i<solutionNames.length; i++) {
-		        	cmdLine += " " + "ui_tests\\" + solutionNames[i].trim() + "\\*_test"
+		        	cmdLine += " " + "ui_tests\\" + solutionNames[i].trim() + "\\*_test";		// Windows
+		        	cmdLineUnix += " " + "ui_tests/" + solutionNames[i].trim() + "/*_test";		// Unix
 		        }
 
-				cmds = cmds + cmdLine + ",";
+				cmdsWin = cmdsWin + cmdLine + ",";
+				cmdsUnix = cmdsUnix + cmdLineUnix + ",";
 
 //		       	}
 	        }
 
 	        // remove comma from last item
-	        if (cmds.length) {
-				cmds = cmds.substring(0, cmds.length-1);
+	        if (cmdsWin.length) {
+				cmdsWin = cmdsWin.substring(0, cmdsWin.length-1);
+			}
+			if (cmdsUnix.length) {
+				cmdsUnix = cmdsUnix.substring(0, cmdsUnix.length-1);
 			}
 
 			// store all command lines
-			project.setProperty("selrunner.cmds", cmds);
+			project.setProperty("selrunner.cmds.windows", cmdsWin);
+			project.setProperty("selrunner.cmds.unix", cmdsUnix);
 		]]>
 		</script>
 	</target>
