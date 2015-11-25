@@ -90,40 +90,6 @@
 		</exec>
 	</target>
 
-	<!-- TEST TASK java -jar selenese-runner.jar -d phantomjs -b http://ronnie-samplengapp-dev.eu-gb.mybluemix.net/ -html-result results e2e\angularuibootstrap-buttons-radio -->
-	<!-- use this target for jenkins and saucelabs .  It does not require selenium webdiver which is 44 mb -->
-	<target name="tests_selenese" depends="load_properties">
-		    <echo message="Run tests script started"/>
-		    <echo message="basedir ${basedir}"/>
-		    <echo message="solution name ${solution.name}"/>
-			<!--<echo message="Testing solution: ${solution.name}"/>-->
-
-
-		<exec executable="cmd" dir="${basedir}" osfamily="windows" 
-					failonerror="true">
-					<arg value="/c"/>
-					<arg value="java"/>
-					<arg value="-jar"/>
-					<arg value="selenese-runner.jar"/>
-					<arg value="-c"/>
-					<arg value="${selrunner.conf}"/>
-
-					<arg value="-d" />
-					<arg value="${selrunner.cmd.d}"/>
-					<arg value="--${selrunner.cmd.driver}"/>
-					<arg value="${selrunner.cmd.driverpath}"/>
-
-					<arg value="${selrunner.tests}"/>
-		</exec>
-
-		<!--<property name="temp1" value="node ./node_modules/.bin/protractor -troubleshoot true ${protractor.conf} -params.solutionName=${solution.name}"/>
-		<exec executable="bash" dir="${basedir}" osfamily="unix"
-							failonerror="true">
-			                <arg value="-c"/>
-							<arg value="${temp1}"/>
-		</exec>-->
-	</target>
-
 	<!-- RUNNING TASKS -->
 	<!-- run selenese for each configuration in selrunner.config.json -->
 	<target name="run_ui_tests" depends="get_ui_tests_cmd">
@@ -164,7 +130,7 @@
 		<fail if="tests_failed" message="FAILED: UI Test execution failed for one of the test solutions; see messages above."/>
 	</target>
 
-	<!-- RUNNING TASKS java -jar selenese-runner.jar -c ${selrunner.conf} [selrunner.config.json] ui_tests/solName/*_test -->
+	<!-- Build the command line to execute selenese-runner java -jar selenese-runner.jar -c ${selrunner.conf} [selrunner.config.json] ui_tests/solName/*_test -->
 	<target name="get_ui_tests_cmd" depends="load_properties">
 		<script language="javascript">
 		<![CDATA[
@@ -205,58 +171,28 @@
 	        // It assumes the file is an Array of JSON objects well formatted
 	        for (config in struct) {
 
-	        	// Include test for all solution names. Run each solution independently
+	        	// Run each test suite in a separate thread
 //		        var solutionNames = project.getProperty("solution.name").split(",");
 //		        for (var i =0; i<solutionNames.length; i++) {
 
 				var cmdLine = "/c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");
 
-	        	// execute in ${basedire} java -jar selenese-runner.jar -c ${selrunner.conf} ${selrunner.tests}
-	        	var exec = project.createTask("exec");
-	        	exec.setDir(new File(project.getProperty("basedir")));
-	        	exec.setExecutable("cmd");
-//	        	exec.setFailonerror(true);
-//	        	exec.setResultproperty("exitCode");
-	        	exec.setSpawn(true);
-	        	exec.createArg().setValue("/c");
-				exec.createArg().setValue("java");
-				exec.createArg().setValue("-jar");
-				exec.createArg().setValue("selenese-runner.jar");
-				exec.createArg().setValue("-c");
-				exec.createArg().setValue(project.getProperty("selrunner.conf"));
-
 				// add each option specified in the selrunner.config
 		        for (option in struct[config]) {
-		        	cmdLine += " " + option + " " + struct[config][option];
+//		            echo = project.createTask("echo");
+//		            echo.setMessage(option + "=" + struct[config][option]);
+//		            echo.perform();
 
-		            echo = project.createTask("echo");
-		            echo.setMessage(option + "=" + struct[config][option]);
-		            echo.perform();
-		            exec.createArg().setValue(option);	// option key
-		            exec.createArg().setValue(struct[config][option]);	// option value
+		           	cmdLine += " " + option + " " + struct[config][option];
 		        }
 
-		        // exec.createArg().setValue("ui_tests\\" + solutionNames[i].trim() + "\\*_test");
-
-
-		        // Include test for all solution names
+		        // TODO recursive query in directory. Node or Java ?
+		        // Search all test suites ending with '_test' for all solution names
 		        var solutionNames = project.getProperty("solution.name").split(",");
 		        for (var i =0; i<solutionNames.length; i++) {
 		        	cmdLine += " " + "ui_tests\\" + solutionNames[i].trim() + "\\*_test"
-		        	exec.createArg().setValue("ui_tests\\" + solutionNames[i].trim() + "\\*_test");
 		        }
-		        // TODO recursive query in directory. Node or Java ?
 
-		        // project.setProperty("selrunner.cmd", cmdLine);
-
-		        //echo = project.createTask("echo");
-		        //echo.setMessage(cmdLine);
-		        //echo.perform();
-
-
-		        // execute tests
-		       	// exec.perform();
-		       	// self.project.executeTarget("run_selenese");
 				cmds = cmds + cmdLine + ",";
 
 //		       	}
@@ -266,25 +202,11 @@
 	        if (cmds.length) {
 				cmds = cmds.substring(0, cmds.length-1);
 			}
+
 			// store all command lines
 			project.setProperty("selrunner.cmds", cmds);
-
-	        /*
-			var browsers 	= ["chrome","phantomjs", "chrome"];
-			var drivers 	= ["chromedriver","phantomjs", "chromedriver"];
-			var driverpaths = ["drivers\\chromedriver.exe", "drivers\\phantomjs.exe", "drivers\\chromedriver.exe"];
-			for (var i=0; i < browsers.length; i++) {
-				project.setProperty("selrunner.cmd.d", browsers[i]);
-				project.setProperty("selrunner.cmd.driver", drivers[i]);
-				project.setProperty("selrunner.cmd.driverpath", driverpaths[i]);
-				self.project.executeTarget( "test" );
-			}*/
 		]]>
 		</script>
 	</target>
-
-
-
-
 
 </project>
