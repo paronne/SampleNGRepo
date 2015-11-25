@@ -35,6 +35,14 @@ var varBoolean = true
  */
 var varNumber
 
+/**
+ * @param {JSEvent} event
+ *
+ * @properties={typeid:24,uuid:"DF75E9AE-DCDB-4CBA-B041-25D7D739C2AD"}
+ */
+function shutDown(event) {
+	application.closeSolution();
+}
 
 /**
  * @protected 

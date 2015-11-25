@@ -110,6 +110,16 @@ text:"Varnumber",
 transparent:true,
 typeid:7,
 uuid:"FCA0AD4E-3FB7-47EA-8556-7ECA749647AE"
+},
+{
+anchors:3,
+location:"929,12",
+name:"btn_shutdown",
+onActionMethodID:"DF75E9AE-DCDB-4CBA-B041-25D7D739C2AD",
+size:"80,20",
+text:"Shutdown",
+typeid:7,
+uuid:"FDE91A4E-8F39-4DD9-B052-AAAB800969E0"
 }
 ],
 name:"testBaseUI",
