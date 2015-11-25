@@ -1,5 +1,6 @@
 basedir = .
 protractor.conf = ./protractor.config.js
-solution.name = svyAngularUIBootstrapButtonsRadio_test
-selrunner.conf = ./config_localhost.txt
-selrunner.tests = ./e2e/angularuibootstrap-buttons-radio_short
+solution.name = svyAngularUIBootstrapButtonsRadio_test, sol_test
+selrunner.conf = config_localhost.txt
+selrunner.failonerror = true
+selrunner.multithread = true

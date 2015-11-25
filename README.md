@@ -40,7 +40,8 @@ Set the solutions names and the path to the selenese-runner default configuratio
 basedir = .
 solution.name = hello, mySolution  #the solutions to run tests against
 selrunner.conf = ./config.txt   #config options for selenese-runner
-protractor.conf = ./protractor.config.js    #configuration for protractor tests
+selrunner.multithread = true	#run in selenese-runner in parallel for each configuration. Default false.
+selrunner.failonerror = true	#force the task to fail if any of the test fails. When multithread is off the job will terminate immediately. Default false.
 ```
 
 Execute selenese-runner on multiple environment by defining each environment configuration in the e2e/selrunner.config.json.
@@ -63,6 +64,11 @@ Protractor e2e tests: For each tested solution (in this example there is only on
 
 Tests should then be added in the folder e2e/spec/mySolution/ and should end with '_spec.js'.*
 
+```
+basedir = .
+solution.name = hello, mySolution  #the solutions to run tests against
+protractor.conf = ./protractor.config.js    #configuration for protractor tests
+```
 
 ### Setup
 

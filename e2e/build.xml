@@ -10,6 +10,8 @@
 -->
 <project  default="run_tests">
 
+	<target name ="run_tests" depends="run_ui_tests, run_unit_tests"/>
+
 	<!-- checks if used dependencies from package.json are outdated .Should be used manualy from time to time-->
 	<target name="check_outdated">
 		<exec executable="bash" dir="${basedir}" osfamily="unix"
@@ -66,10 +68,6 @@
 		</exec>
 	</target>
 
-	<target name ="run_tests" depends="run_ui_tests, run_unit_tests">
-
-	</target>
-
 	<!-- RUNNING TASKS -->
 	<!-- use this target for jenkins and saucelabs .  It does not require selenium webdiver which is 44 mb -->
 	<target name="run_unit_tests" depends="load_properties, install_protractor_if_necessary">
@@ -92,7 +90,7 @@
 		</exec>
 	</target>
 
-	<!-- RUNNING TASKS java -jar selenese-runner.jar -d phantomjs -b http://ronnie-samplengapp-dev.eu-gb.mybluemix.net/ -html-result results e2e\angularuibootstrap-buttons-radio -->
+	<!-- TEST TASK java -jar selenese-runner.jar -d phantomjs -b http://ronnie-samplengapp-dev.eu-gb.mybluemix.net/ -html-result results e2e\angularuibootstrap-buttons-radio -->
 	<!-- use this target for jenkins and saucelabs .  It does not require selenium webdiver which is 44 mb -->
 	<target name="tests_selenese" depends="load_properties">
 		    <echo message="Run tests script started"/>
@@ -101,7 +99,7 @@
 			<!--<echo message="Testing solution: ${solution.name}"/>-->
 
 
-		<exec executable="cmd" dir="${basedir}" osfamily="windows"
+		<exec executable="cmd" dir="${basedir}" osfamily="windows" 
 					failonerror="true">
 					<arg value="/c"/>
 					<arg value="java"/>
@@ -126,8 +124,48 @@
 		</exec>-->
 	</target>
 
+	<!-- RUNNING TASKS -->
+	<!-- run selenese for each configuration in selrunner.config.json -->
+	<target name="run_ui_tests" depends="get_ui_tests_cmd">
+		<echo message="Run tests script started"/>
+		<echo message="basedir ${basedir}"/>
+		<echo message="solution name ${solution.name}"/>	 
+
+		<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+ 		<for param="cmdline" parallel="${selrunner.multithread}" list="${selrunner.cmds}" delimiter=",">
+		    <sequential>
+		        <echo message= "@{cmdline}"/>
+ 		        <antcall target="run_selenese">
+ 		            <param name="selrunner.cmdline" value="@{cmdline}"/>
+		        </antcall>
+		    </sequential>
+		 </for>
+	</target>
+
+	<!-- run selenese-runner from commandline -->
+	<target name="run_selenese">
+		<echo message="Run ${selrunner.cmdline}"/>
+
+		<exec executable="cmd" dir="${basedir}" osfamily="windows" failonerror="false" resultproperty="exitCode">
+			<arg line="${selrunner.cmdline}"/>
+		</exec>
+
+		<condition property="tests_failed">
+			<and>
+				<equals arg1="${selrunner.failonerror}" arg2="true"/>
+				<or>
+	            	<equals arg1="${exitCode}" arg2="3"/>
+	            	<equals arg1="${exitCode}" arg2="4"/>
+	            	<equals arg1="${exitCode}" arg2="5"/>
+	        	</or>
+        	</and>
+		</condition>
+
+		<fail if="tests_failed" message="FAILED: UI Test execution failed for one of the test solutions; see messages above."/>
+	</target>
+
 	<!-- RUNNING TASKS java -jar selenese-runner.jar -c ${selrunner.conf} [selrunner.config.json] ui_tests/solName/*_test -->
-	<target name="run_ui_tests" depends="load_properties">
+	<target name="get_ui_tests_cmd" depends="load_properties">
 		<script language="javascript">
 		<![CDATA[
 	 		importClass(java.io.File);
@@ -161,15 +199,25 @@
 
 	        // Evaluate the JSON.
 	        var struct = eval("(" + json + ")");
-	        
+	        var cmds = "";
+
 	        // Run selenese-runner for each configuration in the selrunner.config.json
 	        // It assumes the file is an Array of JSON objects well formatted
 	        for (config in struct) {
+
+	        	// Include test for all solution names. Run each solution independently
+//		        var solutionNames = project.getProperty("solution.name").split(",");
+//		        for (var i =0; i<solutionNames.length; i++) {
+
+				var cmdLine = "/c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");
 
 	        	// execute in ${basedire} java -jar selenese-runner.jar -c ${selrunner.conf} ${selrunner.tests}
 	        	var exec = project.createTask("exec");
 	        	exec.setDir(new File(project.getProperty("basedir")));
 	        	exec.setExecutable("cmd");
+//	        	exec.setFailonerror(true);
+//	        	exec.setResultproperty("exitCode");
+	        	exec.setSpawn(true);
 	        	exec.createArg().setValue("/c");
 				exec.createArg().setValue("java");
 				exec.createArg().setValue("-jar");
@@ -179,6 +227,8 @@
 
 				// add each option specified in the selrunner.config
 		        for (option in struct[config]) {
+		        	cmdLine += " " + option + " " + struct[config][option];
+
 		            echo = project.createTask("echo");
 		            echo.setMessage(option + "=" + struct[config][option]);
 		            echo.perform();
@@ -186,17 +236,38 @@
 		            exec.createArg().setValue(struct[config][option]);	// option value
 		        }
 
+		        // exec.createArg().setValue("ui_tests\\" + solutionNames[i].trim() + "\\*_test");
+
+
 		        // Include test for all solution names
 		        var solutionNames = project.getProperty("solution.name").split(",");
 		        for (var i =0; i<solutionNames.length; i++) {
+		        	cmdLine += " " + "ui_tests\\" + solutionNames[i].trim() + "\\*_test"
 		        	exec.createArg().setValue("ui_tests\\" + solutionNames[i].trim() + "\\*_test");
 		        }
 		        // TODO recursive query in directory. Node or Java ?
 
+		        // project.setProperty("selrunner.cmd", cmdLine);
+
+		        //echo = project.createTask("echo");
+		        //echo.setMessage(cmdLine);
+		        //echo.perform();
+
+
 		        // execute tests
-		       	exec.perform();
+		       	// exec.perform();
+		       	// self.project.executeTarget("run_selenese");
+				cmds = cmds + cmdLine + ",";
+
+//		       	}
 	        }
 
+	        // remove comma from last item
+	        if (cmds.length) {
+				cmds = cmds.substring(0, cmds.length-1);
+			}
+			// store all command lines
+			project.setProperty("selrunner.cmds", cmds);
 
 	        /*
 			var browsers 	= ["chrome","phantomjs", "chrome"];
