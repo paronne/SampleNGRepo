@@ -122,7 +122,6 @@
 		</script>
 
 		<!-- Repeat the test for each item in count -->
-		<taskdef resource="net/sf/antcontrib/antlib.xml"/>
  		<for param="dir.name" parallel="false" list="${selrunner.load.solution.name}" delimiter=",">
 		    <sequential>
  		        <antcall target="run_selenese_load_tests">
@@ -147,7 +146,6 @@
 		</if>
 
 		<!-- run selenese-runner in parallel until count size -->
-		<taskdef resource="net/sf/antcontrib/antlib.xml"/>
  		<for param="cmdline" parallel="true" list="${load.count}" delimiter=",">
 		    <sequential>
 		        <echo message= "${selrunner.load.cmd}"/>
@@ -165,7 +163,6 @@
 		<echo message="basedir ${basedir}/${selrunner.dir}"/>
 		<echo message="solution name ${selrunner.solution.name}"/>	 
 
-		<taskdef resource="net/sf/antcontrib/antlib.xml"/>
  		<for param="cmdline" parallel="${selrunner.multithread}" list="${selrunner.cmds}" delimiter=",">
 		    <sequential>
 		        <echo message= "@{cmdline}"/>
@@ -309,5 +306,11 @@
 		]]>
 		</script>
 	</target>
+
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+	  <classpath>
+	    <pathelement location="ant-contrib.jar"/>
+	  </classpath>
+	</taskdef>
 
 </project>
