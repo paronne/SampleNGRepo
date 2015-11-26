@@ -28,17 +28,23 @@ mySolution
 
 ### e2e
 
-The e2e/build.xml runs the selenium test suites e2e/ui_tests/hello/*_test and protractor test scripts e2e/spec/hello/*_spec.js.
+The e2e/build.xml runs the selenium test suites e2e/ui_tests/svyAngularUIBootstrapButtonsRadio_test/*_test, protractor test scripts e2e/spec/svyAngularUIBootstrapButtonsRadio_test/*_spec.js and parallel selenium test suites e2e/load_tests/svyAngularUIBootstrapButtonsRadio_test/*_test for load testing.
 
-Selenium e2e tests: For each tested solution (in this example there is none) the folder e2e/ui_tests/ has to contain a folder with the same name as the tested solution. So for each tested solution, the script looks in e2e/ui_tests for a folder with the exact name as the solution and runs all the files ending in '_test'.
+The script runs Selenium Test Suites and Test Cases recorded with Selenium IDE using selenese-runner. Selenese-runner runs the tests on saucelabs hubs using the remote drivers.
+
+Selenium e2e tests: For each tested solution (in this example there is only one) the folder e2e/ui_tests/ has to contain a folder with the same name as the tested solution. So for each tested solution, the script looks in e2e/ui_tests for a folder with the exact name as the solution and runs all the files ending in '_test'.
 
 Tests should then be added in the folder e2e/ui_tests/mySolution/ and should end with '_test'.
 
 Set the solutions names and the path to the selenese-runner default configuration in the file e2e/test_properties.properties.
 
+Set the baseurl and the remote-url to your own saucelabs hub in the config options for selenese-runner.
+
 ```
 basedir = .
-solution.name = hello, mySolution  #the solutions to run tests against
+selrunner.enabled = yep		# remove this property if you would like NOT to run ui testing
+selrunner.dir = ui_tests	#directory containing the test solutions. Default is 'ui_tests'
+selrunner.solution.name = hello, mySolution  #the solutions to run tests against
 selrunner.conf = ./config.txt   #config options for selenese-runner
 selrunner.multithread = true	#run in selenese-runner in parallel for each configuration. Default false.
 selrunner.failonerror = true	#force the task to fail if any of the test fails. When multithread is off the job will terminate immediately. Default false.
@@ -60,14 +66,38 @@ Execute selenese-runner on multiple environment by defining each environment con
 }
 ```
 
+The script runs protractor to run Unit testing.
+
 Protractor e2e tests: For each tested solution (in this example there is only one) the folder e2e/spec/ has to contain a folder with the same name as the tested solution. So for each tested solution, the script looks in e2e/spec for a folder with the exact name as the solution and runs all the files ending in '_spec.js'.
 
 Tests should then be added in the folder e2e/spec/mySolution/ and should end with '_spec.js'.*
 
+Set the baseUrl and the sauceUser/sauceKey of your own saucelabs account in the protractor configuration.
+
 ```
 basedir = .
-solution.name = hello, mySolution  #the solutions to run tests against
+protractor.enabled = yep	# remove this property if you would like NOT to run protractor
+protractor.solution.name = hello, mySolution  #the solutions to run tests against
 protractor.conf = ./protractor.config.js    #configuration for protractor tests
+```
+
+The script runs parallel selenese-runner jobs to simulate load testing on the server. Use phantomjs to run all tests headless.
+
+Selenium e2e load tests: For each solution you would like to perform load testing (in this example there is none) the folder e2e/load_tests/ has to contain a folder with the same name as the tested solution. So for each tested solution, the script looks in e2e/load_tests for a folder with the exact name as the solution and runs all the files ending in '_test'.
+
+Tests should then be added in the folder e2e/load_tests/mySolution/ and should end with '_test'.
+
+Set the solutions names and the path to the selenese-runner default configuration in the file e2e/test_properties.properties.
+
+Set the baseurl in the config options for selenese-runner.
+
+```
+basedir = .
+selrunner.load.enabled = yep	#remove this property if you would like NOT to run load testing
+selrunner.load.dir = ui_tests	#directory containing the test solutions. Default is 'load_tests'
+selrunner.load.solution.name = svyAngularUIBootstrapButtonsRadio_test	#the solutions to run load tests against
+selrunner.load.conf = ./config_load.txt 	#config options for selenese-runner
+selrunner.load.threads = 10		#number of thread to run in parallel for the load testing. Default is 10.
 ```
 
 ### Setup
