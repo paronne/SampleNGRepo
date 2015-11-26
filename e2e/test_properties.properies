@@ -1,6 +1,22 @@
+#general configuration
 basedir = .
+
+#configure unit testing
+protractor.enabled = yep
 protractor.conf = ./protractor.config.js
-solution.name = svyAngularUIBootstrapButtonsRadio_test
+protractor.solution.name = svyAngularUIBootstrapButtonsRadio_test
+
+# configure ui testing
+selrunner.enabled = yep
+selrunner.dir = ui_tests
+selrunner.solution.name = svyAngularUIBootstrapButtonsRadio_test
 selrunner.conf = config_localhost.txt
 selrunner.failonerror = true
 selrunner.multithread = true
+
+# configure load testing
+selrunner.load.enabled = yep
+selrunner.load.dir = ui_tests
+selrunner.load.solution.name = svyAngularUIBootstrapButtonsRadio_test
+selrunner.load.conf = config_load_localhost.txt
+selrunner.load.threads = 3

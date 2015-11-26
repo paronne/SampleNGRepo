@@ -10,7 +10,10 @@
 -->
 <project  default="run_tests">
 
-	<target name ="run_tests" depends="run_ui_tests, run_unit_tests"/>
+	<!-- default properties -->
+
+
+	<target name ="run_tests" depends="run_ui_tests, run_unit_tests, run_load_tests"/>
 
 	<!-- checks if used dependencies from package.json are outdated .Should be used manualy from time to time-->
 	<target name="check_outdated">
@@ -33,11 +36,16 @@
 	    <condition property="protractor.installed">
 	      <available file="./node_modules" type="dir"/>
 	    </condition>
-	 </target>
+	</target>
 
-	 <target name="load_properties">
+	<target name="load_properties">
 	   <echo message="Loading properties."/>
 	   <property file="test_properties.properies"/>
+
+	   <!-- default value if not applied -->
+	   <property name="selrunner.dir" value="ui_tests"/>
+	   <property name="selrunner.load.dir" value="load_tests"/>
+	   <property name="selrunner.load.threads" value="10"/>
 	</target>
 	 
 	 <target name="install_protractor_if_necessary" depends="protractor_installed_check" unless="protractor.installed">
@@ -70,19 +78,20 @@
 
 	<!-- RUNNING TASKS -->
 	<!-- use this target for jenkins and saucelabs .  It does not require selenium webdiver which is 44 mb -->
-	<target name="run_unit_tests" depends="load_properties, install_protractor_if_necessary">
-		    <echo message="Run tests script started"/>
-			<echo message="Testing solution: ${solution.name}"/>
+	<target name="run_unit_tests" depends="load_properties, install_protractor_if_necessary" if="protractor.enabled">
+		    <echo message="Run unit tests script started"/>
+		    <echo message="basedir ${basedir}/${protractor.dir}"/>
+			<echo message="Testing solution: ${protractor.solution.name}"/>
 
 		<exec executable="cmd" dir="${basedir}" osfamily="windows"
 					failonerror="true">
 					<arg value="/c"/>
 					<arg value="node_modules\.bin\protractor"/>
 					<arg value="${protractor.conf}"/>
-					<arg value="--params.solutionName=${solution.name}"/>
+					<arg value="--params.solutionName=${protractor.solution.name}"/>
 		</exec>
 
-		<property name="temp1" value="node ./node_modules/.bin/protractor --troubleshoot true ${protractor.conf} --params.solutionName=${solution.name}"/>
+		<property name="temp1" value="node ./node_modules/.bin/protractor --troubleshoot true ${protractor.conf} --params.solutionName=${protractor.solution.name}"/>
 		<exec executable="bash" dir="${basedir}" osfamily="unix"
 							failonerror="true">
 			                <arg value="-c"/>
@@ -91,11 +100,70 @@
 	</target>
 
 	<!-- RUNNING TASKS -->
+	<!-- run load tests using multiple instance of selenese-runner -->
+	<target name="run_load_tests" depends="load_properties" if="selrunner.load.enabled">
+		<echo message="Run load tests script started"/>
+		<echo message="basedir ${basedir}/${selrunner.load.dir}"/>
+		<echo message="solution name ${selrunner.load.solution.name}"/>	 
+
+		<!-- create count list-->
+		<script language="javascript">
+			<![CDATA[
+				var list = "";
+				var count = project.getProperty("selrunner.load.threads") || 10;
+		 		for (var i=1; i<=count; i++) {
+		 			list+= i + ","
+		 		}
+		 		if (list) {
+		 			list = list.substring(0, list.length -1);
+		 		}
+		 		project.setProperty("load.count", list);
+		    ]]>
+		</script>
+
+		<!-- Repeat the test for each item in count -->
+		<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+ 		<for param="dir.name" parallel="false" list="${selrunner.load.solution.name}" delimiter=",">
+		    <sequential>
+ 		        <antcall target="run_selenese_load_tests">
+ 		            <param name="load.solution.name" value="@{dir.name}"/>
+ 		            <param name="load.count" value="${load.count}"/>
+		        </antcall>
+		    </sequential>
+		 </for>
+	</target>
+
+	<!-- run load tests on a solution-->
+	<target name="run_selenese_load_tests" depends="get_os_family">
+		<!-- check operating system -->
+		<if>
+		 <isset property="os_window" />
+		 <then>
+			<property name="selrunner.load.cmd" value="/c java -jar selenese-runner.jar -c ${selrunner.load.conf} ${selrunner.load.dir}/${load.solution.name}/*_test"/>
+		 </then>
+		 <else>
+			<property name="selrunner.load.cmd" value="-c java -jar selenese-runner.jar -c ${selrunner.load.conf} ${selrunner.load.dir}\${load.solution.name}\*_test"/>
+		 </else>
+		</if>
+
+		<!-- run selenese-runner in parallel until count size -->
+		<taskdef resource="net/sf/antcontrib/antlib.xml"/>
+ 		<for param="cmdline" parallel="true" list="${load.count}" delimiter=",">
+		    <sequential>
+		        <echo message= "${selrunner.load.cmd}"/>
+ 		        <antcall target="run_selenese">
+ 		            <param name="selrunner.cmdline" value="${selrunner.load.cmd}"/>
+		        </antcall>
+		    </sequential>
+		 </for>
+	</target>
+
+	<!-- RUNNING TASKS -->
 	<!-- run selenese for each configuration in selrunner.config.json -->
-	<target name="run_ui_tests" depends="get_ui_tests_cmd, set_cmd_windows, set_cmd_unix">
-		<echo message="Run tests script started"/>
-		<echo message="basedir ${basedir}"/>
-		<echo message="solution name ${solution.name}"/>	 
+	<target name="run_ui_tests" depends="get_ui_tests_cmd, set_cmd_windows, set_cmd_unix" if="selrunner.enabled">
+		<echo message="Run ui tests script started"/>
+		<echo message="basedir ${basedir}/${selrunner.dir}"/>
+		<echo message="solution name ${selrunner.solution.name}"/>	 
 
 		<taskdef resource="net/sf/antcontrib/antlib.xml"/>
  		<for param="cmdline" parallel="${selrunner.multithread}" list="${selrunner.cmds}" delimiter=",">
@@ -127,7 +195,7 @@
 
 	<!-- run selenese-runner from commandline -->
 	<target name="run_selenese">
-		<echo message="Run ${selrunner.cmdline}"/>
+		<!-- <echo message="Run ${selrunner.cmdline}"/> -->
 
 		<exec executable="cmd" dir="${basedir}" osfamily="windows" failonerror="false" resultproperty="exitCode">
 			<arg line="${selrunner.cmdline}"/>
@@ -148,7 +216,7 @@
         	</and>
 		</condition>
 
-		<fail if="tests_failed" message="FAILED: UI Test execution failed for one of the test solutions; see messages above."/>
+		<fail if="tests_failed" message="FAILED: Test execution failed for one of the test solutions; see messages above."/>
 	</target>
 
 	<!-- Build the command line to execute selenese-runner java -jar selenese-runner.jar -c ${selrunner.conf} [selrunner.config.json] ui_tests/solName/*_test -->
@@ -196,7 +264,7 @@
 	        for (config in struct) {
 
 	        	// Run each test suite in a separate thread
-//		        var solutionNames = project.getProperty("solution.name").split(",");
+//		        var solutionNames = project.getProperty("selrunner.solution.name").split(",");
 //		        for (var i =0; i<solutionNames.length; i++) {
 
 				var cmdLine = "/c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");		// Windows
@@ -214,10 +282,11 @@
 		        // TODO recursive query in directory. Node or Java ?
 		        // TODO for any path replace \\ with Unix /
 		        // Search all test suites ending with '_test' for all solution names
-		        var solutionNames = project.getProperty("solution.name").split(",");
+		        var testDir = project.getProperty("selrunner.load.dir")
+		        var solutionNames = project.getProperty("selrunner.solution.name").split(",");
 		        for (var i =0; i<solutionNames.length; i++) {
-		        	cmdLine += " " + "ui_tests\\" + solutionNames[i].trim() + "\\*_test";		// Windows
-		        	cmdLineUnix += " " + "ui_tests/" + solutionNames[i].trim() + "/*_test";		// Unix
+		        	cmdLine += " " + "testDir\\" + solutionNames[i].trim() + "\\*_test";		// Windows
+		        	cmdLineUnix += " " + "testDir/" + solutionNames[i].trim() + "/*_test";		// Unix
 		        }
 
 				cmdsWin = cmdsWin + cmdLine + ",";
