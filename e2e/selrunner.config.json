@@ -1,11 +1,8 @@
 {
 	"firefox": {
-	"-d":"firefox",
-	"--html-result" : "results\\firefox"
+		"remote-browser": "firefox" 
 	}, 
 	"chrome" : {
-	"-d": "chrome",
-	"--chromedriver" : "drivers\\chromedriver.exe",
-	"--html-result" : "results\\chrome"
+		"remote-browser": "chrome"
 	}
 }

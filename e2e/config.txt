@@ -4,7 +4,4 @@ driver: remote
 remote-browser: firefox 
 remote-platform: XP 
 remote-url: http://ronnie:80e61e5c-57d7-4853-a625-6b5d98d69ebe@ondemand.saucelabs.com/wd/hub/
-screenshot-dir: results/screenshots
-screenshot-on-fail: results/screenshots
 baseurl: http://localhost:8080
-html-result: results

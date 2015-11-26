@@ -2,7 +2,6 @@
 basedir = .
 
 #configure unit testing
-protractor.enabled = yep
 protractor.conf = ./protractor.config.js
 protractor.solution.name = svyAngularUIBootstrapButtonsRadio_test
 
