@@ -285,8 +285,8 @@
 		        var testDir = project.getProperty("selrunner.load.dir")
 		        var solutionNames = project.getProperty("selrunner.solution.name").split(",");
 		        for (var i =0; i<solutionNames.length; i++) {
-		        	cmdLine += " " + "testDir\\" + solutionNames[i].trim() + "\\*_test";		// Windows
-		        	cmdLineUnix += " " + "testDir/" + solutionNames[i].trim() + "/*_test";		// Unix
+		        	cmdLine += " " + testDir + "\\" + solutionNames[i].trim() + "\\*_test";		// Windows
+		        	cmdLineUnix += " " + testDir + "/" + solutionNames[i].trim() + "/*_test";		// Unix
 		        }
 
 				cmdsWin = cmdsWin + cmdLine + ",";

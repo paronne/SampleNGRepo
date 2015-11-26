@@ -10,7 +10,7 @@ protractor.solution.name = svyAngularUIBootstrapButtonsRadio_test
 selrunner.enabled = yep
 selrunner.dir = ui_tests
 selrunner.solution.name = svyAngularUIBootstrapButtonsRadio_test
-selrunner.conf = config_localhost.txt
+selrunner.conf = ./config.txt
 selrunner.failonerror = true
 selrunner.multithread = true
 
@@ -18,5 +18,5 @@ selrunner.multithread = true
 selrunner.load.enabled = yep
 selrunner.load.dir = ui_tests
 selrunner.load.solution.name = svyAngularUIBootstrapButtonsRadio_test
-selrunner.load.conf = config_load_localhost.txt
+selrunner.load.conf = ./config_load.txt
 selrunner.load.threads = 3
