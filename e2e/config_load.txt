@@ -2,4 +2,4 @@
 
 driver: phantomjs
 phantomjs: drivers/phantomjs.exe
-baseurl: http://localhost:8080
+baseurl: http://paronne2-samplengapp-dev.eu-gb.mybluemix.net
