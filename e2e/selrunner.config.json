@@ -1,8 +1,8 @@
 {
 	"firefox": {
-		"remote-browser": "firefox" 
+		"--remote-browser": "firefox" 
 	}, 
 	"chrome" : {
-		"remote-browser": "chrome"
+		"--remote-browser": "chrome"
 	}
 }
