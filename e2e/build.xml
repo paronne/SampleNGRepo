@@ -138,10 +138,10 @@
 		<if>
 		 <isset property="os_window" />
 		 <then>
-			<property name="selrunner.load.cmd" value="/c java -jar selenese-runner.jar -c ${selrunner.load.conf} ${selrunner.load.dir}/${load.solution.name}/*_test"/>
+			<property name="selrunner.load.cmd" value="/c java -jar selenese-runner.jar -c ${selrunner.load.conf} ${selrunner.load.dir}\${load.solution.name}\*_test"/>
 		 </then>
 		 <else>
-			<property name="selrunner.load.cmd" value="-c java -jar selenese-runner.jar -c ${selrunner.load.conf} ${selrunner.load.dir}\${load.solution.name}\*_test"/>
+			<property name="selrunner.load.cmd" value="-c java -jar selenese-runner.jar -c ${selrunner.load.conf} ${selrunner.load.dir}/${load.solution.name}/*_test"/>
 		 </else>
 		</if>
 
