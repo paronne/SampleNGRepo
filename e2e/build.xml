@@ -202,7 +202,7 @@
 			<arg line="${selrunner.cmdline}"/>
 		</exec>
 
-		<exec executable="cmd" dir="${basedir}" osfamily="unix" failonerror="false" resultproperty="exitCode">
+		<exec executable="bash" dir="${basedir}" osfamily="unix" failonerror="false" resultproperty="exitCode">
 			<arg line="${selrunner.cmdline}"/>
 		</exec>
 
