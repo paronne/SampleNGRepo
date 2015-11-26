@@ -175,9 +175,13 @@
 
 	<!-- TODO can be improved. get the os family and set the command -->
 	<target name="get_os_family">
-  		<condition property="os_window" else="os_unix">
+  		<condition value="true" property="os_window">
 		 	<os family="windows"/>
 		</condition>
+		<condition value="true" property="os_unix">
+		 	<os family="unix"/>
+		</condition>
+		<echo message="family win: ${os_window} - unix ${os_unix}"/>
 	</target>
 
 	<target name="set_cmd_windows" if="os_window" depends="get_ui_tests_cmd, get_os_family">
