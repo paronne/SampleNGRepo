@@ -141,7 +141,7 @@
 			<property name="selrunner.load.cmd" value="/c java -jar selenese-runner.jar -c ${selrunner.load.conf} ${selrunner.load.dir}\${load.solution.name}\*_test"/>
 		 </then>
 		 <else>
-			<property name="selrunner.load.cmd" value="-c java -jar selenese-runner.jar -c ${selrunner.load.conf} ${selrunner.load.dir}/${load.solution.name}/*_test"/>
+			<property name="selrunner.load.cmd" value="-c java -jar ./selenese-runner.jar -c ${selrunner.load.conf} ./${selrunner.load.dir}/${load.solution.name}/*_test"/>
 		 </else>
 		</if>
 
@@ -269,7 +269,7 @@
 //		        for (var i =0; i<solutionNames.length; i++) {
 
 				var cmdLine = "/c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");		// Windows
-				var cmdLineUnix = "-c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");	// Unix
+				var cmdLineUnix = "-c java -jar ./selenese-runner.jar -c " + project.getProperty("selrunner.conf");	// Unix
 
 				// add each option specified in the selrunner.config
 		        for (option in struct[config]) {
@@ -287,7 +287,7 @@
 		        var solutionNames = project.getProperty("selrunner.solution.name").split(",");
 		        for (var i =0; i<solutionNames.length; i++) {
 		        	cmdLine += " " + testDir + "\\" + solutionNames[i].trim() + "\\*_test";		// Windows
-		        	cmdLineUnix += " " + testDir + "/" + solutionNames[i].trim() + "/*_test";		// Unix
+		        	cmdLineUnix += (i==0 ? " ./" : " ") + testDir + "/" + solutionNames[i].trim() + "/*_test";		// Unix
 		        }
 
 				cmdsWin = cmdsWin + cmdLine + ",";
