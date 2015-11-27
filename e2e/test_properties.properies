@@ -11,7 +11,7 @@ selrunner.dir = ui_tests
 selrunner.solution.name = svyAngularUIBootstrapButtonsRadio_test
 selrunner.conf = ./config.txt
 selrunner.failonerror = true
-selrunner.multithread = true
+selrunner.multithread = false
 
 # configure load testing
 selrunner.load.enabled = yep
