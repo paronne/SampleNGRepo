@@ -43,7 +43,7 @@ angular.module('angularuibootstrapButtonsRadio', ['servoy', 'ui.bootstrap']).dir
 				// persist change to the record whenever the dataprovider is changed
 				$scope.$watch('model.dataProvider', function(newValue, oldValue) {
 					$scope.changedValue = oldValue
-					$scope.svyServoyapi.apply('dataProvider')
+					$scope.svyServoyapi.apply('dataProvider');
 				});
 				
 				
@@ -51,9 +51,9 @@ angular.module('angularuibootstrapButtonsRadio', ['servoy', 'ui.bootstrap']).dir
 					console.log(event)
 					console.log(returnval)
 					if (returnval) {
-						$scope.changedValue = null
+						$scope.changedValue = null;
 					} else {
-						$scope.model.dataProvider = $scope.changedValue
+						$scope.model.dataProvider = $scope.changedValue;
 					}
 				}
 			},
