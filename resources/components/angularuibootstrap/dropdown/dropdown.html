@@ -1,0 +1,38 @@
+<div class="btn-group z-index-99">
+	<button 
+		class='uibootstrap-dropdown btn {{model.buttonStyle}} dropdown-toggle {{model.buttonSize}}'
+		id="{{model.markupId}}" 
+		ng-model="model.dataprovider" 
+		ng-disabled='model.enabled == false' 
+		sablo-tabseq='model.tabSeq' 
+		svy-font='model.fontType' 
+		svy-tooltip='model.toolTipText'
+		data-toggle="dropdown" 
+		ng-if='!model.split' 
+		ng-bind-html='(model.dataProviderID == null || model.dataProviderID.url ? model.text + (!model.split ? "<span class=\"caret\"></span>" : "") : model.dataProviderID ) | formatFilter:model.format.display:model.format.type | mnemonicletterFilter:model.mnemonic'/>
+	<button 
+		ng-click="handlers.onActionMethodID($event)"
+		class='uibootstrap-dropdown btn {{model.buttonStyle}} {{model.buttonSize}}'
+		id="{{model.markupId}}" 
+		ng-model="model.dataprovider" 
+		ng-disabled='model.enabled == false' 
+		sablo-tabseq='model.tabSeq' 
+		svy-font='model.fontType' 
+		svy-tooltip='model.toolTipText' 
+		ng-if='model.split' 
+		ng-bind-html='(model.dataProviderID == null || model.dataProviderID.url ? model.text + (!model.split ? "<span class=\"caret\"></span>" : "") : (model.dataProviderID ? model.dataProviderID : "&nbsp;" )) | formatFilter:model.format.display:model.format.type | mnemonicletterFilter:model.mnemonic'/>
+	<button 
+		type="button" 
+		class="uibootstrap-dropdown btn {{model.buttonStyle}} dropdown-toggle {{model.buttonSize}}"
+		data-toggle="dropdown" 
+		ng-disabled='model.enabled == false' 
+		svy-tooltip='model.toolTipText' 
+		ng-if='model.split'>
+			<span class="caret"></span>
+	</button>
+	<ul class="dropdown-menu" role="menu">
+		<li ng-repeat="item in model.valuelist" ng-click="itemSelected(item.realValue, item.displayValue, $event)" class="ng-class:(item.displayValue == '-' ? 'divider' : '')">
+			<a ng-if="item.displayValue != '-'" href="">{{item.displayValue}}</a>
+		</li>
+	</ul>
+</div> 

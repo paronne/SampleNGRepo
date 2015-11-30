@@ -4,3 +4,6 @@ Bundle-SymbolicName: angularuibootstrap
 
 Name: buttonsRadio/buttonsRadio.spec
 Web-Component: True
+
+Name: dropdown/dropdown.spec
+Web-Component: True
