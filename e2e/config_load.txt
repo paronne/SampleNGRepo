@@ -1,5 +1,5 @@
 # configuration file format.
 
 driver: phantomjs
-phantomjs: drivers/phantomjs.exe
+phantomjs: ./drivers/phantomjs.exe
 baseurl: http://paronne2-samplengapp-dev.eu-gb.mybluemix.net
