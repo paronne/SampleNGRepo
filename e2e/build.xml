@@ -291,7 +291,7 @@
 		        }
 
 				cmdsWin = cmdsWin + cmdLine + ",";
-				//cmdsUnix = cmdsUnix + cmdLineUnix + ",";
+				cmdsUnix = cmdsUnix + cmdLineUnix + ",";
 
 //		       	}
 	        }
@@ -301,7 +301,7 @@
 				cmdsWin = cmdsWin.substring(0, cmdsWin.length-1);
 			}
 			if (cmdsUnix.length) {
-				//cmdsUnix = cmdsUnix.substring(0, cmdsUnix.length-1);
+				cmdsUnix = cmdsUnix.substring(0, cmdsUnix.length-1);
 			}
 
 			// store all command lines
