@@ -1,8 +1,8 @@
 {
 	"name": "angularuibootstrap-dropdown",
-	"displayName": "Dropdown Button",
+	"displayName": "Dropdown",
 	"definition": "angularuibootstrap/dropdown/dropdown.js",
-	"libraries": [],
+	"libraries": [{"name":"uibootstrap-dropdown.css", "version":"1.0.0", "url":"angularuibootstrap/dropdown/css/uibootstrap-dropdown.css", "mimetype":"text/css"}],
 	"version": 1,
 	"model":
 	{

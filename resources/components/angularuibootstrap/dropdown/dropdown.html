@@ -1,4 +1,4 @@
-<div class="btn-group z-index-99">
+<div class="btn-group">
 	<button 
 		class='uibootstrap-dropdown btn {{model.buttonStyle}} dropdown-toggle {{model.buttonSize}}'
 		id="{{model.markupId}}" 
@@ -30,9 +30,9 @@
 		ng-if='model.split'>
 			<span class="caret"></span>
 	</button>
-	<ul class="dropdown-menu" role="menu">
+	<ul class="uibootstrap-dropdown-menu dropdown-menu" role="menu">
 		<li ng-repeat="item in model.valuelist" ng-click="itemSelected(item.realValue, item.displayValue, $event)" class="ng-class:(item.displayValue == '-' ? 'divider' : '')">
-			<a ng-if="item.displayValue != '-'" href="">{{item.displayValue}}</a>
+			<a ng-if="item.displayValue != '-'" href="" ng-bind="item.displayValue ? item.displayValue : '&nbsp;'"></a>
 		</li>
 	</ul>
 </div> 
