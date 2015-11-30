@@ -289,3 +289,18 @@ function toggleFormReadOnly(event) {
 	controller.readOnly = !controller.readOnly
     log("Form  is now " + (controller.readOnly ? 'readOnly' : 'non-readOnly'))
 }
+
+
+/**
+ * Perform the element default action.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @protected
+ *
+ * @properties={typeid:24,uuid:"E118BD05-4CC8-4FC2-8134-E91505AAEAFB"}
+ */
+function onClearLog(event) {
+	logText = null;
+}
+
