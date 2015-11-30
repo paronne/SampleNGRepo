@@ -269,7 +269,7 @@
 //		        for (var i =0; i<solutionNames.length; i++) {
 
 				var cmdLine = "/c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");		// Windows
-				var cmdLineUnix = "-jar ./selenese-runner.jar -c " + project.getProperty("selrunner.conf");	// Unix
+				var cmdLineUnix = "-jar ./selenese-runner.jar -c ./" + project.getProperty("selrunner.conf") + " ./ui_tests/svyAngularUIBootstrapButtonsRadio_test/angularuibootstrap_buttons_radio_test";	// Unix
 
 				// add each option specified in the selrunner.config
 		        for (option in struct[config]) {
@@ -287,11 +287,11 @@
 		        var solutionNames = project.getProperty("selrunner.solution.name").split(",");
 		        for (var i =0; i<solutionNames.length; i++) {
 		        	cmdLine += " " + testDir + "\\" + solutionNames[i].trim() + "\\*_test";		// Windows
-		        	cmdLineUnix += " " + project.getProperty("basedir") + "/" + testDir + "/" + solutionNames[i].trim() + "/*_test";		// Unix
+		        	//cmdLineUnix += " " + project.getProperty("basedir") + "/" + testDir + "/" + solutionNames[i].trim() + "/*_test";		// Unix
 		        }
 
 				cmdsWin = cmdsWin + cmdLine + ",";
-				cmdsUnix = cmdsUnix + cmdLineUnix + ",";
+				//cmdsUnix = cmdsUnix + cmdLineUnix + ",";
 
 //		       	}
 	        }
@@ -301,7 +301,7 @@
 				cmdsWin = cmdsWin.substring(0, cmdsWin.length-1);
 			}
 			if (cmdsUnix.length) {
-				cmdsUnix = cmdsUnix.substring(0, cmdsUnix.length-1);
+				//cmdsUnix = cmdsUnix.substring(0, cmdsUnix.length-1);
 			}
 
 			// store all command lines
