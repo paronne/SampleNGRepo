@@ -8,7 +8,7 @@
 <body>
 <table id="suiteTable" cellpadding="1" cellspacing="1" border="1" class="selenium"><tbody>
 <tr><td><b>Test Suite</b></td></tr>
-<tr><td><a href="buttons-radio_onDataChange.html">buttons-radio_onDataChange</a></td></tr>
+<tr><td><a href="buttons_radio_onDataChange.html">buttons_radio_onDataChange</a></td></tr>
 </tbody></table>
 </body>
 </html>
