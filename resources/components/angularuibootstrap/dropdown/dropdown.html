@@ -1,5 +1,5 @@
-<div class="btn-group">
-	<button 
+<div class="btn-group" ng-style="style.main">
+	<button
 		class='uibootstrap-dropdown btn {{model.buttonStyle}} dropdown-toggle {{model.buttonSize}}'
 		id="{{model.markupId}}" 
 		ng-model="model.dataprovider" 
@@ -10,7 +10,7 @@
 		data-toggle="dropdown" 
 		ng-if='!model.split' 
 		ng-bind-html='(model.dataProviderID == null || model.dataProviderID.url ? model.text + (!model.split ? "<span class=\"caret\"></span>" : "") : model.dataProviderID ) | formatFilter:model.format.display:model.format.type | mnemonicletterFilter:model.mnemonic'/>
-	<button 
+	<button
 		ng-click="handlers.onActionMethodID($event)"
 		class='uibootstrap-dropdown btn {{model.buttonStyle}} {{model.buttonSize}}'
 		id="{{model.markupId}}" 
@@ -21,11 +21,12 @@
 		svy-tooltip='model.toolTipText' 
 		ng-if='model.split' 
 		ng-bind-html='(model.dataProviderID == null || model.dataProviderID.url ? model.text + (!model.split ? "<span class=\"caret\"></span>" : "") : (model.dataProviderID ? model.dataProviderID : "&nbsp;" )) | formatFilter:model.format.display:model.format.type | mnemonicletterFilter:model.mnemonic'/>
-	<button 
+	<button
 		type="button" 
 		class="uibootstrap-dropdown btn {{model.buttonStyle}} dropdown-toggle {{model.buttonSize}}"
 		data-toggle="dropdown" 
-		ng-disabled='model.enabled == false' 
+		ng-disabled='model.enabled == false'
+		sablo-tabseq='model.tabSeq'
 		svy-tooltip='model.toolTipText' 
 		ng-if='model.split'>
 			<span class="caret"></span>

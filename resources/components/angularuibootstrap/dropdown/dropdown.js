@@ -23,10 +23,36 @@ angular.module('angularuibootstrapDropdown', ['servoy']).directive('angularuiboo
 				$scope.model.noDropDown = "btn " + $scope.model.buttonStyle + $scope.model.buttonDropDownToggle;
 			},
 			controller: function($scope, $element, $attrs) {
-				$scope.style = {
-					width: '100%',
-					height: '100%',
-					overflow: 'hidden'
+				$scope.style = {};
+				
+				$scope.getWidth = function () {
+					$element
+				}
+				
+				/* TODO Switch in bootstrap */
+				$scope.style.main = {
+					"width": '100%',
+					"height": '100%'
+				}
+				
+				$scope.style.single = {
+					"width":"100%",
+					"overflow": "hidden",
+					"height": '100%'
+				}
+				
+				$scope.style.button = {
+					"width":"100%",
+					"overflow": "hidden",
+					"height": '100%',
+					"margin-right": "-26px"
+				}
+				
+				$scope.style.drop = {
+					"width": "auto",
+					"position": "absolute",
+					"right": "0px",
+					"height": '100%'
 				}
 
 				$scope.itemSelected = function(realValue, displayValue, event) {
