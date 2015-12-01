@@ -161,7 +161,7 @@ uuid:"8755DBF9-4B97-461B-BB75-9CA5E2AD67FC"
 json:{
 split:true,
 tabSeq:4,
-text:"focus"
+text:"<i>Italic<\/i> %%i18n:servoy.general.status.ready%%"
 },
 location:"400,221",
 name:"dropdown_tagstring",
