@@ -188,6 +188,14 @@ typeid:47,
 uuid:"ADF1E299-10A6-4AD8-9138-13BD38180EEC"
 },
 {
+location:"251,532",
+onActionMethodID:"3625BEA0-209F-4D08-97B4-7CDE717346A9",
+size:"80,32",
+text:"set vl",
+typeid:7,
+uuid:"AF505C19-DBDD-48CC-BF2D-E021131F9730"
+},
+{
 extendsID:"424EF626-8CC5-42EE-89F0-747BAB701317",
 tabSeq:-2,
 typeid:7,
@@ -263,6 +271,21 @@ size:"196,34",
 typeName:"angularuibootstrap-dropdown",
 typeid:47,
 uuid:"CB0E5CB3-C176-45D0-A926-86CCEE47768B"
+},
+{
+json:{
+onMenuItemSelected:"D021B075-E969-48DC-9F38-FE682535DF73",
+split:true,
+tabSeq:5,
+text:"set valuelist",
+valuelist:"88AE3F64-B7B9-4EF7-B447-704DECD15152"
+},
+location:"87,532",
+name:"dropdown_setvaluelist",
+size:"150,34",
+typeName:"angularuibootstrap-dropdown",
+typeid:47,
+uuid:"CEA66BEB-31B5-4D24-B6AA-70FF15D8F0EC"
 },
 {
 extendsID:"521E2724-FA7F-4814-B100-55F84F1070E3",

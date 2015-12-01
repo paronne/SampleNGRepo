@@ -61,7 +61,7 @@
 			"parameters": [
 				{                                                                 
 					"name":"value",
-					"type":"dataset"
+					"type": {"type" :"dataset", "includeColumnNames": true, "columnTypes":[{ "display_values" : "object" }, {"real_values" : "object"}]}
 				}             
 			]
 		}

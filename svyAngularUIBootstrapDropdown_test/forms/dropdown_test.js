@@ -52,3 +52,23 @@ function onMenuItemSelected(realValue, displayValue, event) {
 	log("Item selected element:" + event.getElementName() +  " realValue:" + realValue + " displayValue:" + displayValue);
 	varString = realValue;
 }
+
+/**
+ * Perform the element default action.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @protected
+ *
+ * @properties={typeid:24,uuid:"3625BEA0-209F-4D08-97B4-7CDE717346A9"}
+ */
+function testSetValuelistItems(event) {
+	
+	var dataset = databaseManager.createEmptyDataSet(0,new Array('display_values','real_values'));
+	dataset.addRow(['A',1]);
+	dataset.addRow(['B',2]);
+	dataset.addRow(['C',3]);
+	dataset.addRow(['D',4]);
+	dataset.addRow(['E',5]);
+	elements.dropdown_setvaluelist.setValueListItems(dataset);	
+}
