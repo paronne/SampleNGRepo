@@ -1,6 +1,7 @@
 <div class="btn-group" ng-style="style.main">
 	<button
-		class='uibootstrap-dropdown btn {{model.buttonStyle}} dropdown-toggle {{model.buttonSize}}'
+		class="uibootstrap-dropdown btn btn-default dropdown-toggle"
+		ng-class="model.styleClass"
 		id="{{model.markupId}}" 
 		ng-model="model.dataprovider" 
 		ng-disabled='model.enabled == false' 
@@ -14,7 +15,8 @@
 		ng-bind-html='(model.dataProviderID == null || model.dataProviderID.url ? model.text + (!model.split ? "<span class=\"caret\"></span>" : "") : model.dataProviderID ) | formatFilter:model.format.display:model.format.type | mnemonicletterFilter:model.mnemonic'/>
 	<button
 		ng-click="handlers.onActionMethodID($event)"
-		class='uibootstrap-dropdown btn {{model.buttonStyle}} {{model.buttonSize}}'
+		class="uibootstrap-dropdown btn btn-default"
+		ng-class="model.styleClass"
 		id="{{model.markupId}}" 
 		ng-model="model.dataprovider" 
 		ng-disabled='model.enabled == false' 
@@ -27,7 +29,8 @@
 		ng-bind-html='(model.dataProviderID == null || model.dataProviderID.url ? model.text + (!model.split ? "<span class=\"caret\"></span>" : "") : (model.dataProviderID ? model.dataProviderID : "&nbsp;" )) | formatFilter:model.format.display:model.format.type | mnemonicletterFilter:model.mnemonic'/>
 	<button
 		type="button" 
-		class="uibootstrap-dropdown btn {{model.buttonStyle}} dropdown-toggle {{model.buttonSize}}"
+		class="uibootstrap-dropdown btn btn-default dropdown-toggle"
+		ng-class="model.styleClass"
 		data-toggle="dropdown" 
 		ng-disabled='model.enabled == false'
 		sablo-tabseq='model.tabSeq'

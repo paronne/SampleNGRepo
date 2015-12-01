@@ -176,6 +176,7 @@ buttonStyle:"btn-primary",
 enabled:true,
 horizontalAlignment:-1,
 split:true,
+styleClass:"btn-primary",
 tabSeq:14,
 text:"styled"
 },
@@ -288,6 +289,7 @@ uuid:"DED0D700-1E4A-4D7A-805C-A4F81F0ABFB2"
 {
 json:{
 split:false,
+styleClass:"btn-primary",
 tabSeq:9,
 text:"Thick"
 },
