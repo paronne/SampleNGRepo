@@ -29,6 +29,22 @@ uuid:"09115877-9089-433D-87AE-E782211D2F9F"
 },
 {
 json:{
+onFocusGainedMethodID:"C3D6E65D-213E-4A33-B174-EC52BFAE85E0",
+onFocusLostMethodID:"997D7717-680C-474C-9B68-62F5693D059A",
+split:true,
+tabSeq:3,
+text:"focus",
+toolTipText:"sample tooltip"
+},
+location:"86,221",
+name:"dropdown_focus",
+size:"150,34",
+typeName:"angularuibootstrap-dropdown",
+typeid:47,
+uuid:"1A95E311-69B3-42F3-8308-7A8C521FD710"
+},
+{
+json:{
 split:true,
 tabSeq:12,
 text:"dropdown with very very very long text"
@@ -94,7 +110,7 @@ text:"Long List",
 toolTipText:"sample tooltip",
 valuelist:"098982E6-75DA-4CE1-B495-A07A18EB1CDA"
 },
-location:"86,378",
+location:"86,430",
 name:"dropdown_long_list",
 size:"150,34",
 typeName:"angularuibootstrap-dropdown",
@@ -134,7 +150,7 @@ tabSeq:6,
 toolTipText:"sample tooltip",
 valuelist:"43EC19C2-BCA1-4038-B021-C64DDAB221E6"
 },
-location:"86,324",
+location:"86,376",
 name:"dropdown_dataprovider",
 size:"150,34",
 typeName:"angularuibootstrap-dropdown",
@@ -145,7 +161,7 @@ uuid:"8755DBF9-4B97-461B-BB75-9CA5E2AD67FC"
 json:{
 split:true,
 tabSeq:4,
-text:"<i>Italic<\/i> %%i18n:servoy.general.status.ready%%"
+text:"focus"
 },
 location:"400,221",
 name:"dropdown_tagstring",
@@ -209,7 +225,7 @@ text:"numbers",
 toolTipText:"sample tooltip",
 valuelist:"43EC19C2-BCA1-4038-B021-C64DDAB221E6"
 },
-location:"86,273",
+location:"86,325",
 name:"dropdown_numbers",
 size:"150,34",
 typeName:"angularuibootstrap-dropdown",
@@ -240,7 +256,7 @@ toolTipText:"sample tooltip",
 valuelist:"6A13F594-9FD6-41E1-8CCC-BF0F281B1631",
 visible:true
 },
-location:"86,433",
+location:"86,485",
 name:"dropdown_wide_list",
 size:"196,34",
 typeName:"angularuibootstrap-dropdown",
@@ -262,7 +278,7 @@ text:"empty value",
 toolTipText:"sample tooltip",
 valuelist:"88AE3F64-B7B9-4EF7-B447-704DECD15152"
 },
-location:"86,221",
+location:"86,273",
 name:"dropdown_emptyv",
 size:"150,34",
 typeName:"angularuibootstrap-dropdown",

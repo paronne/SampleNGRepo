@@ -22,7 +22,12 @@
 		"split": {"type":"boolean", "default":false, "tags":{"scope":"design"}}
 	},
 	"handlers": {
-		"onActionMethodID": "function",
+		"onActionMethodID": {		
+			"parameters" : [{
+						    	"name":"event",
+								"type":"JSEvent"
+							}]
+		},
 		"onMenuItemSelected": {
 				"parameters" : [								{
 						          "name":"realValue",
@@ -36,6 +41,18 @@
 						          "name":"event",
 								  "type":"JSEvent"
 								}]
+		},
+		"onFocusGainedMethodID": {		
+			"parameters" : [{
+						    	"name":"event",
+								"type":"JSEvent"
+							}]
+		},
+		"onFocusLostMethodID": {		
+			"parameters" : [{
+						    	"name":"event",
+								"type":"JSEvent"
+							}]
 		}
 	},
 	"api": {
