@@ -1,0 +1,7 @@
+addEmptyValue:1,
+customValues:"<marquee>Hello<\/marquee>Left is a really long value which takes a lot fo space|-1\r\
+Middle|0\r\
+Right|1",
+name:"wideList",
+typeid:34,
+uuid:"6A13F594-9FD6-41E1-8CCC-BF0F281B1631"
