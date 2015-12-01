@@ -11,6 +11,58 @@
 <thead>
 <tr><td rowspan="1" colspan="3">dropdown_long_list</td></tr>
 </thead><tbody>
+<!--Test dropdown with long option list-->
+<tr>
+	<td>open</td>
+	<td>/solutions/svyAngularUIBootstrapDropdown_test/index.html?f=buttonsRadio</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_list']/div/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_list']/div/ul/li/a</td>
+	<td></td>
+</tr>
+<!--Verify max list height is 300 px-->
+<tr>
+	<td>verifyNotVisible</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_list']/div/ul/li[50]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_list']/div/button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyVisible</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_list']/div/ul/li[50]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementHeight</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_list']/div/ul</td>
+	<td>300</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_list']/div/ul/li[50]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_list']/div/ul/li[50]/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//data-servoydefault-button[@data-svy-name='dropdown_test.btn_shutdown']/button</td>
+	<td></td>
+</tr>
 
 </tbody></table>
 </body>

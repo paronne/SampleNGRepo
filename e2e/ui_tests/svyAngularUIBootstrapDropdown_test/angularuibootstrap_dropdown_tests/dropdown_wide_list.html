@@ -11,6 +11,53 @@
 <thead>
 <tr><td rowspan="1" colspan="3">dropdown_wide_list</td></tr>
 </thead><tbody>
+<!--Test dropdown with long option list-->
+<tr>
+	<td>open</td>
+	<td>/solutions/svyAngularUIBootstrapDropdown_test/index.html?f=buttonsRadio</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_wide_list']/div/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertNotVisible</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_wide_list']/div/ul/li/a</td>
+	<td></td>
+</tr>
+<!--Verify dropdown is wider then button-->
+<tr>
+	<td>click</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_wide_list']/div/button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_wide_list']/div/ul/li/a</td>
+	<td></td>
+</tr>
+<tr>
+	<td>storeElementWidth</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_wide_list']/div/button</td>
+	<td>buttonWidth</td>
+</tr>
+<tr>
+	<td>storeElementWidth</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_wide_list']/div/ul</td>
+	<td>dropdownWidth</td>
+</tr>
+<tr>
+	<td>verifyEval</td>
+	<td>${dropdownWidth} &gt; ${buttonWidth}</td>
+	<td>true</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//data-servoydefault-button[@data-svy-name='dropdown_test.btn_shutdown']/button</td>
+	<td></td>
+</tr>
 
 </tbody></table>
 </body>

@@ -11,15 +11,17 @@
 <tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_core.html">dropdown_core</a></td></tr>
 <tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_action.html">dropdown_action</a></td></tr>
 <tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_onMenuItemSelected.html">dropdown_onMenuItemSelected</a></td></tr>
+<tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_onFocus.html">dropdown_onFocus</a></td></tr>
 <tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_dataprovider.html">dropdown_dataprovider</a></td></tr>
+<tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_valuelistWithEmptyValue.html">dropdown_valuelistWithEmptyValue</a></td></tr>
 <tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_disabled.html">dropdown_disabled</a></td></tr>
+<tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_tabseq.html">dropdown_tabseq</a></td></tr>
 <tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_long_list.html">dropdown_long_list</a></td></tr>
+<tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_wide_list.html">dropdown_wide_list</a></td></tr>
 <tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_long_text.html">dropdown_long_text</a></td></tr>
 <tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_styled.html">dropdown_styled</a></td></tr>
 <tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_tagstring.html">dropdown_tagstring</a></td></tr>
 <tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_tooltip.html">dropdown_tooltip</a></td></tr>
-<tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_valuelistWithEmptyValue.html">dropdown_valuelistWithEmptyValue</a></td></tr>
-<tr><td><a href="angularuibootstrap_dropdown_tests/dropdown_wide_list.html">dropdown_wide_list</a></td></tr>
 </tbody></table>
 </body>
 </html>

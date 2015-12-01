@@ -4,14 +4,14 @@
 <head profile="http://selenium-ide.openqa.org/profiles/test-case">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <link rel="selenium.base" href="http://localhost:8080/" />
-<title>dropdown_action</title>
+<title>dropdown_onFocus</title>
 </head>
 <body>
 <table cellpadding="1" cellspacing="1" border="1">
 <thead>
-<tr><td rowspan="1" colspan="3">dropdown_action</td></tr>
+<tr><td rowspan="1" colspan="3">dropdown_onFocus</td></tr>
 </thead><tbody>
-<!--Test the onAction method-->
+<!--Test on Focus Gained event-->
 <tr>
 	<td>open</td>
 	<td>/solutions/svyAngularUIBootstrapDropdown_test/index.html?f=buttonsRadio</td>
@@ -19,30 +19,31 @@
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_main']/div/button</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_focus']/div/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForElementPresent</td>
-	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_main']/div/button[2]</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_focus']/div/button[2]</td>
 	<td></td>
 </tr>
-<!--verify onAction method-->
+<!--verify onFocusGained method-->
 <tr>
 	<td>click</td>
-	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_main']/div/button</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_focus']/div/button</td>
 	<td></td>
 </tr>
 <tr>
 	<td>waitForValue</td>
 	<td>//textarea[@data-svy-name='dropdown_test.log']</td>
-	<td>exact:Action: element dropdown_main<br /></td>
+	<td>exact:Focus Gained: element dropdown_focus<br /></td>
 </tr>
 <tr>
 	<td>clickAndWait</td>
 	<td>//data-servoydefault-button[@data-svy-name='dropdown_test.btn_shutdown']/button</td>
 	<td></td>
 </tr>
+
 </tbody></table>
 </body>
 </html>

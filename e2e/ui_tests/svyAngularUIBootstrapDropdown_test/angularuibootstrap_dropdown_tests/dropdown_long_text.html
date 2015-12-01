@@ -11,6 +11,75 @@
 <thead>
 <tr><td rowspan="1" colspan="3">dropdown_long_text</td></tr>
 </thead><tbody>
+<!--Test buttons with long text-->
+<tr>
+	<td>open</td>
+	<td>/solutions/svyAngularUIBootstrapDropdown_test/index.html?f=buttonsRadio</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt']/div/button</td>
+	<td></td>
+</tr>
+<!--Verify max width is 150 with no split-->
+<tr>
+	<td>verifyElementWidth</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt']/div/button</td>
+	<td>150</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt']/div/button</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt']/div/ul</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementWidth</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt']/div/ul</td>
+	<td>150</td>
+</tr>
+<!--Verify max width is 150 on split-->
+<tr>
+	<td>verifyElementWidth</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt_split']/div/button</td>
+	<td>150</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt_split']/div/button[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt_split']/div/ul</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementWidth</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt_split']/div/ul</td>
+	<td>150</td>
+</tr>
+<!--Verify split button is on the same y position of the first button-->
+<tr>
+	<td>storeElementPositionTop</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt_split']/div/button[2]</td>
+	<td>splitPositionY</td>
+</tr>
+<tr>
+	<td>verifyElementPositionTop</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_long_txt_split']/div/button</td>
+	<td>${splitPositionY}</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//data-servoydefault-button[@data-svy-name='dropdown_test.btn_shutdown']/button</td>
+	<td></td>
+</tr>
 
 </tbody></table>
 </body>
