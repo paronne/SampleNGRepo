@@ -70,5 +70,34 @@ function testSetValuelistItems(event) {
 	dataset.addRow(['C',3]);
 	dataset.addRow(['D',4]);
 	dataset.addRow(['E',5]);
-	elements.dropdown_setvaluelist.setValueListItems(dataset);	
+	elements.dropdown_api_setvaluelist.setValueListItems(dataset);	
+}
+
+/**
+ * Perform the element default action.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @protected
+ *
+ * @properties={typeid:24,uuid:"07509A1C-FE88-4CE7-BF60-66F0DE50510D"}
+ */
+function testOpenDropdown(event) {
+	elements.dropdown_api_open.setDropdownOpen(true);
+	log("Dropdown open:" + elements.dropdown_api_open.isDropdownOpen())
+}
+
+/**
+ * Perform the element default action.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @protected
+ *
+ * @properties={typeid:24,uuid:"1F792739-B7EB-4459-B38A-49B8E76927BB"}
+ */
+function testCloseDropdown(event) {
+	elements.dropdown_api_open.setDropdownOpen(false);
+	log("Dropdown open:" + elements.dropdown_api_open.isDropdownOpen());
+	
 }

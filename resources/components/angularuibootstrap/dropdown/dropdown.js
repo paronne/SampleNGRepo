@@ -4,9 +4,11 @@ angular.module('angularuibootstrapDropdown', ['servoy']).directive('angularuiboo
 			scope: {
 				model: "=svyModel",
 				handlers: "=svyHandlers",
-				api: "=svyApi"
+				api: "=svyApi",
+				servoyApi: "=svyServoyapi"
 			},
 			link: function($scope, $element, $attrs) {
+				
 				/**
 				 * Sets the display/real values to the custom valuelist of the element (if element has custom valuelist). This does not effect the value list with same name list on other elements or value lists at application level. Should receive a dataset parameter, first column is for display values, second column (optional) is for real values. NOTE: if you modify values for checkbox/radio field, note that having one value in valuelist is a special case, so switching between one value and 0/multiple values after form is created may have side effects
 				 *
@@ -18,8 +20,8 @@ angular.module('angularuibootstrapDropdown', ['servoy']).directive('angularuiboo
 				 * elements.elem.setValueListItems(dataset);
 				 *
 				 * @param {Object} dataset first column is display value, second column is real value
-				 * 
-				 */
+				 *
+				 * */
 				$scope.api.setValueListItems = function(dataset) {
 					var valuelistItems = [];
 					for (var i = 1; i < dataset.length; i++) {
@@ -31,7 +33,24 @@ angular.module('angularuibootstrapDropdown', ['servoy']).directive('angularuiboo
 						valuelistItems.push(item);
 					}
 					$scope.model.valuelist = valuelistItems;
+				}	
+				
+				/**
+				 * Open the dropdown menu
+				 * 
+				 * @param {Boolean} isopen
+				 * 
+				 * */
+				$scope.api.setDropdownOpen = function(isopen) {
+					$scope.model.isopen = isopen;
 				}
+
+				/**
+				 * returns true if the dropdown is open
+				 * */
+				$scope.api.isDropdownOpen = function() {
+					return $scope.model.isopen;
+				}				
 				
 				$scope.model.buttonDropDownToggle = (!$scope.model.split ? " dropdown-toggle" : "");
 				$scope.model.noDropDown = "btn " + $scope.model.buttonStyle + $scope.model.buttonDropDownToggle;

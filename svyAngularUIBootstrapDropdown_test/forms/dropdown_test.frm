@@ -103,6 +103,20 @@ uuid:"58DF00FE-ADCB-4BAA-A3C7-33D9E474535E"
 },
 {
 json:{
+split:true,
+tabSeq:5,
+text:"api open",
+valuelist:"88AE3F64-B7B9-4EF7-B447-704DECD15152"
+},
+location:"87,581",
+name:"dropdown_api_open",
+size:"150,34",
+typeName:"angularuibootstrap-dropdown",
+typeid:47,
+uuid:"5AE9C661-5CBE-4998-AA81-2649E344F2F1"
+},
+{
+json:{
 onMenuItemSelected:"D021B075-E969-48DC-9F38-FE682535DF73",
 split:true,
 tabSeq:8,
@@ -190,16 +204,32 @@ uuid:"ADF1E299-10A6-4AD8-9138-13BD38180EEC"
 {
 location:"251,532",
 onActionMethodID:"3625BEA0-209F-4D08-97B4-7CDE717346A9",
-size:"80,32",
+size:"92,32",
 text:"set vl",
 typeid:7,
 uuid:"AF505C19-DBDD-48CC-BF2D-E021131F9730"
+},
+{
+location:"305,581",
+onActionMethodID:"1F792739-B7EB-4459-B38A-49B8E76927BB",
+size:"39,32",
+text:"close",
+typeid:7,
+uuid:"AF8832D0-CBF6-4CC2-9139-B7551D2E9AAA"
 },
 {
 extendsID:"424EF626-8CC5-42EE-89F0-747BAB701317",
 tabSeq:-2,
 typeid:7,
 uuid:"B286F51F-777C-4AE8-8915-BEA89F9C14B5"
+},
+{
+location:"254,581",
+onActionMethodID:"07509A1C-FE88-4CE7-BF60-66F0DE50510D",
+size:"39,32",
+text:"open",
+typeid:7,
+uuid:"B3C75F28-3B98-4212-A166-2A6060130453"
 },
 {
 json:{
@@ -277,11 +307,11 @@ json:{
 onMenuItemSelected:"D021B075-E969-48DC-9F38-FE682535DF73",
 split:true,
 tabSeq:5,
-text:"set valuelist",
+text:"api setvaluelist",
 valuelist:"88AE3F64-B7B9-4EF7-B447-704DECD15152"
 },
 location:"87,532",
-name:"dropdown_setvaluelist",
+name:"dropdown_api_setvaluelist",
 size:"150,34",
 typeName:"angularuibootstrap-dropdown",
 typeid:47,
