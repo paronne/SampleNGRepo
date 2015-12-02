@@ -229,6 +229,29 @@
 	        importClass(java.io.BufferedReader);
 	        importClass(java.io.FileWriter);
 	        importClass(java.io.BufferedWriter);
+
+	        // recursive function to get all files in directory having matching criteria
+	       	function getFiles(directoryPath, files) {
+	        	var directory = new File(directoryPath);
+
+	        	// get all the files from a directory
+				var fList = directory.listFiles();
+				for (var j=0; j<fList.length; j++) {
+				   	var file = fList[j];
+//				   	echo = project.createTask("echo");
+//		            echo.setMessage("dir " + j + " " + file );
+//		            echo.perform();
+				    if (file.isFile()) {
+				    	// only test suites with name *_test
+				    	var reg = new RegExp(/_test$/)
+				    	if (reg.test(file)) {
+				    		files.push(file);
+				    	}
+				    } else if (file.isDirectory()) {
+				        getFiles(file.getAbsolutePath(), files);
+				    }
+				}
+			}
 	        
 	        // read properties from file selrunner.config.json
 	        echo = project.createTask("echo");
@@ -269,7 +292,8 @@
 //		        for (var i =0; i<solutionNames.length; i++) {
 
 				var cmdLine = "/c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");		// Windows
-				var cmdLineUnix = "-jar ./selenese-runner.jar -c ./" + project.getProperty("selrunner.conf") + " ./ui_tests/svyAngularUIBootstrapButtonsRadio_test/angularuibootstrap_buttons_radio_test";	// Unix
+				var cmdLineUnix = "-jar ./selenese-runner.jar -c ./" + project.getProperty("selrunner.conf"); 		// Unix
+				//"./ui_tests/svyAngularUIBootstrapButtonsRadio_test/angularuibootstrap_buttons_radio_test";	
 
 				// add each option specified in the selrunner.config
 		        for (option in struct[config]) {
@@ -286,9 +310,24 @@
 		        var testDir = project.getProperty("selrunner.load.dir")
 		        var solutionNames = project.getProperty("selrunner.solution.name").split(",");
 		        for (var i =0; i<solutionNames.length; i++) {
-		        	cmdLine += " " + testDir + "\\" + solutionNames[i].trim() + "\\*_test";		// Windows
+		        	//cmdLine += " " + testDir + "\\" + solutionNames[i].trim() + "\\*_test";		// Windows
 		        	//cmdLineUnix += " " + project.getProperty("basedir") + "/" + testDir + "/" + solutionNames[i].trim() + "/*_test";		// Unix
-		        }
+
+		           	var files = [];
+		           	var filesUnix = [];
+				   	var directory = new File(testDir + "\\" + solutionNames[i].trim());
+				   	var directoryUnix = new File(testDir + "/" + solutionNames[i].trim());
+
+				   	getFiles(directory, files);
+				   	getFiles(directoryUnix, filesUnix);
+
+				   	echo = project.createTask("echo");
+		           	echo.setMessage("length " + files.length + " " + filesUnix.length + " " + filesUnix.join(""));
+		           	echo.perform();
+
+		        	cmdLine += " " + files.join("");			// Windows
+		        	cmdLineUnix += " " + filesUnix.join("")		// Unix
+				}
 
 				cmdsWin = cmdsWin + cmdLine + ",";
 				cmdsUnix = cmdsUnix + cmdLineUnix + ",";
