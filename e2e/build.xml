@@ -315,8 +315,8 @@
 
 		           	var files = [];
 		           	var filesUnix = [];
-				   	var directory = new File(testDir + "\\" + solutionNames[i].trim());
-				   	var directoryUnix = new File(testDir + "/" + solutionNames[i].trim());
+				   	var directory = testDir + "\\" + solutionNames[i].trim();
+				   	var directoryUnix = testDir + "/" + solutionNames[i].trim();
 
 				   	getFiles(directory, files);
 				   	getFiles(directoryUnix, filesUnix);
