@@ -234,20 +234,14 @@
 	       	function getFiles(directoryPath, files) {
 	        	var directory = new File(directoryPath);
 
-	        	// get all the files from a directory
 				var fList = directory.listFiles();
 				if (!fList) {
-					echo = project.createTask("echo");
-		            echo.setMessage("No files in directory " + directoryPath);
-		            echo.perform();
 		            return;
 				}
 
+	        	// get all the files from a directory
 				for (var j=0; j<fList.length; j++) {
 				   	var file = fList[j];
-//				   	echo = project.createTask("echo");
-//		            echo.setMessage("dir " + j + " " + file );
-//		            echo.perform();
 				    if (file.isFile()) {
 				    	// only test suites with name *_test
 				    	var reg = new RegExp(/_test$/)
@@ -299,7 +293,7 @@
 //		        for (var i =0; i<solutionNames.length; i++) {
 
 				var cmdLine = "/c java -jar selenese-runner.jar -c " + project.getProperty("selrunner.conf");		// Windows
-				var cmdLineUnix = "-jar ./selenese-runner.jar -c ./" + project.getProperty("selrunner.conf"); 		// Unix
+				var cmdLineUnix = "-jar ./selenese-runner.jar -c " + project.getProperty("selrunner.conf"); 		// Unix
 				//"./ui_tests/svyAngularUIBootstrapButtonsRadio_test/angularuibootstrap_buttons_radio_test";	
 
 				// add each option specified in the selrunner.config
@@ -333,7 +327,7 @@
 		           	echo.perform();
 
 		        	cmdLine += " " + files.join("");			// Windows
-		        	cmdLineUnix += " " + filesUnix.join("")		// Unix
+		        	cmdLineUnix += " ./" + filesUnix.join("")		// Unix
 				}
 
 				cmdsWin = cmdsWin + cmdLine + ",";
