@@ -236,6 +236,13 @@
 
 	        	// get all the files from a directory
 				var fList = directory.listFiles();
+				if (!fList) {
+					echo = project.createTask("echo");
+		            echo.setMessage("No files in directory " + directoryPath);
+		            echo.perform();
+		            return;
+				}
+
 				for (var j=0; j<fList.length; j++) {
 				   	var file = fList[j];
 //				   	echo = project.createTask("echo");
