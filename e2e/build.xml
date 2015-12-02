@@ -326,8 +326,8 @@
 		           	echo.setMessage("length " + files.length + " " + filesUnix.length + " " + filesUnix.join(""));
 		           	echo.perform();
 
-		        	cmdLine += " " + files.join("");			// Windows
-		        	cmdLineUnix += " ./" + filesUnix.join("")		// Unix
+		        	cmdLine += " " + files.join(" ");			// Windows
+		        	cmdLineUnix += " ./" + filesUnix.join(" ")		// Unix
 				}
 
 				cmdsWin = cmdsWin + cmdLine + ",";
