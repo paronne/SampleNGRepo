@@ -23,29 +23,29 @@
 	<td></td>
 </tr>
 <tr>
-	<td>verifyNotEditable</td>
+	<td>assertNotEditable</td>
 	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_disabled']/div/button</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyNotEditable</td>
+	<td>assertNotEditable</td>
 	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_disabled']/div/button[2]</td>
 	<td></td>
 </tr>
-<!--default is enabled-->
+<!--verify the dropdown is not shown-->
 <tr>
-	<td>waitForElementPresent</td>
-	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_disabled']/div/button</td>
+	<td>verifyNotVisible</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_disabled']/div/ul</td>
 	<td></td>
 </tr>
 <tr>
-	<td>verifyEditable</td>
-	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_main']/div/button</td>
-	<td></td>
+	<td>fireEvent</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_disabled']/div</td>
+	<td>click</td>
 </tr>
 <tr>
-	<td>verifyEditable</td>
-	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_main']/div/button[2]</td>
+	<td>assertNotVisible</td>
+	<td>//data-angularuibootstrap-dropdown[@data-svy-name='dropdown_test.dropdown_disabled']/div/ul</td>
 	<td></td>
 </tr>
 </tbody></table>
