@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-Name: JQuery 3PLibs
+Bundle-SymbolicName: jquery3partylibs
+
+Name: select2AutoTokenizer/select2AutoTokenizer.spec
+Web-Component: True
+

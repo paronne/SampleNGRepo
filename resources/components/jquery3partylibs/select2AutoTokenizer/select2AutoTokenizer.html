@@ -1,0 +1,14 @@
+<div svy-border='model.borderType'
+	 svy-background='model.transparent ? "transparent" : model.background'
+	 svy-foreground='model.foreground'
+	 svy-margin='model.margin'
+	 svy-font='model.fontType'
+     ng-style="style" 
+     svy-tooltip='model.toolTipText' >
+	<input 
+		id="{{::model.svyMarkupId}}" 
+		style="width:100%" 
+		tabindex="-1" 
+		class="select2-offscreen" 
+		value={{model.dataprovider}}>
+</div>
