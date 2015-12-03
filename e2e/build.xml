@@ -210,6 +210,7 @@
 			<and>
 				<equals arg1="${selrunner.failonerror}" arg2="true"/>
 				<or>
+					<equals arg1="${exitCode}" arg2="1"/>
 	            	<equals arg1="${exitCode}" arg2="3"/>
 	            	<equals arg1="${exitCode}" arg2="4"/>
 	            	<equals arg1="${exitCode}" arg2="5"/>
