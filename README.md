@@ -17,13 +17,12 @@
 
 ### Description
 
-The entry point is build.xml. It takes a servoy solution project (the 'hello' folder), exports it as a war file ('e2e/war_export/hello.war'), starts a tomcat server instance (the 'apache-tomcat-8.0.24' folder),  deploys the war, runs the protractor test scripts e2e/spec/hello/*_spec.js, undeploys the war file and shuts down tomcat.
+The entry point is build.xml. It takes a servoy solution project (the 'hello' folder), exports it as a war file ('e2e/war_export/hello.war'), starts a tomcat server instance (the 'apache-tomcat-8.0.24' folder),  deploys the war, runs the protractor test scripts e2e/spec/svyAngularUIBootstrapButtonsRadio_test/*_spec.js, runs the selenium test suites e2e/ui_tests/svyAngularUIBootstrapButtonsRadio_test/**/*_test, undeploys the war file and shuts down tomcat.
 
-To add another solution, check out the project (and it's resources project) in the jenkins workpace near the 'hello' project and add its name in test_runner.properties in the variable 'solutions_to_export_as_war_tests'. Eg:
+The script can export as a WAR one active solution per time. To export multiple solution, create a new solution which will reference as modules all the solutions to be exported. Change the name of the solution to export in test_runner.properties in the variable 'solutions_to_export_as_war_tests'. Eg:
 
 ```
-solutions_to_export_as_war_tests			= hello \
-mySolution
+solutions_to_export_as_war_tests			= mySolution
 ```
 
 ### e2e
