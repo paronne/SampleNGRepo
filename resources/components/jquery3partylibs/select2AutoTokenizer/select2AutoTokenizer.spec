@@ -17,9 +17,9 @@
 			"mimetype": "text/css"
 		},
 		{
-			"name": "app.css",
+			"name": "j3pl-select2-autotokenizer.css",
 			"version": "1",
-			"url": "jquery3partylibs/select2AutoTokenizer/css/app.css",
+			"url": "jquery3partylibs/select2AutoTokenizer/css/j3pl-select2-autotokenizer.css",
 			"mimetype": "text/css"
 		}
 	],
@@ -27,33 +27,49 @@
 	{
 		"dataprovider": { "type":"dataprovider", "pushToServer": "allow","tags": { "scope" :"design" }, "ondatachange": { "onchange":"onDataChangeMethodID" }},
 		"valueSeparator" : {"type" :"string", "tags" : {"scope" :"design"}, "values" : [{"NEW_LINE":"new_line"}, {"COMMA": "comma"}], "default" : "new_line"},
-		"transparent" : "boolean",
 		"valuelist": { "type" : "valuelist", "tags": { "scope" :"design" }, "for": "dataprovider"}, 
-		"background" : "color", 
-	    "borderType" : "border", 
-        "editable" : {"type":"boolean", "default":true}, 
-        "enabled" : {"type":"boolean", "default":true}, 
-        "fontType" : "font", 
-        "foreground" : "color", 
-        "location" : "point", 
-        "margin" : {"type" :"insets", "tags": { "scope" :"design" }}, 
-        "placeholderText" : "tagstring", 
+		"visible" : {"type":"boolean", "default":true},
+        "allowNewEntries": {"type": "boolean"}, 
+        "noMatchesFoundText": {"type": "tagstring", "default": "No matches found"},
         "size" : {"type" :"dimension",  "default" : {"width":140, "height":20}}, 
         "tabSeq" : {"type" :"tabseq", "tags": { "scope" :"design" }}, 
+        "placeholderText" : {"type": "tagstring", "default" : "Select..."}, 
         "toolTipText" : "tagstring", 
-        "visible" : {"type":"boolean", "default":true},
-        "maximumSelectionSize": {"type": "int"},
-        "allowNewEntries": {"type": "boolean"}, 
-        "noMatchesFoundText": {"type": "tagstring", "default": "No matches found"}
+        "styleClass" : {"type": "styleclass"},
+        "dataproviderType" : {"type" :"string", "tags" : {"scope" :"design"}, "values" : [{"STRING":"String"}, {"NUMBER": "Number"}, {"BOOLEAN": "Boolean"}], "default" : "String"},
+                
+        "maximumSelectionSize": {"type": "int", "tags": { "scope" :"private" }},
+		"transparent" : {"type" :"boolean", "tags": { "scope" :"private" }},
+		"background" : {"type" :"color", "tags": { "scope" :"private" }}, 
+	    "borderType" : {"type" :"border", "tags": { "scope" :"private" }}, 
+        "fontType" : {"type" :"font", "tags": { "scope" :"private" }}, 
+        "foreground" : {"type" :"color", "tags": { "scope" :"private" }}, 
+        "location" : "point", 
+        "margin" : {"type" :"insets", "tags": { "scope" :"private" }},
+       	"editable" : {"type":"boolean", "default":true, "tags": { "scope" :"private" }}, 
+        "enabled" : {"type":"boolean", "default":true, "tags": { "scope" :"private" }}
+
 	},
 	"handlers":
 	{
-		"onActionMethodID" : "function", 
-		"onDataChangeMethodID" : "function", 
-		"onFocusGainedMethodID" : "function", 
-		"onFocusLostMethodID" : "function", 
-		"onRenderMethodID" : "function", 
-		"onRightClickMethodID" : "function" 
+		"onDataChangeMethodID" : {
+	          "returns": "Boolean", 
+	         	
+	        	"parameters":[
+								{
+						          "name":"oldValue",
+								  "type":"${dataproviderType}"
+								}, 
+								{
+						          "name":"newValue",
+								  "type":"${dataproviderType}"
+								}, 
+								{
+						          "name":"event",
+								  "type":"JSEvent"
+								} 
+							 ]
+		}
 	},
 	"api": 
 	{

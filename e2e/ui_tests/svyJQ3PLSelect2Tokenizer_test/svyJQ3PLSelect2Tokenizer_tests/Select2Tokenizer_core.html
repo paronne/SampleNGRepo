@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8080/" />
+<title>Select2Tokenizer_core</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Select2Tokenizer_core</td></tr>
+</thead><tbody>
+<!--test core functionalities of tokanizer-->
+<tr>
+	<td>open</td>
+	<td>/solutions/svyJQ3PLSelect2Tokanizer_test/index.html?f=select2AutoTokenizer</td>
+	<td></td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>//data-jquery3partylibs-select2autotokenizer[@data-svy-name='select2AutoTokenizer.select2autotokenizer_main']</td>
+	<td>tokenizer</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${tokenizer}//input</td>
+	<td>tokenizerInput</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>//div[contains(@class, 'select2-drop')]</td>
+	<td>select2drop</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${select2drop}/ul/li[contains(@class,'select2-result')]</td>
+	<td>select2result_1</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${select2drop}/ul/li[contains(@class,'select2-result')][2]</td>
+	<td>select2result_2</td>
+</tr>
+<tr>
+	<td>store</td>
+	<td>${tokenizer}//li[contains(@class,'select2-search-choice')]</td>
+	<td>select2choice_1</td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>${tokenizer}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementPresent</td>
+	<td>${select2drop}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyNotVisible</td>
+	<td>${select2drop}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>verifyElementNotPresent</td>
+	<td>${select2result_1}</td>
+	<td></td>
+</tr>
+<!--Select a value-->
+<tr>
+	<td>click</td>
+	<td>${tokenizerInput}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>${select2result_1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertVisible</td>
+	<td>${select2result_1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>mouseUp</td>
+	<td>${select2result_1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForElementPresent</td>
+	<td>${select2choice_1}</td>
+	<td></td>
+</tr>
+<tr>
+	<td>waitForValue</td>
+	<td>//input[@data-svy-name='select2AutoTokenizer.varString']</td>
+	<td>One</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//data-servoydefault-button[@data-svy-name='testBaseUI.btn_shutdown']/button</td>
+	<td></td>
+</tr>
+</tbody></table>
+</body>
+</html>
