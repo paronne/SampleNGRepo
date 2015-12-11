@@ -26,7 +26,6 @@
 	"model":
 	{
 		"dataprovider": { "type":"dataprovider", "pushToServer": "allow","tags": { "scope" :"design" }, "ondatachange": { "onchange":"onDataChangeMethodID" }},
-		"valueSeparator" : {"type" :"string", "tags" : {"scope" :"design"}, "values" : [{"NEW_LINE":"new_line"}, {"COMMA": "comma"}], "default" : "new_line"},
 		"valuelist": { "type" : "valuelist", "tags": { "scope" :"design" }, "for": "dataprovider"}, 
 		"visible" : {"type":"boolean", "default":true},
         "allowNewEntries": {"type": "boolean"}, 
@@ -36,8 +35,10 @@
         "placeholderText" : {"type": "tagstring", "default" : "Select..."}, 
         "toolTipText" : "tagstring", 
         "styleClass" : {"type": "styleclass"},
-        "dataproviderType" : {"type" :"string", "tags" : {"scope" :"design"}, "values" : [{"STRING":"String"}, {"NUMBER": "Number"}, {"BOOLEAN": "Boolean"}], "default" : "String"},
-                
+        "dataproviderType" : {"type" :"string", "tags" : {"scope" :"design"}, "values" : [{"STRING":"String"}, {"NUMBER": "Number"}], "default" : "String"},
+           
+           
+        "valueSeparator" : {"type" :"string", "tags" : {"scope" :"private"}, "values" : [{"NEW_LINE":"new_line"}, {"COMMA": "comma"}], "default" : "new_line"},    
         "maximumSelectionSize": {"type": "int", "tags": { "scope" :"private" }},
 		"transparent" : {"type" :"boolean", "tags": { "scope" :"private" }},
 		"background" : {"type" :"color", "tags": { "scope" :"private" }}, 

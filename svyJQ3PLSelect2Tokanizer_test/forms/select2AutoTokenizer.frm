@@ -123,6 +123,7 @@ uuid:"5E29F06C-B904-438F-86D2-6C43F05396DE"
 displayType:1,
 extendsID:"521E2724-FA7F-4814-B100-55F84F1070E3",
 location:"440,181",
+onDataChangeMethodID:"227BA0B2-FC31-4846-9578-7A7A9F818491",
 size:"140,32",
 typeid:4,
 uuid:"6B93047B-15A5-4E94-850C-9C76A807E076"
@@ -158,7 +159,7 @@ typeid:47,
 uuid:"7733D230-A2FC-4C11-9DD9-4D2F33940B3A"
 },
 {
-enabled:true,
+enabled:false,
 extendsID:"D3E5ED82-BCA2-40DC-AE61-D0F3155C853D",
 location:"18,251",
 typeid:7,
@@ -197,7 +198,7 @@ uuid:"975D7392-78E1-40B0-85D3-E264121AE65A"
 {
 displayType:0,
 editable:true,
-enabled:true,
+enabled:false,
 extendsID:"4B52DF1C-8447-4971-82E4-EDF995D601AF",
 location:"440,250",
 typeid:4,
@@ -256,6 +257,7 @@ json:{
 dataprovider:"varNumber",
 dataproviderType:"Number",
 maximumSelectionSize:0,
+onDataChangeMethodID:"227BA0B2-FC31-4846-9578-7A7A9F818491",
 tabSeq:1,
 toolTipText:"sample tooltip",
 valuelist:"3B175321-805C-4F41-B355-763A65182DC7"
