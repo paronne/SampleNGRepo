@@ -35,7 +35,6 @@
         "placeholderText" : {"type": "tagstring", "default" : "Select..."}, 
         "toolTipText" : "tagstring", 
         "styleClass" : {"type": "styleclass"},
-        "dataproviderType" : {"type" :"string", "tags" : {"scope" :"design"}, "values" : [{"STRING":"String"}, {"NUMBER": "Number"}], "default" : "String"},
            
            
         "valueSeparator" : {"type" :"string", "tags" : {"scope" :"private"}, "values" : [{"NEW_LINE":"new_line"}, {"COMMA": "comma"}], "default" : "new_line"},    

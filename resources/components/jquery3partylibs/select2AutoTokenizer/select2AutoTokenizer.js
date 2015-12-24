@@ -52,15 +52,15 @@ angular.module('jquery3partylibsSelect2autotokenizer', ['servoy']).directive('jq
 				}
 				
 				function isTypeString() {
-					return  $scope.model.dataproviderType === "String"	//!$scope.model.dataprovider || $scope.model.dataprovider.constructor.name === "String"
+					return  !$scope.model.dataprovider || $scope.model.dataprovider.constructor.name === "String"
 				} 
 				
 				function isTypeNan() {
-					return  $scope.model.dataproviderType === "Number"	//$scope.model.dataprovider.constructor.name === "Number"
+					return  $scope.model.dataprovider.constructor.name === "Number"
 				}
 				
 				function isTypeBoolean() {
-					return  $scope.model.dataproviderType === "Boolean" //$scope.model.dataprovider.constructor.name === "Boolean"
+					return  $scope.model.dataprovider.constructor.name === "Boolean"
 				}
 
 				// init svyMarkupId and draw the chart at the next digest
@@ -85,14 +85,12 @@ angular.module('jquery3partylibsSelect2autotokenizer', ['servoy']).directive('jq
 						console.log("triggering change");
 						if (tokenizer) {
 							if ($scope.model.dataprovider) {
-								console.log($scope.model.dataprovider.constructor);
-
 								// split values if is a String convert to string if is a number or Boolean
 								if (isTypeString()) {
 									var value = $scope.model.dataprovider.split("\n");
 									value = value.join(",");
 								} else if ( isTypeNan() || isTypeBoolean()) {
-									value = $scope.model.dataprovider + "";
+									value = $scope.model.dataprovider // + "";
 								} else {
 									console.log("Warning dataProvider typeof " + $scope.model.dataprovider.constructor.name + " not allowed")
 								}
@@ -109,8 +107,7 @@ angular.module('jquery3partylibsSelect2autotokenizer', ['servoy']).directive('jq
 
 				function onChange(e) {
 					console.log("onChange called");
-					console.log(e);
-
+					
 					if ($scope.model.dataproviderType != SEPARATOR.COMMA) {
 						var data = $("#" + $scope.model.svyMarkupId).select2("data");
 						var dpValue;
@@ -118,13 +115,14 @@ angular.module('jquery3partylibsSelect2autotokenizer', ['servoy']).directive('jq
 						if (data && data.length > 0) {
 
 							// split values if is a String convert to string if is a number or Boolean
-							if (isTypeString()) {
+							// When dataprovider is empty i dont know the type of dataprovider. In case is a String
+							if (data.length > 1 && isTypeString()) {
 								dpValue = [];
 								for (var i = 0; i < data.length; i++) {
 									dpValue.push(data[i].id);
 								}
 								dpValue = dpValue.join("\n");
-							} else if ( isTypeNan() || isTypeBoolean()) {
+							} else if ( data.length ==1 || isTypeNan() || isTypeBoolean() ) {
 								dpValue = data[data.length - 1].id;
 							} else {
 								console.log("Warning dataProvider typeof " + $scope.model.dataprovider.constructor.name + " not allowed")
@@ -136,7 +134,7 @@ angular.module('jquery3partylibsSelect2autotokenizer', ['servoy']).directive('jq
 
 						console.log("dpValue " + dpValue + " type " + ( $scope.model.dataprovider ? $scope.model.dataprovider.constructor.name : "undefined" ))
 						// apply change to dataprovider
-						if ($scope.model.dataprovider !== dpValue) {
+						if ($scope.model.dataprovider != dpValue) {
 							$scope.model.dataprovider = dpValue;
 							console.log(dpValue);
 							$scope.svyServoyapi.apply('dataprovider');
