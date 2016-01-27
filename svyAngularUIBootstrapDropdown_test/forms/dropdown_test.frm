@@ -3,6 +3,7 @@ items:[
 {
 json:{
 enabled:false,
+onActionMethodID:"B759A8BC-7396-4871-9AFF-BBC37C199F1C",
 split:true,
 tabSeq:13,
 text:"disabled"
@@ -106,7 +107,7 @@ json:{
 split:true,
 tabSeq:5,
 text:"api open",
-valuelist:"88AE3F64-B7B9-4EF7-B447-704DECD15152"
+valuelist:"753B3DAE-2CE8-4680-89DB-51BF2F8A3061"
 },
 location:"87,581",
 name:"dropdown_api_open",
@@ -122,7 +123,7 @@ split:true,
 tabSeq:8,
 text:"Long List",
 toolTipText:"sample tooltip",
-valuelist:"098982E6-75DA-4CE1-B495-A07A18EB1CDA"
+valuelist:"65B21A11-3A89-453F-889E-0FAF5C7ECDC0"
 },
 location:"86,430",
 name:"dropdown_long_list",
@@ -162,7 +163,7 @@ dataProviderID:"varString",
 split:true,
 tabSeq:6,
 toolTipText:"sample tooltip",
-valuelist:"43EC19C2-BCA1-4038-B021-C64DDAB221E6"
+valuelist:"753B3DAE-2CE8-4680-89DB-51BF2F8A3061"
 },
 location:"86,376",
 name:"dropdown_dataprovider",
@@ -246,7 +247,7 @@ split:true,
 tabSeq:1,
 text:"dropdown",
 toolTipText:"sample tooltip",
-valuelist:"877EBF72-021B-40BC-80BE-55015BFB20A2"
+valuelist:"753B3DAE-2CE8-4680-89DB-51BF2F8A3061"
 },
 location:"86,169",
 name:"dropdown_main",
@@ -262,7 +263,7 @@ split:true,
 tabSeq:5,
 text:"numbers",
 toolTipText:"sample tooltip",
-valuelist:"43EC19C2-BCA1-4038-B021-C64DDAB221E6"
+valuelist:"3B175321-805C-4F41-B355-763A65182DC7"
 },
 location:"86,325",
 name:"dropdown_numbers",
@@ -292,7 +293,7 @@ split:true,
 tabSeq:7,
 text:"Wide List",
 toolTipText:"sample tooltip",
-valuelist:"6A13F594-9FD6-41E1-8CCC-BF0F281B1631",
+valuelist:"9E361376-AD26-48CA-8633-F983C7DC70C6",
 visible:true
 },
 location:"86,485",
@@ -308,7 +309,7 @@ onMenuItemSelected:"D021B075-E969-48DC-9F38-FE682535DF73",
 split:true,
 tabSeq:5,
 text:"api setvaluelist",
-valuelist:"88AE3F64-B7B9-4EF7-B447-704DECD15152"
+valuelist:"753B3DAE-2CE8-4680-89DB-51BF2F8A3061"
 },
 location:"87,532",
 name:"dropdown_api_setvaluelist",
@@ -330,7 +331,7 @@ split:true,
 tabSeq:3,
 text:"empty value",
 toolTipText:"sample tooltip",
-valuelist:"88AE3F64-B7B9-4EF7-B447-704DECD15152"
+valuelist:"AE0EFD23-B9CD-4FBB-B08C-B362E7977C58"
 },
 location:"86,273",
 name:"dropdown_emptyv",
