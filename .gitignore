@@ -1,3 +1,8 @@
 .metadata
 
 resources/datasources/udm2/**
+resources/datasources/myng/**
+
+resources/.settings/**
+
+e2e/ui_tests/basic_test/**
