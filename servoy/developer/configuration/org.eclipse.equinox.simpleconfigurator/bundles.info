@@ -1,7 +1,6 @@
 #encoding=UTF-8
 #version=1
 com.ibm.icu,54.1.1.v201501272100,plugins/com.ibm.icu_54.1.1.v201501272100.jar,4,false
-com.jcraft.jsch,0.1.53.v201508180515,plugins/com.jcraft.jsch_0.1.53.v201508180515.jar,4,false
 com.jcraft.jsch,0.1.51.v201410302000,plugins/com.jcraft.jsch_0.1.51.v201410302000.jar,4,false
 com.servoy.eclipse.core,8.0.2.3024,plugins/com.servoy.eclipse.core_8.0.2.3024.jar,4,false
 com.servoy.eclipse.debug,8.0.2.3024,plugins/com.servoy.eclipse.debug_8.0.2.3024.jar,4,false
@@ -25,7 +24,6 @@ j2db_runtime,8.0.2.3024,plugins/j2db_runtime_8.0.2.3024.jar,4,false
 j2db_server,8.0.2.3024,plugins/j2db_server_8.0.2.3024.jar,4,false
 j2db_tunnel,8.0.2.3024,plugins/j2db_tunnel_8.0.2.3024.jar,4,false
 jabsorb,1.3.3,plugins/jabsorb_1.3.3.jar,4,false
-javaewah,0.7.9.v201401101600,plugins/javaewah_0.7.9.v201401101600.jar,4,false
 javax.annotation,1.2.0.v201401042248,plugins/javax.annotation_1.2.0.v201401042248.jar,4,false
 javax.el,2.2.0.v201303151357,plugins/javax.el_2.2.0.v201303151357.jar,4,false
 javax.inject,1.0.0.v20091030,plugins/javax.inject_1.0.0.v20091030.jar,4,false
@@ -41,7 +39,6 @@ org.apache.batik.util,1.7.0.v201011041433,plugins/org.apache.batik.util_1.7.0.v2
 org.apache.batik.util.gui,1.7.0.v200903091627,plugins/org.apache.batik.util.gui_1.7.0.v200903091627.jar,4,false
 org.apache.commons.codec,1.6.0.v201305230611,plugins/org.apache.commons.codec_1.6.0.v201305230611.jar,4,false
 org.apache.commons.collections,3.2.1,plugins/org.apache.commons.collections_3.2.1.jar,4,false
-org.apache.commons.compress,1.6.0.v201310281400,plugins/org.apache.commons.compress_1.6.0.v201310281400.jar,4,false
 org.apache.commons.dbcp,1.4.0,plugins/org.apache.commons.dbcp_1.4.0.jar,4,false
 org.apache.commons.io,2.4.0,plugins/org.apache.commons.io_2.4.0.jar,4,false
 org.apache.commons.jxpath,1.3.0.v200911051830,plugins/org.apache.commons.jxpath_1.3.0.v200911051830.jar,4,false
@@ -55,7 +52,6 @@ org.apache.httpcomponents.httpclient,4.3.6.v201411290715,plugins/org.apache.http
 org.apache.httpcomponents.httpcore,4.3.3.v201411290715,plugins/org.apache.httpcomponents.httpcore_4.3.3.v201411290715.jar,4,false
 org.apache.james.apache-mime4j,0.6.0,plugins/org.apache.james.apache-mime4j_0.6.0.jar,4,false
 org.apache.jasper.glassfish,2.2.2.v201501141630,plugins/org.apache.jasper.glassfish_2.2.2.v201501141630.jar,4,false
-org.apache.log4j,1.2.15.v201012070815,plugins/org.apache.log4j_1.2.15.v201012070815.jar,4,false
 org.apache.lucene.analysis,3.5.0.v20120725-1805,plugins/org.apache.lucene.analysis_3.5.0.v20120725-1805.jar,4,false
 org.apache.lucene.core,3.5.0.v20120725-1805,plugins/org.apache.lucene.core_3.5.0.v20120725-1805.jar,4,false
 org.apache.tomcat,8.0.28,plugins/org.apache.tomcat_8.0.28.jar,4,false
@@ -145,10 +141,6 @@ org.eclipse.ecf.provider.filetransfer.httpclient4,1.0.1043.v20150512-1727,plugin
 org.eclipse.ecf.provider.filetransfer.httpclient4.ssl,1.0.0.v20150512-1727,plugins/org.eclipse.ecf.provider.filetransfer.httpclient4.ssl_1.0.0.v20150512-1727.jar,4,false
 org.eclipse.ecf.provider.filetransfer.ssl,1.0.0.v20150512-1727,plugins/org.eclipse.ecf.provider.filetransfer.ssl_1.0.0.v20150512-1727.jar,4,false
 org.eclipse.ecf.ssl,1.1.0.v20150512-1727,plugins/org.eclipse.ecf.ssl_1.1.0.v20150512-1727.jar,4,false
-org.eclipse.egit,4.1.1.201511131810-r,plugins/org.eclipse.egit_4.1.1.201511131810-r.jar,4,false
-org.eclipse.egit.core,4.1.1.201511131810-r,plugins/org.eclipse.egit.core_4.1.1.201511131810-r.jar,4,false
-org.eclipse.egit.doc,4.1.1.201511131810-r,plugins/org.eclipse.egit.doc_4.1.1.201511131810-r.jar,4,false
-org.eclipse.egit.ui,4.1.1.201511131810-r,plugins/org.eclipse.egit.ui_4.1.1.201511131810-r.jar,4,false
 org.eclipse.emf.common,2.11.0.v20150512-0501,plugins/org.eclipse.emf.common_2.11.0.v20150512-0501.jar,4,false
 org.eclipse.emf.common.ui,2.9.0.v20140901-1055,plugins/org.eclipse.emf.common.ui_2.9.0.v20140901-1055.jar,4,false
 org.eclipse.emf.ecore,2.11.0.v20150512-0501,plugins/org.eclipse.emf.ecore_2.11.0.v20150512-0501.jar,4,false
@@ -242,8 +234,6 @@ org.eclipse.jetty.util,9.2.9.v20150224,plugins/org.eclipse.jetty.util_9.2.9.v201
 org.eclipse.jface,3.11.0.v20150602-1400,plugins/org.eclipse.jface_3.11.0.v20150602-1400.jar,4,false
 org.eclipse.jface.databinding,1.7.0.v20150406-2148,plugins/org.eclipse.jface.databinding_1.7.0.v20150406-2148.jar,4,false
 org.eclipse.jface.text,3.10.0.v20150603-1752,plugins/org.eclipse.jface.text_3.10.0.v20150603-1752.jar,4,false
-org.eclipse.jgit,4.1.1.201511131810-r,plugins/org.eclipse.jgit_4.1.1.201511131810-r.jar,4,false
-org.eclipse.jgit.archive,4.1.1.201511131810-r,plugins/org.eclipse.jgit.archive_4.1.1.201511131810-r.jar,4,false
 org.eclipse.jsch.core,1.2.0.v20141202-1415,plugins/org.eclipse.jsch.core_1.2.0.v20141202-1415.jar,4,false
 org.eclipse.jsch.ui,1.2.0.v20141202-1415,plugins/org.eclipse.jsch.ui_1.2.0.v20141202-1415.jar,4,false
 org.eclipse.ltk.core.refactoring,3.6.200.v20140826-0859,plugins/org.eclipse.ltk.core.refactoring_3.6.200.v20140826-0859.jar,4,false
@@ -322,13 +312,6 @@ org.sat4j.pb,2.3.5.v201404071733,plugins/org.sat4j.pb_2.3.5.v201404071733.jar,4,
 org.slf4j.api,1.7.2.v20121108-1250,plugins/org.slf4j.api_1.7.2.v20121108-1250.jar,4,false
 org.slf4j.impl.log4j12,1.7.2.v20131105-2200,plugins/org.slf4j.impl.log4j12_1.7.2.v20131105-2200.jar,4,false
 org.sweetlemonade.eclipse.json,1.0.4,plugins/org.sweetlemonade.eclipse.json_1.0.4.jar,4,false
-org.tigris.subversion.clientadapter,1.10.3,plugins/org.tigris.subversion.clientadapter_1.10.3.jar,4,false
-org.tigris.subversion.clientadapter.javahl,1.8.14,plugins/org.tigris.subversion.clientadapter.javahl_1.8.14.jar,4,false
-org.tigris.subversion.clientadapter.javahl.win64,1.8.14,plugins/org.tigris.subversion.clientadapter.javahl.win64_1.8.14/,4,false
-org.tigris.subversion.subclipse.core,1.10.10,plugins/org.tigris.subversion.subclipse.core_1.10.10.jar,4,false
-org.tigris.subversion.subclipse.doc,1.3.0,plugins/org.tigris.subversion.subclipse.doc_1.3.0.jar,4,false
-org.tigris.subversion.subclipse.tools.usage,1.1.0,plugins/org.tigris.subversion.subclipse.tools.usage_1.1.0.jar,4,false
-org.tigris.subversion.subclipse.ui,1.10.9,plugins/org.tigris.subversion.subclipse.ui_1.10.9.jar,4,false
 org.tukaani.xz,1.3.0.v201308270617,plugins/org.tukaani.xz_1.3.0.v201308270617.jar,4,false
 org.w3c.css.sac,1.3.1.v200903091627,plugins/org.w3c.css.sac_1.3.1.v200903091627.jar,4,false
 org.w3c.dom.events,3.0.0.draft20060413_v201105210656,plugins/org.w3c.dom.events_3.0.0.draft20060413_v201105210656.jar,4,false
