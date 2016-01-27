@@ -1,0 +1,1 @@
+C:/Servoy_8_3023/application_server/postgres_db/bin/postgres.exe "-D" "C:/Servoy_8_3023/application_server/database" "-p" "3023"
