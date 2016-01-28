@@ -223,6 +223,7 @@
 
 	<!-- Build the command line to execute selenese-runner java -jar selenese-runner.jar -c ${selrunner.conf} [selrunner.config.json] ui_tests/solName/*_test -->
 	<target name="get_ui_tests_cmd" depends="load_properties">
+		<echo message="this is the base dir ${basedir}"/>
 		<script language="javascript">
 		<![CDATA[
 	 		importClass(java.io.File);
