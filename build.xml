@@ -30,6 +30,7 @@
 	
 	<target name="deploy_war_solutions" depends="export_war_solutions">
 		<echo level="info" message="Trying to deploy the war file."/>
+		<undeploy-war-solution/>
 		<deploy-war-solution/>
 	</target>
 
@@ -162,6 +163,17 @@
 
             <!-- create a property as well -->
            <property name="@{propertyName}" refid="@{pathName}" />
+       </sequential>
+    </macrodef>
+	
+	<macrodef name="undeploy-war-solution">
+	    <attribute name="pathName" default="${solutions_to_export_as_war_tests}"/>
+        <sequential>
+            <!-- store path to newest JAR -->
+			<echo level="info" message="Using pathName : @{pathName}"/>
+			<echo level="info" message="Using war Name : @{warFile}"/>
+			
+            <get src="http://localhost:9090/manager/text/undeploy?path=/@{pathName}" dest="undeploy_log.txt" username="admin-script" password="admin-script"/>
        </sequential>
     </macrodef>
 	
