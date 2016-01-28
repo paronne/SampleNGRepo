@@ -32,6 +32,7 @@
 		<echo level="info" message="Trying to deploy the war file."/>
 		<undeploy-war-solution/>
 		<deploy-war-solution/>
+		<antcall target="e2e/build.xml"/>
 	</target>
 
 
