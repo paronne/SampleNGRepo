@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="test_runner" default="unzip" basedir=".">
+<project name="test_runner" default="deploy_war_solutions" basedir=".">
 
   <target name="load_properties">
 	   <property file="test_runner.properties"/>
