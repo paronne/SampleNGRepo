@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<project name="test_runner" default="deploy_war_solutions" basedir=".">
+<project name="test_runner" default="run_e2e_test" basedir=".">
 
   <target name="load_properties">
 	   <property file="test_runner.properties"/>
@@ -32,7 +32,10 @@
 		<echo level="info" message="Trying to deploy the war file."/>
 		<undeploy-war-solution/>
 		<deploy-war-solution/>
-		<antcall target="e2e/build.xml"/>
+	</target>
+	
+	<target name="run_e2e_test" depends="deploy_war_solutions">
+		<ant antfile="e2e/build.xml"/>
 	</target>
 
 
