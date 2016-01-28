@@ -166,14 +166,14 @@
     </macrodef>
 	
 	<macrodef name="deploy-war-solution">
-	    <attribute name="pathName" default="${solutions_to_export_as_war_tests}2"/>
+	    <attribute name="pathName" default="${solutions_to_export_as_war_tests}"/>
         <attribute name="warFile" default="${basedir}/${servoy.test.target-exports.war}/${solutions_to_export_as_war_tests}.war"/>
         <sequential>
             <!-- store path to newest JAR -->
 			<echo level="info" message="Using pathName : @{pathName}"/>
 			<echo level="info" message="Using war Name : @{warFile}"/>
 			
-            <get src="http://localhost:9090/manager/text/deploy?path=@{pathName}&amp;war=@{warFile}" dest="deploy_log.txt" username="admin-script" password="admin-script"/>
+            <get src="http://localhost:9090/manager/text/deploy?path=/@{pathName}&amp;war=@{warFile}" dest="deploy_log.txt" username="admin-script" password="admin-script"/>
        </sequential>
     </macrodef>
 
