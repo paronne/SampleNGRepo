@@ -29,7 +29,7 @@
     </target>
 	
 	<target name="deploy_war_solutions" depends="export_war_solutions">
-		<echo level="info" message="Trying to deploy the war file.">
+		<echo level="info" message="Trying to deploy the war file."/>
 		<deploy-war-solution/>
 	</target>
 
