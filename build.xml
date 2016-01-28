@@ -8,9 +8,9 @@
 
 	<target name="export_war_solutions" depends="load_properties, clean">
 		<export-solutions-as-war solutionNames="${solutions_to_export_as_war_tests}" outputDir="${servoy.test.target-exports.war}"/>
-    <loadfile property="eclipselog" srcFile=".metadata/.log"/>
-    <echo message="${eclipselog}" />
-  </target>
+		<loadfile property="eclipselog" srcFile=".metadata/.log"/>
+		<echo message="${eclipselog}" />
+	</target>
 
 	<target name="unzip" depends="export_war_solutions">
 	    <echo level="info" message="Trying to unzip war: ${servoy.test.target-exports.war}/${solutions_to_export_as_war_tests}.war"/>
@@ -27,6 +27,11 @@
     <target name="prepare_test_run_log">
 		<move file="${servoy_install.app_server_dir}/servoy_log.txt" tofile="${log.dir}/import_test_client_log.txt" failonerror="false"/>
     </target>
+	
+	<target name="deploy_war_solutions" depends="export_war_solutions">
+		<echo level="info" message="Trying to deploy the war file.">
+		<deploy-war-solution/>
+	</target>
 
 
     <macrodef name="export-solutions-as-war">
@@ -47,6 +52,7 @@
         	<java   classname="org.eclipse.equinox.launcher.Main"
                 	classpathref="equinox.launcher.jar.location"
                 	failonerror="true"
+					resultproperty="export.result"
                 	fork="true">
             	<jvmarg value="-Xms40m" />
             	<jvmarg value="-Xmx512m" />
@@ -90,6 +96,11 @@
 
 				<!--<arg value="-ie" /> -->
         	</java>
+			<condition property="export.failed">
+                <not>
+                    <equals arg1="${export.result}" arg2="0"/>
+                </not>
+            </condition>
     	</sequential>
     </macrodef>
 
@@ -151,6 +162,18 @@
 
             <!-- create a property as well -->
            <property name="@{propertyName}" refid="@{pathName}" />
+       </sequential>
+    </macrodef>
+	
+	<macrodef name="deploy-war-solution">
+	    <attribute name="pathName" default="${solutions_to_export_as_war_tests}"/>
+        <attribute name="warFile" default="${servoy.test.target-exports.war}/${solutions_to_export_as_war_tests}.war"/>
+        <sequential>
+            <!-- store path to newest JAR -->
+			<echo level="info" message="Using pathName : @{pathName}"/>
+			<echo level="info" message="Using war Name : @{warFile}"/>
+			
+            <get src="http://localhost:9090/manager/text/deploy?path=SampleNGRepo&war=e2e/war_export/SampleNGRepo.war" dest="deploy_log.txt" username="admin-script" password="admin-script"/>
        </sequential>
     </macrodef>
 
