@@ -35,7 +35,7 @@
 	</target>
 	
 	<target name="run_e2e_test" depends="deploy_war_solutions">
-		<ant antfile="e2e/build.xml"/>
+		<ant antfile="build.xml" dir="e2e"/>
 	</target>
 
 
