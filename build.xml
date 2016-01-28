@@ -166,8 +166,8 @@
     </macrodef>
 	
 	<macrodef name="deploy-war-solution">
-	    <attribute name="pathName" default="${solutions_to_export_as_war_tests}"/>
-        <attribute name="warFile" default="${servoy.test.target-exports.war}/${solutions_to_export_as_war_tests}.war"/>
+	    <attribute name="pathName" default="${solutions_to_export_as_war_tests}2"/>
+        <attribute name="warFile" default="${basedir}/${servoy.test.target-exports.war}/${solutions_to_export_as_war_tests}.war"/>
         <sequential>
             <!-- store path to newest JAR -->
 			<echo level="info" message="Using pathName : @{pathName}"/>
