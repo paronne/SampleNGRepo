@@ -173,7 +173,7 @@
 			<echo level="info" message="Using pathName : @{pathName}"/>
 			<echo level="info" message="Using war Name : @{warFile}"/>
 			
-            <get src="http://localhost:9090/manager/text/deploy?path=SampleNGRepo&war=e2e/war_export/SampleNGRepo.war" dest="deploy_log.txt" username="admin-script" password="admin-script"/>
+            <get src="http://localhost:9090/manager/text/deploy?path=SampleNGRepo&amp;war=e2e/war_export/SampleNGRepo.war" dest="deploy_log.txt" username="admin-script" password="admin-script"/>
        </sequential>
     </macrodef>
 
