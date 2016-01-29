@@ -1,8 +1,9 @@
 {
-	"firefox": {
-		"--remote-browser": "firefox" 
-	}, 
 	"chrome" : {
-		"--remote-browser": "chrome"
+		"-d": "chrome"
+		"--chromedriver" : "drivers\\chromedriver.exe",
+		"--html-result" : "html_results\\chrome",
+		"--screenshot-dir": "html_results\\chrome\\screenshots",
+		"--screenshot-on-fail": "html_results\\chrome\\screenshots"
 	}
 }
