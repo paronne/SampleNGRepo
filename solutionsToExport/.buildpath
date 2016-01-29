@@ -3,4 +3,5 @@
 	<buildpathentry excluding=".stp/|medias/" kind="src" path=""/>
 	<buildpathentry exported="true" kind="prj" path="/svyAngularUIBootstrapButtonsRadio_test"/>
 	<buildpathentry exported="true" kind="prj" path="/svyAngularUIBootstrapDropdown_test"/>
+	<buildpathentry exported="true" kind="prj" path="/svyJQ3PLSelect2Tokanizer_test"/>
 </buildpath>
