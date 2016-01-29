@@ -1,6 +1,6 @@
 {
 	"chrome" : {
-		"-d": "chrome"
+		"-d": "chrome",
 		"--chromedriver" : "drivers\\chromedriver.exe",
 		"--html-result" : "html_results\\chrome",
 		"--screenshot-dir": "html_results\\chrome\\screenshots",
