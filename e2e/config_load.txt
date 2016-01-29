@@ -4,6 +4,6 @@ driver: phantomjs
 phantomjs: ./drivers/phantomjs.exe
 baseurl: http://localhost:9090/SampleNGRepo
 
-screenshot-dir: results/screenshots
-screenshot-on-fail: results/screenshots
-html-result: results
+screenshot-dir: load_results/screenshots
+screenshot-on-fail: load_results/screenshots
+html-result: load_results
