@@ -5,6 +5,8 @@
 	<target name="load_properties">
 		<property file="test_runner.properties"/>
 	</target>
+	
+	<target name="maind" depends="export_war_solutions, deploy_war_solutions, run_e2e_test"/>
 
 	<target name="export_war_solutions" depends="load_properties, clean">
 		<export-solutions-as-war solutionNames="${solutions_to_export_as_war_tests}" outputDir="${servoy.test.target-exports.war}"/>
@@ -30,11 +32,11 @@
 	
 	<target name="deploy_war_solutions" depends="export_war_solutions" if="servoy.deploy.baseurl">
 		<echo level="info" message="Trying to deploy the war file."/>
-		<undeploy-war-solution baseurl="${servoy.deploy.baseurl}" path="sorvoy.deploy.context"/>
-		<deploy-war-solution baseurl="${servoy.deploy.baseurl}" path="sorvoy.deploy.context"/>
+		<undeploy-war-solution baseurl="${servoy.deploy.baseurl}" path="${sorvoy.deploy.context}"/>
+		<deploy-war-solution baseurl="${servoy.deploy.baseurl}" path="${sorvoy.deploy.context}"/>
 	</target>
 	
-	<target name="run_e2e_test" depends="deploy_war_solutions">
+	<target name="run_e2e_test" depends="deploy_war_solutions" if="servoy_test_properties">
 		<exec executable="bash" dir="${basedir}/e2e" osfamily="unix"
 					failonerror="true">
 					<arg value="-c"/>
