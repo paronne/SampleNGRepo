@@ -32,8 +32,8 @@
 	
 	<target name="deploy_war_solutions" depends="export_war_solutions" if="servoy.deploy.baseurl">
 		<echo level="info" message="Trying to deploy the war file."/>
-		<undeploy-war-solution baseurl="${servoy.deploy.baseurl}" path="${sorvoy.deploy.context}"/>
-		<deploy-war-solution baseurl="${servoy.deploy.baseurl}" path="${sorvoy.deploy.context}"/>
+		<undeploy-war-solution baseurl="${servoy.deploy.baseurl}" path="${servoy.deploy.context}"/>
+		<deploy-war-solution baseurl="${servoy.deploy.baseurl}" path="${servoy.deploy.context}"/>
 	</target>
 	
 	<target name="run_e2e_test" depends="deploy_war_solutions" if="servoy_test_properties">
