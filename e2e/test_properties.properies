@@ -6,6 +6,7 @@ protractor.conf = ./protractor.config.js
 protractor.solution.name = svyAngularUIBootstrapButtonsRadio_test
 
 # configure ui testing
+selrunner.enabled = yep
 selrunner.dir = ui_tests
 selrunner.solution.name = svyAngularUIBootstrapButtonsRadio_test
 selrunner.conf = ./config.txt

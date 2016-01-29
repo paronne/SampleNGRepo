@@ -2,9 +2,9 @@
 
 <project name="test_runner" default="run_e2e_test" basedir=".">
 
-  <target name="load_properties">
-	   <property file="test_runner.properties"/>
-  </target>
+	<target name="load_properties">
+		<property file="test_runner.properties"/>
+	</target>
 
 	<target name="export_war_solutions" depends="load_properties, clean">
 		<export-solutions-as-war solutionNames="${solutions_to_export_as_war_tests}" outputDir="${servoy.test.target-exports.war}"/>
@@ -28,10 +28,10 @@
 		<move file="${servoy_install.app_server_dir}/servoy_log.txt" tofile="${log.dir}/import_test_client_log.txt" failonerror="false"/>
     </target>
 	
-	<target name="deploy_war_solutions" depends="export_war_solutions">
+	<target name="deploy_war_solutions" depends="export_war_solutions" if="servoy.deploy.baseurl">
 		<echo level="info" message="Trying to deploy the war file."/>
-		<undeploy-war-solution/>
-		<deploy-war-solution/>
+		<undeploy-war-solution baseurl="${servoy.deploy.baseurl}" path="sorvoy.deploy.context"/>
+		<deploy-war-solution baseurl="${servoy.deploy.baseurl}" path="sorvoy.deploy.context"/>
 	</target>
 	
 	<target name="run_e2e_test" depends="deploy_war_solutions">
@@ -180,25 +180,26 @@
     </macrodef>
 	
 	<macrodef name="undeploy-war-solution">
-	    <attribute name="pathName" default="${solutions_to_export_as_war_tests}"/>
+		<attribute name="baseurl" default="localhost9090"/>
+	    <attribute name="path" default="${solutions_to_export_as_war_tests}"/>
         <sequential>
             <!-- store path to newest JAR -->
-			<echo level="info" message="Using pathName : @{pathName}"/>
-			<echo level="info" message="Using war Name : @{warFile}"/>
+			<echo level="info" message="Using pathName : @{path}"/>
 			
-            <get src="http://localhost:9090/manager/text/undeploy?path=/@{pathName}" dest="undeploy_log.txt" username="admin-script" password="admin-script"/>
+            <get src="http://@{baseurl}/manager/text/undeploy?path=/@{path}" dest="undeploy_log.txt" username="admin-script" password="admin-script"/>
        </sequential>
     </macrodef>
 	
 	<macrodef name="deploy-war-solution">
-	    <attribute name="pathName" default="${solutions_to_export_as_war_tests}"/>
-        <attribute name="warFile" default="${basedir}/${servoy.test.target-exports.war}/${solutions_to_export_as_war_tests}.war"/>
+		<attribute name="baseurl" default="localhost9090"/>
+	    <attribute name="path" default="${solutions_to_export_as_war_tests}"/>
+        <attribute name="war" default="${basedir}/${servoy.test.target-exports.war}/${solutions_to_export_as_war_tests}.war"/>
         <sequential>
             <!-- store path to newest JAR -->
-			<echo level="info" message="Using pathName : @{pathName}"/>
-			<echo level="info" message="Using war Name : @{warFile}"/>
+			<echo level="info" message="Using pathName : @{path}"/>
+			<echo level="info" message="Using war Name : @{war}"/>
 			
-            <get src="http://localhost:9090/manager/text/deploy?path=/@{pathName}&amp;war=@{warFile}" dest="deploy_log.txt" username="admin-script" password="admin-script"/>
+            <get src="http://@{baseurl}/manager/text/deploy?path=/@{path}&amp;war=@{war}" dest="deploy_log.txt" username="admin-script" password="admin-script"/>
        </sequential>
     </macrodef>
 
