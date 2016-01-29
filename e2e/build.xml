@@ -226,11 +226,13 @@
 		<echo message="this is the base dir ${basedir}"/>
 		<script language="javascript">
 		<![CDATA[
-	 		importClass(java.io.File);
-	        importClass(java.io.FileReader);
-	        importClass(java.io.BufferedReader);
-	        importClass(java.io.FileWriter);
-	        importClass(java.io.BufferedWriter);
+
+			// Rhino is the equivalent of importClass which does not work anymore in Java8
+			var File = java.io.File;
+			var FileReader = java.io.FileReader;
+			var BufferedReader = java.io.BufferedReader;
+			var FileWriter = java.io.FileWriter;
+			var BufferedWriter = java.io.BufferedWriter;
 
 	        // recursive function to get all files in directory having matching criteria
 	       	function getFiles(directoryPath, files) {
