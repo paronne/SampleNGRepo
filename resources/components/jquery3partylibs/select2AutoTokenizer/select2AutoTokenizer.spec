@@ -1,7 +1,7 @@
 {
 	"name": "jquery3partylibs-select2autotokenizer",
 	"displayName": "select2tokenizer",
-	"definition": "jquery3partylibs/select2AutoTokenizer/select2Autotokenizer.js",
+	"definition": "jquery3partylibs/select2AutoTokenizer/select2AutoTokenizer.js",
 	"version": 1,
 	"libraries": [
 		{
