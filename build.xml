@@ -35,7 +35,16 @@
 	</target>
 	
 	<target name="run_e2e_test" depends="deploy_war_solutions">
-		<ant antfile="build.xml" dir="e2e"/>
+		<exec executable="bash" dir="${basedir}/e2e" osfamily="unix"
+					failonerror="true">
+					<arg value="-c"/>
+					<arg value="ant"/>
+		</exec>
+		<exec executable="cmd" dir="${basedir}/e2e" osfamily="windows"
+					failonerror="true">
+					<arg value="/c"/>
+					<arg value="ant"/>
+		</exec>
 	</target>
 
 
