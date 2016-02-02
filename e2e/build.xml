@@ -314,18 +314,21 @@
 		        // Search all test suites ending with '_test' for all solution names
 		        var testDir = project.getProperty("selrunner.load.dir")
 		        var solutionNames = project.getProperty("selrunner.solution.name").split(",");
+				var cmdRollup = "";
+				var cmdRollupUnix = "";
+				
 		        for (var i =0; i<solutionNames.length; i++) {
 		        	//cmdLine += " " + testDir + "\\" + solutionNames[i].trim() + "\\*_test";		// Windows
 		        	//cmdLineUnix += " " + project.getProperty("basedir") + "/" + testDir + "/" + solutionNames[i].trim() + "/*_test";		// Unix
 
-		           	var files = [];
-		           	var filesUnix = [];
-				   	var directory = testDir + "\\" + solutionNames[i].trim();
+					var directory = testDir + "\\" + solutionNames[i].trim();
 				   	var directoryUnix = testDir + "/" + solutionNames[i].trim();
-					
+		           	var files = [];
+		           	var filesUnix = [];					
 					var rollups = [];
 		           	var rollupsUnix = [];
 
+					// find solution's rollup
 					var regSuiteRollups = new RegExp(/_rollup.js$/)
 				   	getFiles(directory, rollups, regSuiteRollups);
 				   	getFiles(directoryUnix, rollupsUnix, regSuiteRollups);
@@ -334,9 +337,12 @@
 		           	echo.setMessage("length " + rollups.length + " " + rollupsUnix.length + " " + rollupsUnix.join(""));
 		           	echo.perform();
 
-		        	cmdLine += " --rollup " + rollups.join(" ");			// Windows
-		        	cmdLineUnix += " --rollup ./" + rollupsUnix.join(" ")		// Unix
+					if(rollups.length || rollupsUnix.lenght) {
+						cmdRollup += " --rollup " + rollups.join(" ") + " ";			// Windows
+						cmdRollupUnix += " --rollup ./" + rollupsUnix.join(" ") + " ";		// Unix
+					}
 
+					// find solution's suite case
 					var regSuiteTest = new RegExp(/_test$/)
 				   	getFiles(directory, files, regSuiteTest);
 				   	getFiles(directoryUnix, filesUnix, regSuiteTest);
@@ -349,8 +355,9 @@
 		        	cmdLineUnix += " ./" + filesUnix.join(" ")		// Unix
 				}
 
-				cmdsWin = cmdsWin + cmdLine + ",";
-				cmdsUnix = cmdsUnix + cmdLineUnix + ",";
+				// concatenate cmdline, rollups and suite tests
+				cmdsWin = cmdsWin + cmdRollup + cmdLine + ",";
+				cmdsUnix = cmdsUnix + cmdRollupUnix + cmdLineUnix + ",";
 
 //		       	}
 	        }
