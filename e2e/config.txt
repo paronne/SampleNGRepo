@@ -1,4 +1,6 @@
 # configuration file format.
 
 baseurl: http://localhost:9090/SampleNGRepo/
+set-speed: 1
+timeout:10000
 

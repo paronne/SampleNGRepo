@@ -1,5 +1,7 @@
 # configuration file format.
 
+set-speed: 1
+timeout:10000
 driver: phantomjs
 phantomjs: ./drivers/phantomjs.exe
 baseurl: http://localhost:9090/SampleNGRepo/
