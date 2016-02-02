@@ -5,5 +5,11 @@
 		"--html-result" : "html_results\\chrome",
 		"--screenshot-dir": "html_results\\chrome\\screenshots",
 		"--screenshot-on-fail": "html_results\\chrome\\screenshots"
+	},
+	"firefox" : {
+		"-d": "firefox",
+		"--html-result" : "html_results\\firefox",
+		"--screenshot-dir": "html_results\\firefox\\screenshots",
+		"--screenshot-on-fail": "html_results\\firefox\\screenshots"
 	}
 }
