@@ -1,13 +1,11 @@
 <?xml version="1.0"?>
 
-<project name="test_runner" default="run_e2e_test" basedir=".">
+<project name="test_runner" default="export_war_solutions" basedir=".">
 
 	<target name="load_properties">
 		<property file="test_runner.properties"/>
 	</target>
 	
-	<target name="maind" depends="export_war_solutions, deploy_war_solutions, run_e2e_test"/>
-
 	<target name="export_war_solutions" depends="load_properties, clean">
 		<export-solutions-as-war solutionNames="${solutions_to_export_as_war_tests}" outputDir="${servoy.test.target-exports.war}"/>
 		<loadfile property="eclipselog" srcFile=".metadata/.log"/>
@@ -25,31 +23,16 @@
   		<move file="${test.workspace.dir}/.metadata/.log" tofile="${log.dir}/workspace_exporter_workspace_log.txt" failonerror="false"/>
     </target>
 
-
     <target name="prepare_test_run_log">
 		<move file="${servoy_install.app_server_dir}/servoy_log.txt" tofile="${log.dir}/import_test_client_log.txt" failonerror="false"/>
     </target>
 	
-	<target name="deploy_war_solutions" depends="export_war_solutions" if="servoy.deploy.baseurl">
+	<target name="deploy_war_solutions" depends="load_properties" if="servoy.deploy.baseurl">
 		<echo level="info" message="Trying to deploy the war file."/>
 		<undeploy-war-solution baseurl="${servoy.deploy.baseurl}" path="${servoy.deploy.context}"/>
 		<deploy-war-solution baseurl="${servoy.deploy.baseurl}" path="${servoy.deploy.context}"/>
 	</target>
 	
-	<target name="run_e2e_test" depends="deploy_war_solutions" if="servoy_test_properties">
-		<exec executable="bash" dir="${basedir}/e2e" osfamily="unix"
-					failonerror="true">
-					<arg value="-c"/>
-					<arg value="ant"/>
-		</exec>
-		<exec executable="cmd" dir="${basedir}/e2e" osfamily="windows"
-					failonerror="true">
-					<arg value="/c"/>
-					<arg value="ant"/>
-		</exec>
-	</target>
-
-
     <macrodef name="export-solutions-as-war">
         <attribute name="solutionNames"/>
         <attribute name="outputDir"/>
