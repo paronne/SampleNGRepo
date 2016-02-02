@@ -235,7 +235,7 @@
 			var BufferedWriter = java.io.BufferedWriter;
 
 	        // recursive function to get all files in directory having matching criteria
-	       	function getFiles(directoryPath, files) {
+	       	function getFiles(directoryPath, files, reg) {
 	        	var directory = new File(directoryPath);
 
 				var fList = directory.listFiles();
@@ -248,12 +248,12 @@
 				   	var file = fList[j];
 				    if (file.isFile()) {
 				    	// only test suites with name *_test
-				    	var reg = new RegExp(/_test$/)
+				    	// var reg = new RegExp(/_test$/)
 				    	if (reg.test(file)) {
 				    		files.push(file);
 				    	}
 				    } else if (file.isDirectory()) {
-				        getFiles(file.getAbsolutePath(), files);
+				        getFiles(file.getAbsolutePath(), files, reg);
 				    }
 				}
 			}
@@ -322,9 +322,24 @@
 		           	var filesUnix = [];
 				   	var directory = testDir + "\\" + solutionNames[i].trim();
 				   	var directoryUnix = testDir + "/" + solutionNames[i].trim();
+					
+					var rollups = [];
+		           	var rollupsUnix = [];
 
-				   	getFiles(directory, files);
-				   	getFiles(directoryUnix, filesUnix);
+					var regSuiteRollups = new RegExp(/_rollup.js$/)
+				   	getFiles(directory, rollups, regSuiteRollups);
+				   	getFiles(directoryUnix, rollupsUnix, regSuiteRollups);
+
+				   	echo = project.createTask("echo");
+		           	echo.setMessage("length " + rollups.length + " " + rollupsUnix.length + " " + rollupsUnix.join(""));
+		           	echo.perform();
+
+		        	cmdLine += " --rollup " + rollups.join(" ");			// Windows
+		        	cmdLineUnix += " --rollup ./" + rollupsUnix.join(" ")		// Unix
+
+					var regSuiteTest = new RegExp(/_test$/)
+				   	getFiles(directory, files, regSuiteTest);
+				   	getFiles(directoryUnix, filesUnix, regSuiteTest);
 
 				   	echo = project.createTask("echo");
 		           	echo.setMessage("length " + files.length + " " + filesUnix.length + " " + filesUnix.join(""));
