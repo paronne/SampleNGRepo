@@ -316,6 +316,8 @@
 		        var solutionNames = project.getProperty("selrunner.solution.name").split(",");
 				var cmdRollup = "";
 				var cmdRollupUnix = "";
+				var cmdSuite = "";
+				var cmdSuiteUnix = "";
 				
 		        for (var i =0; i<solutionNames.length; i++) {
 		        	//cmdLine += " " + testDir + "\\" + solutionNames[i].trim() + "\\*_test";		// Windows
@@ -351,16 +353,17 @@
 		           	echo.setMessage("length " + files.length + " " + filesUnix.length + " " + filesUnix.join(""));
 		           	echo.perform();
 
-		        	cmdLine += " " + files.join(" ");			// Windows
-		        	cmdLineUnix += " ./" + filesUnix.join(" ")		// Unix
+		        	cmdSuite += " " + files.join(" ");			// Windows
+		        	cmdSuiteUnix += " ./" + filesUnix.join(" ")		// Unix
 				}
 
 				// concatenate cmdline, rollups and suite tests
-				cmdsWin = cmdsWin + cmdRollup + cmdLine + ",";
-				cmdsUnix = cmdsUnix + cmdRollupUnix + cmdLineUnix + ",";
+				cmdsWin = cmdsWin + cmdLine + cmdRollup + cmdSuite + ",";
+				cmdsUnix = cmdsUnix + cmdLineUnix + cmdRollupUnix + cmdSuiteUnix + ",";
 
 //		       	}
 	        }
+			
 
 	        // remove comma from last item
 	        if (cmdsWin.length) {
