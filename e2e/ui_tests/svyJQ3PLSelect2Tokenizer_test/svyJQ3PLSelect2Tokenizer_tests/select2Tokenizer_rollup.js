@@ -1,15 +1,4 @@
 /**
- * For use in Selenium IDE.
- *
- * You will need to add this to Selenium under Options / Options in the Selenium Menu.
- * Put this under Selenium Core Extensions:
- * ~/selenium-ide-for-slp/sideflow.js , ~/selenium-ide-for-slp/slp_rollups.js
- *
- *
- */
-//var manager = new RollupManager();
- 
-/**
  * Include this file in the Selenium Core extensions (Options > General > Selenium Core Extensions)
  * You can include multiple files in the core extensions but you can create only once a RollupManager.
  */
