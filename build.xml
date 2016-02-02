@@ -28,7 +28,8 @@
     </target>
 	
 	<target name="deploy_war_solutions" depends="load_properties" if="servoy.deploy.baseurl">
-		<echo level="info" message="Trying to deploy the war file."/>
+		<!-- TODO must check if the deploy returns OK or FAIL. Right now always build successfully. -->
+		<echo level="info" message="Trying to undeploy and re-deploy the war file on http://${servoy.deploy.baseurl}."/>
 		<undeploy-war-solution baseurl="${servoy.deploy.baseurl}" path="${servoy.deploy.context}"/>
 		<deploy-war-solution baseurl="${servoy.deploy.baseurl}" path="${servoy.deploy.context}"/>
 	</target>
@@ -165,11 +166,11 @@
     </macrodef>
 	
 	<macrodef name="undeploy-war-solution">
-		<attribute name="baseurl" default="localhost9090"/>
+		<attribute name="baseurl" default="localhost:9090"/>
 	    <attribute name="path" default="${solutions_to_export_as_war_tests}"/>
         <sequential>
             <!-- store path to newest JAR -->
-			<echo level="info" message="Using pathName : @{path}"/>
+			<echo level="info" message="Undeploy the tomcat app : @{path}"/>
 			
             <get src="http://@{baseurl}/manager/text/undeploy?path=/@{path}" dest="undeploy_log.txt" username="admin-script" password="admin-script"/>
        </sequential>
@@ -180,10 +181,7 @@
 	    <attribute name="path" default="${solutions_to_export_as_war_tests}"/>
         <attribute name="war" default="${basedir}/${servoy.test.target-exports.war}/${solutions_to_export_as_war_tests}.war"/>
         <sequential>
-            <!-- store path to newest JAR -->
-			<echo level="info" message="Using pathName : @{path}"/>
-			<echo level="info" message="Using war Name : @{war}"/>
-			
+			<echo level="info" message="Deploy the tomcat app: @{path} using WAR file: @{war}"/>
             <get src="http://@{baseurl}/manager/text/deploy?path=/@{path}&amp;war=@{war}" dest="deploy_log.txt" username="admin-script" password="admin-script"/>
        </sequential>
     </macrodef>
