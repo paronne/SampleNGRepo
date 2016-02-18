@@ -51,7 +51,6 @@ function shutDown(event) {
  * @properties={typeid:24,uuid:"FE26EE33-A845-4545-90F0-FF4FF589B8DF"}
  */
 function updateUI(event) {
-	
 }
 
 /**
@@ -255,41 +254,58 @@ function onElementFocusLost(event) {
 }
 
 /**
- * Toggle Visibility of the element
- *
- * @param {JSEvent} event the event that triggered the action
- *
+ * @param {JSEvent} event
  * @protected
- *
- * @properties={typeid:24,uuid:"3A99F778-744E-4E24-AE0F-00AEF8E9FDF4"}
- */
-function toggleVisibility(event) {
-    if (!testElement || !elements[testElement]) return;
-    elements[testElement].visible = !elements[testElement].visible;
-    log("Element " + testElement + ' is now ' + (elements[testElement].visible ? 'visible' : 'invisible'))
-}
-
-/**
- * @param event
- *
- * @properties={typeid:24,uuid:"C5A3B318-2BCA-40E8-928D-24E5A367014C"}
- */
-function toggleReadOnly(event) {
-    if (!testElement || !elements[testElement]) return;
-    elements[testElement].readOnly = !elements[testElement].readOnly;
-    log("Element " + testElement + ' is now ' + (elements[testElement].readOnly ? 'readOnly' : 'non-readOnly'))
-}
-
-/**
- * @param event
  *
  * @properties={typeid:24,uuid:"CABE3A02-389D-436C-9989-510E6AA1001E"}
  */
 function toggleFormReadOnly(event) {
 	controller.readOnly = !controller.readOnly
     log("Form  is now " + (controller.readOnly ? 'readOnly' : 'non-readOnly'))
+	updateUI(event)
 }
 
+/**
+ * @param {JSEvent} event
+ * @protected
+ *
+ * @properties={typeid:24,uuid:"C0039C4D-E686-4C71-81B7-47090E4B2A93"}
+ */
+function toggleFormEnabled(event) {
+	controller.enabled = !controller.enabled
+    log("Form  is now " + (controller.enabled ? 'enabled' : 'non-enabled'))
+	updateUI(event)
+}
+
+/**
+ * Returns true if the test element has property testElement
+ * @param {String} prop
+ * @protected 
+ *
+ * @properties={typeid:24,uuid:"776DBB83-F711-47F9-8B82-2203191BCCBF"}
+ */
+function testElementHasProperty(prop) {
+    if (!testElement || !elements[testElement]) { 
+    	return false 
+	}
+	return prop in elements[testElement]
+} 
+
+/**
+ * Toggle a Boolean property of the testElement
+ * 
+ * @param {JSEvent} event
+ * @param {String} prop
+ * @protected 
+ *
+ * @properties={typeid:24,uuid:"B7F6806C-D29D-407D-89EE-A17C3AC406E6"}
+ */
+function toggleElementPropertyBoolean(event , prop) {
+    if (testElementHasProperty(prop)) {
+    	elements[testElement][prop] = elements[testElement][prop] ? false : true;
+    	log("Element " + testElement + ' is now ' + (elements[testElement][prop] ? prop : 'non-' + prop));
+    }
+}
 
 /**
  * Perform the element default action.
@@ -303,4 +319,3 @@ function toggleFormReadOnly(event) {
 function onClearLog(event) {
 	logText = null;
 }
-
