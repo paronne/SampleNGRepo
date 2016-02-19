@@ -23,7 +23,7 @@ specname:\"row\"\
 items:[
 {
 customProperties:"attributes:{\
-class:\"col-md-6\"\
+class:\"col-md-8\"\
 },\
 properties:{\
 packagename:\"12grid\",\
@@ -43,7 +43,7 @@ uuid:"47819218-9040-4032-BB33-F6A3BE8D151F"
 },
 {
 customProperties:"attributes:{\
-class:\"col-md-6\"\
+class:\"col-md-4\"\
 },\
 properties:{\
 packagename:\"12grid\",\

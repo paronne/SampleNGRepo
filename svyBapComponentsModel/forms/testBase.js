@@ -178,6 +178,19 @@ function onRightClick(event) {
  *
  * @protected
  *
+ * @properties={typeid:24,uuid:"F1D5CA69-7A6A-4665-B3DA-97E92DB14E16"}
+ */
+function onDoubleClick(event) {
+	log('Double Click: element ' + event.getElementName())
+}
+
+/**
+ * Perform the element right-click action.
+ *
+ * @param {JSEvent} event the event that triggered the action
+ *
+ * @protected
+ *
  * @properties={typeid:24,uuid:"997D7717-680C-474C-9B68-62F5693D059A"}
  */
 function onFocusLost(event) {
