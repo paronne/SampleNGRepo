@@ -31,6 +31,9 @@ specname:\"column\"\
 }",
 items:[
 {
+json:{
+height:1024
+},
 name:"tablesspanel_1",
 typeName:"bootstrapcomponents-tablesspanel",
 typeid:47,
