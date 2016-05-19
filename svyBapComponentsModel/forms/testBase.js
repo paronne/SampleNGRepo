@@ -36,6 +36,20 @@ var varBoolean = true
 var varNumber
 
 /**
+ * @type {Date}
+ *
+ * @properties={typeid:35,uuid:"3AA1DAD9-B048-433C-89AC-1DF125CCCC34",variableType:93}
+ */
+var varDate
+
+/**
+ * @type {Date}
+ *
+ * @properties={typeid:35,uuid:"E1717A15-A6ED-4C76-8D17-6D1262F99746",variableType:93}
+ */
+var varToday = new Date();
+
+/**
  * @param {JSEvent} event
  *
  * @properties={typeid:24,uuid:"DF75E9AE-DCDB-4CBA-B041-25D7D739C2AD"}
@@ -155,7 +169,7 @@ function onDataChange(oldValue, newValue, event) {
  * @properties={typeid:24,uuid:"85E26F4B-02E5-499D-9D9A-B8868C9AB66B"}
  */
 function onAction(event) {
-	log('Action: element ' + event.getElementName())
+	log('Action: element ' + event.getElementName() +  " " + event.getType() + " " + event.getX() + " " + event.getY() + " " + event.getModifiers())
 }
 
 /**

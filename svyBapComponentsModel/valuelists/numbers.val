@@ -1,7 +1,7 @@
 addEmptyValue:1,
 customValues:"One|1\r\
 Two|2\r\
-Tree|3\r\
+Three|3\r\
 ",
 name:"numbers",
 typeid:34,

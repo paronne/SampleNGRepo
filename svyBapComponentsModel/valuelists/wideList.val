@@ -1,5 +1,5 @@
 addEmptyValue:1,
-customValues:"<marquee>Hello<\/marquee>Left is a really long value which takes a lot fo space|-1\r\
+customValues:"<i>Hello<\/i>Left is a really long value which takes a lot fo space|-1\r\
 Middle|0\r\
 Right|1",
 name:"wideList",
