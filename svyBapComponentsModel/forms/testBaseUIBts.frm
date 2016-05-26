@@ -45,6 +45,7 @@ parameters:[\
 }",
 json:{
 onActionMethodID:"B7F6806C-D29D-407D-89EE-A17C3AC406E6",
+tabSeq:-2,
 text:"readOnly"
 },
 location:"1,1",
@@ -69,6 +70,7 @@ parameters:[\
 }",
 json:{
 onActionMethodID:"B7F6806C-D29D-407D-89EE-A17C3AC406E6",
+tabSeq:-2,
 text:"Visible"
 },
 name:"btnVisible",
@@ -91,6 +93,7 @@ parameters:[\
 }",
 json:{
 onActionMethodID:"B7F6806C-D29D-407D-89EE-A17C3AC406E6",
+tabSeq:-2,
 text:"enabled"
 },
 location:"2,2",
@@ -117,6 +120,7 @@ items:[
 {
 json:{
 onActionMethodID:"C0039C4D-E686-4C71-81B7-47090E4B2A93",
+tabSeq:-2,
 text:"enabled"
 },
 location:"2,2",
@@ -129,6 +133,7 @@ uuid:"38628DA5-7392-4639-856E-61ADD42C117D"
 {
 json:{
 onActionMethodID:"CABE3A02-389D-436C-9989-510E6AA1001E",
+tabSeq:-2,
 text:"readOnly"
 },
 location:"1,1",
@@ -155,6 +160,7 @@ items:[
 {
 json:{
 onActionMethodID:"DF75E9AE-DCDB-4CBA-B041-25D7D739C2AD",
+tabSeq:-2,
 text:"Shutdown"
 },
 location:"1,1",
@@ -212,6 +218,9 @@ specname:\"column\"\
 }",
 items:[
 {
+json:{
+tabSeq:-2
+},
 name:"label",
 typeName:"bootstrapcomponents-label",
 typeid:47,
@@ -258,6 +267,7 @@ specname:\"column\"\
 items:[
 {
 json:{
+tabSeq:-2,
 text:"Form"
 },
 location:"1,1",
@@ -282,6 +292,7 @@ specname:\"column\"\
 items:[
 {
 json:{
+tabSeq:-2,
 text:"TestElement",
 visible:true
 },
@@ -339,6 +350,7 @@ specname:\"column\"\
 items:[
 {
 json:{
+tabSeq:-2,
 text:"Number"
 },
 location:"1,1",
@@ -364,7 +376,8 @@ items:[
 json:{
 dataProviderID:"varNumber",
 enabled:true,
-placeholderText:"Custom"
+placeholderText:"Custom",
+tabSeq:-2
 },
 location:"1,1",
 name:"varNumber",
@@ -416,6 +429,7 @@ specname:\"column\"\
 items:[
 {
 json:{
+tabSeq:-2,
 text:"Boolean"
 },
 location:"1,1",
@@ -439,7 +453,8 @@ specname:\"column\"\
 items:[
 {
 json:{
-dataProviderID:"varBoolean"
+dataProviderID:"varBoolean",
+tabSeq:-2
 },
 location:"1,1",
 name:"varBoolean",
@@ -491,6 +506,7 @@ specname:\"column\"\
 items:[
 {
 json:{
+tabSeq:-2,
 text:"String"
 },
 location:"1,1",
@@ -514,7 +530,8 @@ specname:\"column\"\
 items:[
 {
 json:{
-dataProviderID:"varString"
+dataProviderID:"varString",
+tabSeq:-2
 },
 location:"1,1",
 name:"varString",
@@ -564,6 +581,7 @@ items:[
 {
 json:{
 onActionMethodID:"512AB797-047B-4AD4-B462-47E1015132E8",
+tabSeq:-2,
 text:"Clear"
 },
 location:"1,1",
@@ -575,7 +593,8 @@ uuid:"5580B929-45CA-484A-867D-7F8448BD03E7"
 {
 json:{
 dataProviderID:"logText",
-readOnly:false
+readOnly:false,
+tabSeq:-2
 },
 location:"2,2",
 name:"log",
